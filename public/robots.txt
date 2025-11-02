@@ -1,0 +1,25 @@
+# robots.txt for ARIN IT Solutions
+# https://www.arinits.com
+
+User-agent: *
+Allow: /
+
+# Disallow admin or private areas (if any exist in the future)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Allow all important pages
+Allow: /
+Allow: /contact
+Allow: /portfolio
+Allow: /team
+Allow: /blog
+Allow: /services/
+Allow: /terms
+Allow: /privacy
+
+# Sitemap location
+Sitemap: https://www.arinits.com/sitemap.xml
+
+# Crawl-delay (optional - remove if not needed)
+# Crawl-delay: 1

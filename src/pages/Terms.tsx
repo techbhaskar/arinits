@@ -8,6 +8,7 @@ const Terms = () => {
         title="Terms of Service - ARIN IT Solutions"
         description="Read the terms of service for ARIN IT Solutions website and services."
         path="/terms"
+        keywords="terms of service, terms and conditions, ARIN IT Solutions terms, website terms, legal terms"
       />
       <div className="max-w-4xl mx-auto">
         <div className="glass-strong rounded-2xl p-8 md:p-12 shadow-xl">

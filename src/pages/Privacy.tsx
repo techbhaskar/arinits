@@ -8,6 +8,7 @@ const Privacy = () => {
         title="Privacy Policy - ARIN IT Solutions"
         description="Privacy policy for ARIN IT Solutions. Learn how we collect, use, and protect your personal information."
         path="/privacy"
+        keywords="privacy policy, data privacy, personal information protection, GDPR compliance, privacy statement"
       />
       <div className="max-w-4xl mx-auto">
         <div className="glass-strong rounded-2xl p-8 md:p-12 shadow-xl">
