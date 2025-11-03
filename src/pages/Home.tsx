@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Logo from "../components/Logo";
 import SEO from "../components/SEO";
 
 const Home = () => {
@@ -196,7 +195,7 @@ const Home = () => {
           className="absolute inset-0 opacity-10"
           style={{
             backgroundImage:
-              "linear-gradient(to right, rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.1) 1px, transparent 1px)",
+              "linear-gradient(to right, rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(to bottom, rgba(184, 107, 35, 0.1) 1px, transparent 1px)",
             backgroundSize: "50px 50px",
           }}
         ></div>
@@ -513,7 +512,7 @@ const Home = () => {
               {
                 title: "Enterprise E-Commerce Platform",
                 category: "Web Development",
-                gradient: "from-arin-orange to-orange-500",
+                gradient: "from-orange-500 to-orange-600",
               },
               {
                 title: "Mobile Banking Application",
@@ -523,7 +522,7 @@ const Home = () => {
               {
                 title: "Cloud Migration Solution",
                 category: "Cloud & DevOps",
-                gradient: "from-arin-orange to-red-500",
+                gradient: "from-orange-500 to-orange-600",
               },
             ].map((project, index) => (
               <Link
@@ -595,7 +594,7 @@ const Home = () => {
               {
                 name: "Alex Rodriguez",
                 role: "CEO & Founder",
-                gradient: "from-arin-orange to-orange-500",
+                gradient: "from-orange-500 to-orange-600",
               },
               {
                 name: "Sarah Chen",
@@ -605,12 +604,12 @@ const Home = () => {
               {
                 name: "Michael Johnson",
                 role: "Lead Developer",
-                gradient: "from-arin-orange to-red-500",
+                gradient: "from-orange-500 to-orange-600",
               },
               {
                 name: "Emily Davis",
                 role: "UX/UI Designer",
-                gradient: "from-orange-500 to-red-500",
+                gradient: "from-orange-500 to-orange-600",
               },
             ].map((member, index) => (
               <Link
@@ -670,7 +669,7 @@ const Home = () => {
                 title: "10 Essential Tips for Modern Web Development",
                 category: "Web Development",
                 date: "March 15, 2024",
-                gradient: "from-arin-orange to-orange-500",
+                gradient: "from-orange-500 to-orange-600",
               },
               {
                 title: "Cloud Migration: A Complete Guide",
@@ -682,7 +681,7 @@ const Home = () => {
                 title: "Building Secure Mobile Applications",
                 category: "Mobile Development",
                 date: "March 5, 2024",
-                gradient: "from-arin-orange to-red-500",
+                gradient: "from-orange-500 to-orange-600",
               },
             ].map((post, index) => (
               <Link

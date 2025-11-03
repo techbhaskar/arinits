@@ -107,7 +107,7 @@ const SoftwareDevelopment = () => {
           className="absolute inset-0 opacity-10"
           style={{
             backgroundImage:
-              "linear-gradient(to right, rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.1) 1px, transparent 1px)",
+              "linear-gradient(to right, rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(to bottom, rgba(184, 107, 35, 0.1) 1px, transparent 1px)",
             backgroundSize: "50px 50px",
           }}
         ></div>
@@ -216,6 +216,24 @@ const SoftwareDevelopment = () => {
                   </div>
                   <div className="glass-strong-dark rounded-lg p-4 text-center">
                     Go
+                  </div>
+                  <div className="glass-strong-dark rounded-lg p-4 text-center">
+                    TensorFlow
+                  </div>
+                  <div className="glass-strong-dark rounded-lg p-4 text-center">
+                    PyTorch
+                  </div>
+                  <div className="glass-strong-dark rounded-lg p-4 text-center">
+                    scikit-learn
+                  </div>
+                  <div className="glass-strong-dark rounded-lg p-4 text-center">
+                    OpenAI API
+                  </div>
+                  <div className="glass-strong-dark rounded-lg p-4 text-center">
+                    LangChain
+                  </div>
+                  <div className="glass-strong-dark rounded-lg p-4 text-center">
+                    Hugging Face
                   </div>
                 </div>
               </div>

@@ -12,7 +12,7 @@ const Portfolio = () => {
         "Built a scalable e-commerce platform handling 100K+ daily transactions with advanced inventory management and real-time analytics.",
       tech: ["React", "Node.js", "PostgreSQL", "AWS"],
       image: "/api/placeholder/800/600",
-      gradient: "from-arin-orange to-orange-500",
+      gradient: "from-orange-500 to-orange-600",
     },
     {
       id: 2,
@@ -32,7 +32,7 @@ const Portfolio = () => {
         "Migrated enterprise infrastructure to AWS, reducing costs by 40% and improving scalability and performance significantly.",
       tech: ["AWS", "Docker", "Kubernetes", "Terraform"],
       image: "/api/placeholder/800/600",
-      gradient: "from-arin-orange to-red-500",
+      gradient: "from-orange-500 to-orange-600",
     },
     {
       id: 4,
@@ -42,7 +42,7 @@ const Portfolio = () => {
         "Created an intelligent analytics platform with machine learning capabilities, providing real-time insights and predictions.",
       tech: ["Python", "React", "TensorFlow", "PostgreSQL"],
       image: "/api/placeholder/800/600",
-      gradient: "from-orange-500 to-red-500",
+      gradient: "from-orange-500 to-orange-600",
     },
     {
       id: 5,
@@ -52,7 +52,7 @@ const Portfolio = () => {
         "Developed a comprehensive healthcare management system with patient records, scheduling, and telemedicine capabilities.",
       tech: ["React", "Node.js", "MongoDB", "WebRTC"],
       image: "/api/placeholder/800/600",
-      gradient: "from-orange-600 to-orange-500",
+      gradient: "from-orange-500 to-orange-600",
     },
     {
       id: 6,
@@ -62,7 +62,7 @@ const Portfolio = () => {
         "Built a high-performance trading platform with real-time data processing, advanced charting, and algorithmic trading support.",
       tech: ["Vue.js", "Go", "Redis", "WebSocket"],
       image: "/api/placeholder/800/600",
-      gradient: "from-red-500 to-orange-500",
+      gradient: "from-orange-500 to-orange-600",
     },
   ];
 
@@ -104,7 +104,7 @@ const Portfolio = () => {
           className="absolute inset-0 opacity-10"
           style={{
             backgroundImage:
-              "linear-gradient(to right, rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.1) 1px, transparent 1px)",
+              "linear-gradient(to right, rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(to bottom, rgba(184, 107, 35, 0.1) 1px, transparent 1px)",
             backgroundSize: "50px 50px",
           }}
         ></div>
@@ -150,13 +150,13 @@ const Portfolio = () => {
               {filteredProjects.map((project) => (
                 <div
                   key={project.id}
-                  className="group relative glass-strong-dark rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 border border-white/20"
+                  className="group relative glass-strong-dark rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 border border-white/20 text-white"
                 >
                   {/* Project Image Placeholder */}
                   <div
                     className={`h-64 bg-gradient-to-br ${project.gradient} relative overflow-hidden`}
                   >
-                    <div className="absolute inset-0 flex items-center justify-center text-white text-4xl font-bold opacity-20">
+                    <div className="absolute inset-0 flex items-center justify-center text-white text-4xl font-bold opacity-4">
                       {project.category}
                     </div>
                   </div>

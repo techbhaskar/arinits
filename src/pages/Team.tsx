@@ -9,7 +9,7 @@ const Team = () => {
       description:
         "Visionary leader with 15+ years in technology. Expert in digital transformation and strategic planning.",
       image: "/api/placeholder/400/400",
-      gradient: "from-arin-orange to-orange-500",
+      gradient: "from-orange-500 to-orange-600",
       social: {
         linkedin: "#",
         twitter: "#",
@@ -35,7 +35,7 @@ const Team = () => {
       description:
         "Full-stack developer passionate about creating elegant solutions. Specializes in React, Node.js, and modern web technologies.",
       image: "/api/placeholder/400/400",
-      gradient: "from-arin-orange to-red-500",
+      gradient: "from-orange-500 to-orange-600",
       social: {
         linkedin: "#",
         github: "#",
@@ -48,7 +48,7 @@ const Team = () => {
       description:
         "Creative designer focused on user-centered design. Transforms complex ideas into intuitive, beautiful interfaces.",
       image: "/api/placeholder/400/400",
-      gradient: "from-orange-500 to-red-500",
+      gradient: "from-orange-500 to-orange-600",
       social: {
         linkedin: "#",
         behance: "#",
@@ -61,7 +61,7 @@ const Team = () => {
       description:
         "Infrastructure expert ensuring seamless deployments and optimal performance. AWS, Docker, and Kubernetes specialist.",
       image: "/api/placeholder/400/400",
-      gradient: "from-orange-600 to-orange-500",
+      gradient: "from-orange-500 to-orange-600",
       social: {
         linkedin: "#",
         github: "#",
@@ -74,7 +74,7 @@ const Team = () => {
       description:
         "Organized leader ensuring projects are delivered on time and within budget. Expert in agile methodologies.",
       image: "/api/placeholder/400/400",
-      gradient: "from-red-500 to-orange-500",
+      gradient: "from-orange-500 to-orange-600",
       social: {
         linkedin: "#",
         twitter: "#",
@@ -111,7 +111,7 @@ const Team = () => {
           className="absolute inset-0 opacity-10"
           style={{
             backgroundImage:
-              "linear-gradient(to right, rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.1) 1px, transparent 1px)",
+              "linear-gradient(to right, rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(to bottom, rgba(184, 107, 35, 0.1) 1px, transparent 1px)",
             backgroundSize: "50px 50px",
           }}
         ></div>
@@ -156,13 +156,13 @@ const Team = () => {
               {teamMembers.map((member) => (
                 <div
                   key={member.id}
-                  className="group glass-strong-dark rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 border border-white/20"
+                  className="group glass-strong-dark rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 border border-white/20 text-white"
                 >
                   {/* Member Image Placeholder */}
                   <div
                     className={`h-80 bg-gradient-to-br ${member.gradient} relative overflow-hidden`}
                   >
-                    <div className="absolute inset-0 flex items-center justify-center text-white text-6xl font-bold opacity-20">
+                    <div className="absolute inset-0 flex items-center justify-center text-white text-6xl font-bold opacity-4">
                       {member.name
                         .split(" ")
                         .map((n) => n[0])
