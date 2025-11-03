@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import SEO from "../components/SEO";
 
@@ -87,7 +86,7 @@ const ITConsulting = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-24 pb-16 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen overflow-x-hidden">
       <SEO
         title="IT Consulting Services - ARIN IT Solutions"
         description="Expert IT consulting services. Get strategic guidance on technology decisions that drive business growth and digital transformation."
@@ -96,158 +95,185 @@ const ITConsulting = () => {
       />
 
       {/* Hero Section */}
-      <section className="max-w-7xl mx-auto mb-20">
-        <div className="text-center mb-16">
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-            IT Consulting Services
+      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-black pt-24">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-arin-orange/20 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-orange-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        </div>
+
+        {/* Grid Pattern Overlay */}
+        <div
+          className="absolute inset-0 opacity-10"
+          style={{
+            backgroundImage:
+              "linear-gradient(to right, rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.1) 1px, transparent 1px)",
+            backgroundSize: "50px 50px",
+          }}
+        ></div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6">
+            <span className="block text-white">IT</span>
+            <span className="block bg-gradient-to-r from-arin-orange to-orange-400 bg-clip-text text-transparent pb-4">
+              Consulting
+            </span>
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
             Get expert guidance on technology decisions that drive business
             growth. Our consultants provide strategic insights and practical
             solutions.
           </p>
         </div>
+      </section>
 
-        <div className="glass-strong rounded-3xl p-12 md:p-16 shadow-2xl">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                Why Choose Our IT Consulting?
-              </h2>
-              <ul className="space-y-4 text-gray-700">
-                <li className="flex items-start space-x-3">
-                  <svg
-                    className="w-6 h-6 text-arin-orange mt-1 flex-shrink-0"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <span>15+ years of combined consulting experience</span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <svg
-                    className="w-6 h-6 text-arin-orange mt-1 flex-shrink-0"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <span>Data-driven recommendations and insights</span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <svg
-                    className="w-6 h-6 text-arin-orange mt-1 flex-shrink-0"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <span>Industry-specific expertise across sectors</span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <svg
-                    className="w-6 h-6 text-arin-orange mt-1 flex-shrink-0"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <span>End-to-end implementation support</span>
-                </li>
-              </ul>
-            </div>
-            <div className="bg-gradient-to-br from-purple-500 to-pink-500 rounded-3xl p-12 text-white">
-              <h3 className="text-2xl font-bold mb-6">
-                Our Consulting Approach
-              </h3>
-              <div className="space-y-4">
-                <div className="glass-strong-dark rounded-lg p-4">
-                  <div className="font-semibold mb-2">1. Assessment</div>
-                  <div className="text-sm opacity-90">
-                    Understand your current state
+      <div className="relative -mt-20 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black via-gray-900 to-gray-900 py-4">
+        <div className="max-w-7xl mx-auto mb-20">
+          <div className="glass-strong-dark rounded-3xl p-12 md:p-16 shadow-2xl border border-white/20">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2 className="text-3xl font-bold text-white mb-6">
+                  Why Choose Our IT Consulting?
+                </h2>
+                <ul className="space-y-4 text-gray-300">
+                  <li className="flex items-start space-x-3">
+                    <svg
+                      className="w-6 h-6 text-arin-orange mt-1 flex-shrink-0"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                    <span>15+ years of combined consulting experience</span>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <svg
+                      className="w-6 h-6 text-arin-orange mt-1 flex-shrink-0"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                    <span>Data-driven recommendations and insights</span>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <svg
+                      className="w-6 h-6 text-arin-orange mt-1 flex-shrink-0"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                    <span>Industry-specific expertise across sectors</span>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <svg
+                      className="w-6 h-6 text-arin-orange mt-1 flex-shrink-0"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                    <span>End-to-end implementation support</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="bg-gradient-to-br from-arin-orange to-orange-500 rounded-3xl p-12 text-white">
+                <h3 className="text-2xl font-bold mb-6">
+                  Our Consulting Approach
+                </h3>
+                <div className="space-y-4">
+                  <div className="glass-strong-dark rounded-lg p-4">
+                    <div className="font-semibold mb-2">1. Assessment</div>
+                    <div className="text-sm opacity-90">
+                      Understand your current state
+                    </div>
                   </div>
-                </div>
-                <div className="glass-strong-dark rounded-lg p-4">
-                  <div className="font-semibold mb-2">2. Strategy</div>
-                  <div className="text-sm opacity-90">
-                    Develop actionable roadmap
+                  <div className="glass-strong-dark rounded-lg p-4">
+                    <div className="font-semibold mb-2">2. Strategy</div>
+                    <div className="text-sm opacity-90">
+                      Develop actionable roadmap
+                    </div>
                   </div>
-                </div>
-                <div className="glass-strong-dark rounded-lg p-4">
-                  <div className="font-semibold mb-2">3. Implementation</div>
-                  <div className="text-sm opacity-90">
-                    Execute with precision
+                  <div className="glass-strong-dark rounded-lg p-4">
+                    <div className="font-semibold mb-2">3. Implementation</div>
+                    <div className="text-sm opacity-90">
+                      Execute with precision
+                    </div>
                   </div>
-                </div>
-                <div className="glass-strong-dark rounded-lg p-4">
-                  <div className="font-semibold mb-2">4. Optimization</div>
-                  <div className="text-sm opacity-90">
-                    Continuous improvement
+                  <div className="glass-strong-dark rounded-lg p-4">
+                    <div className="font-semibold mb-2">4. Optimization</div>
+                    <div className="text-sm opacity-90">
+                      Continuous improvement
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
 
-      {/* Services Grid */}
-      <section className="max-w-7xl mx-auto mb-20">
-        <h2 className="text-4xl font-bold text-center text-gray-900 mb-12">
-          Our IT Consulting Services
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {services.map((service, index) => (
-            <div
-              key={index}
-              className="glass-strong rounded-3xl p-8 hover:scale-105 transition-all duration-500 shadow-xl"
-            >
-              <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mb-6 text-white">
-                {service.icon}
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                {service.title}
-              </h3>
-              <p className="text-gray-700 leading-relaxed">
-                {service.description}
-              </p>
+        {/* Services Grid */}
+        <section className="mb-20">
+          <div className="max-w-7xl mx-auto">
+            <h2 className="text-4xl font-bold text-center text-white mb-12">
+              Our IT Consulting Services
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {services.map((service, index) => (
+                <div
+                  key={index}
+                  className="glass-strong-dark rounded-3xl p-8 hover:scale-105 transition-all duration-500 shadow-xl border border-white/20"
+                >
+                  <div className="w-16 h-16 bg-gradient-to-br from-arin-orange to-orange-500 rounded-2xl flex items-center justify-center mb-6 text-white">
+                    {service.icon}
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-4">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-300 leading-relaxed">
+                    {service.description}
+                  </p>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-      </section>
+          </div>
+        </section>
 
-      {/* CTA Section */}
-      <section className="max-w-4xl mx-auto glass-strong rounded-3xl p-12 shadow-xl text-center">
-        <h2 className="text-4xl font-bold text-gray-900 mb-6">
-          Need Expert IT Consultation?
-        </h2>
-        <p className="text-xl text-gray-600 mb-8">
-          Let's discuss your technology challenges and opportunities.
-        </p>
-        <Link
-          to="/contact"
-          className="inline-block px-10 py-4 bg-arin-orange text-white rounded-lg font-semibold text-lg hover:bg-orange-600 transform hover:scale-105 transition-all duration-300 shadow-xl"
-        >
-          Schedule Consultation
-        </Link>
-      </section>
+        {/* CTA Section */}
+        <section className="mt-20">
+          <div className="max-w-4xl mx-auto text-center glass-strong-dark rounded-3xl p-12 shadow-xl border border-white/20">
+            <h2 className="text-4xl font-bold text-white mb-6">
+              Need Expert IT Consultation?
+            </h2>
+            <p className="text-xl text-gray-300 mb-8">
+              Let's discuss your technology challenges and opportunities.
+            </p>
+            <Link
+              to="/contact"
+              className="inline-block px-10 py-4 bg-gradient-to-r from-arin-orange to-orange-500 text-white rounded-lg font-semibold text-lg hover:from-orange-600 hover:to-orange-700 transform hover:scale-105 transition-all duration-300 shadow-xl"
+            >
+              Schedule Consultation
+            </Link>
+          </div>
+        </section>
+      </div>
     </div>
   );
 };

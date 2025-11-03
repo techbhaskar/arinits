@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../components/Logo";
 import SEO from "../components/SEO";
@@ -205,13 +205,9 @@ const Home = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Column - Content */}
             <div className="text-white space-y-6 sm:space-y-8 animate-fade-in">
-              <div className="inline-block">
-                <Logo size="md" />
-              </div>
-
-              <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold leading-tight">
+              <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold leading-relaxed">
                 <span className="block">Transform Your</span>
-                <span className="block bg-gradient-to-r from-arin-orange to-orange-400 bg-clip-text text-transparent">
+                <span className="block bg-gradient-to-r from-arin-orange to-orange-400 bg-clip-text text-transparent pb-4">
                   Digital Future
                 </span>
               </h1>
@@ -225,18 +221,17 @@ const Home = () => {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   to="/contact"
-                  className="group relative px-8 py-4 bg-arin-orange text-white rounded-lg font-semibold text-lg 
-                           hover:bg-orange-600 transform hover:scale-105 transition-all duration-300 
-                           shadow-xl hover:shadow-2xl overflow-hidden"
+                  className="px-8 py-4 bg-gradient-to-r from-arin-orange to-orange-500 text-white rounded-lg font-semibold text-lg 
+                           hover:from-orange-600 hover:to-orange-700 transform hover:scale-105 transition-all duration-300 
+                           shadow-xl hover:shadow-2xl"
                 >
-                  <span className="relative z-10">Start Your Project</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-orange-600 to-red-600 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
+                  Start Your Project
                 </Link>
                 <Link
                   to="/contact"
-                  className="px-8 py-4 glass-strong text-white rounded-lg font-semibold text-lg 
-                           hover:bg-white/20 transform hover:scale-105 transition-all duration-300 
-                           border-2 border-white/30 backdrop-blur-xl"
+                  className="px-8 py-4 glass-strong-dark text-white rounded-lg font-semibold text-lg 
+                           hover:bg-white/10 transform hover:scale-105 transition-all duration-300 
+                           border-2 border-white/30"
                 >
                   View Our Work
                 </Link>
@@ -261,20 +256,18 @@ const Home = () => {
             <div className="relative hidden lg:block">
               <div className="relative">
                 {/* Floating Cards */}
-                <div className="absolute -top-10 -right-10 glass-strong rounded-2xl p-6 shadow-2xl transform rotate-6 animate-float">
-                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl mb-4 flex items-center justify-center">
+                <div className="absolute top-4 right-4 translate-x-4 -translate-y-4 glass-strong-dark rounded-2xl p-6 shadow-2xl transform rotate-6 animate-float border border-white/20">
+                  <div className="w-16 h-16 bg-gradient-to-br from-arin-orange to-orange-500 rounded-xl mb-4 flex items-center justify-center">
                     <svg
                       className="w-8 h-8 text-white"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M13 10V3L4 14h7v7l9-11h-7z"
-                      />
+                      <path d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
                   </div>
                   <h3 className="text-white font-bold text-lg mb-2">
@@ -285,20 +278,18 @@ const Home = () => {
                   </p>
                 </div>
 
-                <div className="absolute -bottom-10 -left-10 glass-strong rounded-2xl p-6 shadow-2xl transform -rotate-6 animate-float-delayed">
-                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl mb-4 flex items-center justify-center">
+                <div className="absolute bottom-4 left-4 -translate-x-4 translate-y-4 glass-strong-dark rounded-2xl p-6 shadow-2xl transform -rotate-6 animate-float-delayed border border-white/20">
+                  <div className="w-16 h-16 bg-gradient-to-br from-arin-orange to-orange-500 rounded-xl mb-4 flex items-center justify-center">
                     <svg
                       className="w-8 h-8 text-white"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
-                      />
+                      <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                     </svg>
                   </div>
                   <h3 className="text-white font-bold text-lg mb-2">
@@ -307,28 +298,46 @@ const Home = () => {
                   <p className="text-gray-300 text-sm">Modern & responsive</p>
                 </div>
 
-                {/* Central Visual */}
-                <div className="relative glass-strong rounded-3xl p-12 shadow-2xl backdrop-blur-xl">
-                  <div className="absolute inset-0 bg-gradient-to-br from-arin-orange/20 to-transparent rounded-3xl"></div>
-                  <div className="relative z-10">
-                    <div className="grid grid-cols-3 gap-4 mb-8">
-                      {[1, 2, 3, 4, 5, 6].map((i) => (
-                        <div
-                          key={i}
-                          className="aspect-square bg-gradient-to-br from-arin-orange/30 to-orange-600/30 rounded-lg animate-pulse"
-                          style={{ animationDelay: `${i * 0.1}s` }}
-                        ></div>
-                      ))}
-                    </div>
-                    <div className="text-center">
-                      <div className="text-4xl font-bold text-white mb-2">
-                        Innovation
-                      </div>
-                      <div className="text-gray-300">
-                        Driving Digital Excellence
-                      </div>
-                    </div>
+                <div className="absolute top-1/3 left-0 -translate-x-20 glass-strong-dark rounded-2xl p-6 shadow-2xl transform rotate-12 animate-float border border-white/20">
+                  <div className="w-16 h-16 bg-gradient-to-br from-arin-orange to-orange-500 rounded-xl mb-4 flex items-center justify-center">
+                    <svg
+                      className="w-8 h-8 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                    >
+                      <path d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                    </svg>
                   </div>
+                  <h3 className="text-white font-bold text-lg mb-2">
+                    Mobile Apps
+                  </h3>
+                  <p className="text-gray-300 text-sm">
+                    Native & cross-platform
+                  </p>
+                </div>
+
+                <div className="absolute bottom-1/3 right-8 translate-x-12 glass-strong-dark rounded-2xl p-6 shadow-2xl transform rotate-3 animate-float border border-white/20">
+                  <div className="w-16 h-16 bg-gradient-to-br from-arin-orange to-orange-500 rounded-xl mb-4 flex items-center justify-center">
+                    <svg
+                      className="w-8 h-8 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                    >
+                      <path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                    </svg>
+                  </div>
+                  <h3 className="text-white font-bold text-lg mb-2">
+                    Software Dev
+                  </h3>
+                  <p className="text-gray-300 text-sm">Custom solutions</p>
                 </div>
               </div>
             </div>
@@ -352,13 +361,13 @@ const Home = () => {
       </section>
 
       {/* Services Section - Feature Rich */}
-      <section className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black via-gray-900 to-gray-900">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12 sm:mb-16 md:mb-20">
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-4 sm:mb-6">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 sm:mb-6">
               Our Expertise
             </h2>
-            <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto">
               Comprehensive technology services designed to accelerate your
               business growth and digital transformation journey.
             </p>
@@ -368,21 +377,21 @@ const Home = () => {
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="group relative glass-strong rounded-3xl p-8 hover:scale-105 transition-all duration-500 shadow-xl overflow-hidden"
+                className="group relative glass-strong-dark rounded-3xl p-8 hover:scale-105 transition-all duration-500 shadow-xl overflow-hidden border border-white/20"
               >
                 <div
                   className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
                 ></div>
                 <div className="relative z-10">
                   <div
-                    className={`w-20 h-20 bg-gradient-to-br ${feature.color} rounded-2xl flex items-center justify-center mb-6 text-white group-hover:scale-110 transition-transform duration-500`}
+                    className={`w-20 h-20 bg-gradient-to-br from-arin-orange to-orange-500 rounded-2xl flex items-center justify-center mb-6 text-white group-hover:scale-110 transition-transform duration-500`}
                   >
                     {feature.icon}
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-arin-orange transition-colors">
+                  <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-arin-orange transition-colors">
                     {feature.title}
                   </h3>
-                  <p className="text-gray-700 leading-relaxed">
+                  <p className="text-gray-300 leading-relaxed">
                     {feature.description}
                   </p>
                   <div className="mt-6 flex items-center text-arin-orange font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -427,19 +436,19 @@ const Home = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-32 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <section className="py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black via-gray-900 to-gray-900">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+            <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
               Client Success Stories
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-gray-300">
               Don't just take our word for it. See what our clients say about
               working with us.
             </p>
           </div>
 
-          <div className="relative glass-strong rounded-3xl p-12 md:p-16 shadow-2xl">
+          <div className="relative glass-strong-dark rounded-3xl p-12 md:p-16 shadow-2xl border border-white/20">
             <div className="text-center">
               <div className="flex justify-center mb-6">
                 {[...Array(testimonials[currentTestimonial].rating)].map(
@@ -455,14 +464,14 @@ const Home = () => {
                   )
                 )}
               </div>
-              <p className="text-2xl md:text-3xl text-gray-700 mb-8 leading-relaxed italic">
+              <p className="text-2xl md:text-3xl text-gray-300 mb-8 leading-relaxed italic">
                 "{testimonials[currentTestimonial].content}"
               </p>
               <div>
-                <div className="text-xl font-bold text-gray-900 mb-2">
+                <div className="text-xl font-bold text-white mb-2">
                   {testimonials[currentTestimonial].name}
                 </div>
-                <div className="text-gray-600">
+                <div className="text-gray-300">
                   {testimonials[currentTestimonial].role}
                 </div>
               </div>
@@ -477,7 +486,7 @@ const Home = () => {
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${
                     index === currentTestimonial
                       ? "bg-arin-orange w-8"
-                      : "bg-gray-300"
+                      : "bg-gray-500"
                   }`}
                 />
               ))}
@@ -487,13 +496,13 @@ const Home = () => {
       </section>
 
       {/* Portfolio Preview Section */}
-      <section className="py-32 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black via-gray-900 to-gray-900">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+            <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
               Featured Projects
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Explore some of our most successful projects that showcase our
               expertise and innovation.
             </p>
@@ -504,23 +513,23 @@ const Home = () => {
               {
                 title: "Enterprise E-Commerce Platform",
                 category: "Web Development",
-                gradient: "from-blue-500 to-cyan-500",
+                gradient: "from-arin-orange to-orange-500",
               },
               {
                 title: "Mobile Banking Application",
                 category: "Mobile Development",
-                gradient: "from-purple-500 to-pink-500",
+                gradient: "from-orange-500 to-orange-600",
               },
               {
                 title: "Cloud Migration Solution",
                 category: "Cloud & DevOps",
-                gradient: "from-green-500 to-emerald-500",
+                gradient: "from-arin-orange to-red-500",
               },
             ].map((project, index) => (
               <Link
                 key={index}
                 to="/portfolio"
-                className="group glass-strong rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105"
+                className="group glass-strong-dark rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 border border-white/20"
               >
                 <div
                   className={`h-64 bg-gradient-to-br ${project.gradient} relative overflow-hidden`}
@@ -533,7 +542,7 @@ const Home = () => {
                   <span className="text-sm text-arin-orange font-semibold">
                     {project.category}
                   </span>
-                  <h3 className="text-2xl font-bold text-gray-900 mt-3 mb-3 group-hover:text-arin-orange transition-colors">
+                  <h3 className="text-2xl font-bold text-white mt-3 mb-3 group-hover:text-arin-orange transition-colors">
                     {project.title}
                   </h3>
                   <div className="flex items-center text-arin-orange font-semibold">
@@ -560,7 +569,7 @@ const Home = () => {
           <div className="text-center">
             <Link
               to="/portfolio"
-              className="inline-block px-10 py-4 bg-arin-orange text-white rounded-lg font-semibold text-lg hover:bg-orange-600 transform hover:scale-105 transition-all duration-300 shadow-xl"
+              className="inline-block px-10 py-4 bg-gradient-to-r from-arin-orange to-orange-500 text-white rounded-lg font-semibold text-lg hover:from-orange-600 hover:to-orange-700 transform hover:scale-105 transition-all duration-300 shadow-xl"
             >
               View All Projects
             </Link>
@@ -569,13 +578,13 @@ const Home = () => {
       </section>
 
       {/* Team Preview Section */}
-      <section className="py-32 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <section className="py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black via-gray-900 to-gray-900">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+            <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
               Meet Our Team
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Talented professionals dedicated to delivering exceptional
               technology solutions.
             </p>
@@ -586,17 +595,17 @@ const Home = () => {
               {
                 name: "Alex Rodriguez",
                 role: "CEO & Founder",
-                gradient: "from-blue-500 to-cyan-500",
+                gradient: "from-arin-orange to-orange-500",
               },
               {
                 name: "Sarah Chen",
                 role: "CTO",
-                gradient: "from-purple-500 to-pink-500",
+                gradient: "from-orange-500 to-orange-600",
               },
               {
                 name: "Michael Johnson",
                 role: "Lead Developer",
-                gradient: "from-green-500 to-emerald-500",
+                gradient: "from-arin-orange to-red-500",
               },
               {
                 name: "Emily Davis",
@@ -607,7 +616,7 @@ const Home = () => {
               <Link
                 key={index}
                 to="/team"
-                className="group glass-strong rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105"
+                className="group glass-strong-dark rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105 border border-white/20"
               >
                 <div
                   className={`h-64 bg-gradient-to-br ${member.gradient} relative overflow-hidden`}
@@ -620,7 +629,7 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="p-6 text-center">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-arin-orange transition-colors">
+                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-arin-orange transition-colors">
                     {member.name}
                   </h3>
                   <p className="text-arin-orange font-semibold">
@@ -634,7 +643,7 @@ const Home = () => {
           <div className="text-center">
             <Link
               to="/team"
-              className="inline-block px-10 py-4 bg-arin-orange text-white rounded-lg font-semibold text-lg hover:bg-orange-600 transform hover:scale-105 transition-all duration-300 shadow-xl"
+              className="inline-block px-10 py-4 bg-gradient-to-r from-arin-orange to-orange-500 text-white rounded-lg font-semibold text-lg hover:from-orange-600 hover:to-orange-700 transform hover:scale-105 transition-all duration-300 shadow-xl"
             >
               Meet Full Team
             </Link>
@@ -643,13 +652,13 @@ const Home = () => {
       </section>
 
       {/* Blog Preview Section */}
-      <section className="py-32 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black via-gray-900 to-gray-900">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+            <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
               Latest Insights
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Stay updated with the latest trends, best practices, and insights
               from our experts.
             </p>
@@ -661,25 +670,25 @@ const Home = () => {
                 title: "10 Essential Tips for Modern Web Development",
                 category: "Web Development",
                 date: "March 15, 2024",
-                gradient: "from-blue-500 to-cyan-500",
+                gradient: "from-arin-orange to-orange-500",
               },
               {
                 title: "Cloud Migration: A Complete Guide",
                 category: "Cloud & DevOps",
                 date: "March 10, 2024",
-                gradient: "from-purple-500 to-pink-500",
+                gradient: "from-orange-500 to-orange-600",
               },
               {
                 title: "Building Secure Mobile Applications",
                 category: "Mobile Development",
                 date: "March 5, 2024",
-                gradient: "from-green-500 to-emerald-500",
+                gradient: "from-arin-orange to-red-500",
               },
             ].map((post, index) => (
               <Link
                 key={index}
                 to="/blog"
-                className="group glass-strong rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105"
+                className="group glass-strong-dark rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 border border-white/20"
               >
                 <div
                   className={`h-48 bg-gradient-to-br ${post.gradient} relative overflow-hidden`}
@@ -693,9 +702,9 @@ const Home = () => {
                     <span className="text-sm text-arin-orange font-semibold">
                       {post.category}
                     </span>
-                    <span className="text-sm text-gray-500">{post.date}</span>
+                    <span className="text-sm text-gray-400">{post.date}</span>
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-arin-orange transition-colors line-clamp-2">
+                  <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-arin-orange transition-colors line-clamp-2">
                     {post.title}
                   </h3>
                   <div className="flex items-center text-arin-orange font-semibold">
@@ -722,7 +731,7 @@ const Home = () => {
           <div className="text-center">
             <Link
               to="/blog"
-              className="inline-block px-10 py-4 bg-arin-orange text-white rounded-lg font-semibold text-lg hover:bg-orange-600 transform hover:scale-105 transition-all duration-300 shadow-xl"
+              className="inline-block px-10 py-4 bg-gradient-to-r from-arin-orange to-orange-500 text-white rounded-lg font-semibold text-lg hover:from-orange-600 hover:to-orange-700 transform hover:scale-105 transition-all duration-300 shadow-xl"
             >
               Read All Posts
             </Link>
@@ -747,16 +756,16 @@ const Home = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/contact"
-              className="px-10 py-5 bg-arin-orange text-white rounded-lg font-semibold text-lg 
-                       hover:bg-orange-600 transform hover:scale-105 transition-all duration-300 
+              className="px-10 py-5 bg-gradient-to-r from-arin-orange to-orange-500 text-white rounded-lg font-semibold text-lg 
+                       hover:from-orange-600 hover:to-orange-700 transform hover:scale-105 transition-all duration-300 
                        shadow-2xl"
             >
               Get Started Today
             </Link>
             <Link
               to="/contact"
-              className="px-10 py-5 glass-strong text-white rounded-lg font-semibold text-lg 
-                       hover:bg-white/20 transform hover:scale-105 transition-all duration-300 
+              className="px-10 py-5 glass-strong-dark text-white rounded-lg font-semibold text-lg 
+                       hover:bg-white/10 transform hover:scale-105 transition-all duration-300 
                        border-2 border-white/30"
             >
               Schedule a Consultation
