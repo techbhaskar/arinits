@@ -17,8 +17,9 @@ const Footer = () => {
               worldwide.
             </p>
             <div className="mt-6 space-y-2 text-gray-700">
-              <p>Email: info@arinits.com</p>
+              <p>Email: admin@arinits.com</p>
               <p>Website: www.arinits.com</p>
+              <
             </div>
           </div>
 
