@@ -19,7 +19,7 @@ const Footer = () => {
             <div className="mt-6 space-y-2 text-gray-700">
               <p>Email: admin@arinits.com</p>
               <p>Website: www.arinits.com</p>
-              <
+              <p>Phone: +91 (955) 088-8357</p>
             </div>
           </div>
 
