@@ -2,11 +2,20 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import SEO from "../components/SEO";
 
+// Helper function to generate slug from title
+const generateSlug = (title: string): string => {
+  return title
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+};
+
 const Blog = () => {
   const blogPosts = [
     {
       id: 1,
       title: "10 Essential Tips for Modern Web Development",
+      slug: "10-essential-tips-for-modern-web-development",
       excerpt:
         "Discover the latest best practices and techniques for building scalable, performant web applications in 2024.",
       author: "Arin IT Solutions",
@@ -19,6 +28,7 @@ const Blog = () => {
     {
       id: 2,
       title: "Cloud Migration: A Complete Guide",
+      slug: "cloud-migration-a-complete-guide",
       excerpt:
         "Learn how to successfully migrate your infrastructure to the cloud, reduce costs, and improve scalability.",
       author: "Arin IT Solutions",
@@ -31,6 +41,7 @@ const Blog = () => {
     {
       id: 3,
       title: "Building Secure Mobile Applications",
+      slug: "building-secure-mobile-applications",
       excerpt:
         "Explore security best practices for mobile app development, from authentication to data protection.",
       author: "Arin IT Solutions",
@@ -43,6 +54,7 @@ const Blog = () => {
     {
       id: 4,
       title: "The Future of AI in Software Development",
+      slug: "the-future-of-ai-in-software-development",
       excerpt:
         "How artificial intelligence is transforming the software development lifecycle and developer productivity.",
       author: "Arin IT Solutions",
@@ -55,6 +67,7 @@ const Blog = () => {
     {
       id: 5,
       title: "Design Systems: Building Consistent UIs",
+      slug: "design-systems-building-consistent-uis",
       excerpt:
         "Create maintainable and scalable design systems that ensure consistency across your applications.",
       author: "Arin IT Solutions",
@@ -67,6 +80,7 @@ const Blog = () => {
     {
       id: 6,
       title: "DevOps Best Practices for Modern Teams",
+      slug: "devops-best-practices-for-modern-teams",
       excerpt:
         "Streamline your development workflow with proven DevOps strategies and automation techniques.",
       author: "Arin IT Solutions",
@@ -104,7 +118,7 @@ const Blog = () => {
       />
 
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-black pt-24 pb-12">
+      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-black pt-24 pb-16">
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-0 left-1/4 w-96 h-96 bg-arin-orange/20 rounded-full blur-3xl animate-pulse"></div>
@@ -135,7 +149,7 @@ const Blog = () => {
         </div>
       </section>
 
-      <div className="relative -mt-20 pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black via-gray-900 to-gray-900 py-4">
+      <div className="relative pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black via-gray-900 to-gray-900 pt-8">
         <div className="max-w-7xl mx-auto">
           {/* Category Filter */}
           <div className="mb-12">
@@ -200,7 +214,7 @@ const Blog = () => {
                         <div className="text-xs text-gray-400">{post.date}</div>
                       </div>
                       <Link
-                        to={`/blog/${post.id}`}
+                        to={`/blog/${post.slug}`}
                         className="text-arin-orange font-semibold hover:text-orange-400 transition-colors flex items-center gap-2"
                       >
                         Read More
