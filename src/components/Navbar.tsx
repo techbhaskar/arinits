@@ -60,7 +60,7 @@ const Navbar = () => {
                 className={`px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
                   location.pathname === link.path
                     ? "bg-arin-orange text-white"
-                    : "text-gray-700 hover:bg-white/50 hover:text-arin-orange"
+                    : "text-white hover:bg-white/50 hover:text-arin-orange"
                 }`}
               >
                 {link.label}
@@ -87,7 +87,7 @@ const Navbar = () => {
                 className={`px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
                   servicesLinks.some((link) => location.pathname === link.path)
                     ? "bg-arin-orange text-white"
-                    : "text-gray-700 hover:bg-white/50 hover:text-arin-orange"
+                    : "text-white hover:bg-white/50 hover:text-arin-orange"
                 }`}
               >
                 Services
@@ -137,7 +137,7 @@ const Navbar = () => {
                       className={`block px-4 py-3 transition-all duration-200 ${
                         location.pathname === link.path
                           ? "bg-arin-orange text-white"
-                          : "text-gray-700 hover:bg-white/50 hover:text-arin-orange"
+                          : "text-white hover:bg-white/50 hover:text-arin-orange"
                       }`}
                     >
                       {link.label}
