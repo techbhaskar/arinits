@@ -1,14 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import SEO from "../components/SEO";
 
-// Helper function to generate slug from title
-const generateSlug = (title: string): string => {
-  return title
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/(^-|-$)/g, "");
-};
-
 // Blog posts data - should match Blog.tsx
 const blogPosts = [
   {
