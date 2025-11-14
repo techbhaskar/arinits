@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Circular frame -->
+  <circle cx="50" cy="50" r="48" fill="white" stroke="black" stroke-width="2"/>
+  
+  <!-- Top outlined A with double-line architectural effect -->
+  <g stroke="black" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Outer A outline -->
+    <path d="M 28 68 L 50 22 L 72 68"/>
+    <!-- Inner A outline for double-line effect -->
+    <path d="M 32 68 L 50 28 L 68 68"/>
+    <!-- Crossbar -->
+    <line x1="36" y1="56" x2="64" y2="56"/>
+    <line x1="38" y1="58" x2="62" y2="58"/>
+  </g>
+  
+  <!-- Bottom solid orange-red A with dynamic broader base -->
+  <path d="M 18 62 
+           L 38 24 
+           L 58 62 
+           L 62 62 
+           L 62 58 
+           L 58 58 
+           L 38 30 
+           L 38 62 
+           Z 
+           M 22 45 
+           L 58 45 
+           L 58 50 
+           L 22 50 
+           Z" 
+        fill="#FF5A30"/>
+  
+  <!-- ARIN IT text -->
+  <text x="50" y="84" font-family="Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="black">ARIN IT</text>
+</svg>

@@ -1,35 +1,42 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <!-- Circular frame -->
-  <circle cx="50" cy="50" r="48" fill="white" stroke="black" stroke-width="2"/>
-  
-  <!-- Top outlined A with double-line architectural effect -->
-  <g stroke="black" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <!-- Outer A outline -->
-    <path d="M 28 68 L 50 22 L 72 68"/>
-    <!-- Inner A outline for double-line effect -->
-    <path d="M 32 68 L 50 28 L 68 68"/>
-    <!-- Crossbar -->
-    <line x1="36" y1="56" x2="64" y2="56"/>
-    <line x1="38" y1="58" x2="62" y2="58"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <title>ARIN ITS Favicon - Quantum Flow</title>
+  <defs>
+    <!-- Orange gradient for the swoosh -->
+    <linearGradient id="grad" x1="0%" y1="40%" x2="100%" y2="60%">
+      <stop offset="0%" stop-color="#ff6a00"/>
+      <stop offset="55%" stop-color="#ff8a00"/>
+      <stop offset="100%" stop-color="#ffb400"/>
+    </linearGradient>
+    <!-- Soft glow -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Transparent background -->
+  <rect width="256" height="256" fill="none"/>
+
+  <!-- Swoosh path -->
+  <g filter="url(#glow)">
+    <path d="
+      M 24 152
+      C 70 190, 122 176, 160 150
+      C 186 132, 216 132, 232 158
+      C 205 134, 176 132, 144 160
+      C 102 196, 54 188, 24 152 Z"
+      fill="url(#grad)" opacity="0.95"/>
+    <!-- Highlight edge -->
+    <path d="
+      M 35 152
+      C 80 184, 126 170, 162 146
+      C 184 132, 210 132, 228 154"
+      fill="none" stroke="#ffffff" stroke-opacity="0.35" stroke-width="4" stroke-linecap="round"/>
   </g>
-  
-  <!-- Bottom solid orange-red A with dynamic broader base -->
-  <path d="M 18 62 
-           L 38 24 
-           L 58 62 
-           L 62 62 
-           L 62 58 
-           L 58 58 
-           L 38 30 
-           L 38 62 
-           Z 
-           M 22 45 
-           L 58 45 
-           L 58 50 
-           L 22 50 
-           Z" 
-        fill="#FF5A30"/>
-  
-  <!-- ARIN IT text -->
-  <text x="50" y="84" font-family="Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="black">ARIN IT</text>
+
+  <!-- Safe viewBox margin (no text, icon-only for favicon) -->
 </svg>
