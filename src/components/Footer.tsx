@@ -110,6 +110,30 @@ const Footer = () => {
                   Technology Solutions
                 </Link>
               </li>
+              <li>
+                <Link
+                  to="/cloud-solutions"
+                  className="text-gray-700 hover:text-arin-orange transition-colors"
+                >
+                  Cloud Solutions
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/devops-services"
+                  className="text-gray-700 hover:text-arin-orange transition-colors"
+                >
+                  DevOps Services
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/cybersecurity-consulting"
+                  className="text-gray-700 hover:text-arin-orange transition-colors"
+                >
+                  Cybersecurity Consultants
+                </Link>
+              </li>
             </ul>
           </div>
         </div>

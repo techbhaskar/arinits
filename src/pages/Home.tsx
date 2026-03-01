@@ -196,10 +196,10 @@ const Home = () => {
   return (
     <div className="overflow-x-hidden">
       <SEO
-        title="ARIN IT Solutions - Software Development & Consulting"
-        description="Premier software development and consulting company delivering innovative technology solutions for businesses worldwide."
+        title="Custom Software Development & IT Consulting | ARIN IT"
+        description="Expert custom software development and strategic IT consulting. We deliver enterprise software solutions to accelerate your digital transformation."
         path="/"
-        keywords="software development, IT consulting, web development, app development, technology solutions"
+        keywords="custom software development, strategic IT consulting, enterprise software, digital transformation, technology solutions"
       />
 
       {/* Hero Section - Premium Design */}
@@ -222,20 +222,21 @@ const Home = () => {
         ></div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 lg:items-start pt-8">
             {/* Left Column - Content */}
             <div className="text-white space-y-6 sm:space-y-8 animate-fade-in">
-              <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold leading-relaxed">
-                <span className="block">Transform Your</span>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-relaxed">
+                <span className="block">Custom Software Development &</span>
                 <span className="block bg-gradient-to-r from-arin-orange to-orange-400 bg-clip-text text-transparent pb-4">
-                  Digital Future
+                  Strategic IT Consulting Solutions
                 </span>
               </h1>
 
               <p className="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed max-w-xl">
-                We deliver cutting-edge software solutions and strategic IT
-                consulting that drive innovation and accelerate business growth.
-                Partner with us to build the technology that defines tomorrow.
+                We deliver robust enterprise software and strategic IT consulting that
+                drive innovation through cloud modernization and accelerate your digital
+                transformation. Partner with us to build scalable architecture that
+                defines tomorrow.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
@@ -273,10 +274,10 @@ const Home = () => {
             </div>
 
             {/* Right Column - Visual Element */}
-            <div className="relative hidden lg:block">
-              <div className="relative">
+            <div className="relative hidden lg:block h-[550px] w-full">
+              <div className="relative h-full w-full">
                 {/* Floating Cards */}
-                <div className="absolute top-4 right-4 translate-x-4 -translate-y-4 glass-strong-dark rounded-2xl p-6 shadow-2xl transform rotate-6 animate-float border border-white/20">
+                <div className="absolute top-4 right-8 glass-strong-dark rounded-2xl p-6 shadow-2xl transform rotate-3 animate-float border border-white/20">
                   <div className="w-16 h-16 bg-gradient-to-br from-arin-orange to-orange-500 rounded-xl mb-4 flex items-center justify-center">
                     <svg
                       className="w-8 h-8 text-white"
@@ -298,7 +299,7 @@ const Home = () => {
                   </p>
                 </div>
 
-                <div className="absolute bottom-4 left-4 -translate-x-4 translate-y-4 glass-strong-dark rounded-2xl p-6 shadow-2xl transform -rotate-6 animate-float-delayed border border-white/20">
+                <div className="absolute top-16 left-0 glass-strong-dark rounded-2xl p-6 shadow-2xl transform -rotate-6 animate-float-delayed border border-white/20">
                   <div className="w-16 h-16 bg-gradient-to-br from-arin-orange to-orange-500 rounded-xl mb-4 flex items-center justify-center">
                     <svg
                       className="w-8 h-8 text-white"
@@ -318,7 +319,7 @@ const Home = () => {
                   <p className="text-gray-300 text-sm">Modern & responsive</p>
                 </div>
 
-                <div className="absolute top-1/3 left-0 -translate-x-20 glass-strong-dark rounded-2xl p-6 shadow-2xl transform rotate-12 animate-float border border-white/20">
+                <div className="absolute bottom-12 left-10 glass-strong-dark rounded-2xl p-6 shadow-2xl transform rotate-6 animate-float border border-white/20">
                   <div className="w-16 h-16 bg-gradient-to-br from-arin-orange to-orange-500 rounded-xl mb-4 flex items-center justify-center">
                     <svg
                       className="w-8 h-8 text-white"
@@ -340,7 +341,7 @@ const Home = () => {
                   </p>
                 </div>
 
-                <div className="absolute bottom-1/3 right-8 translate-x-12 glass-strong-dark rounded-2xl p-6 shadow-2xl transform rotate-3 animate-float border border-white/20">
+                <div className="absolute bottom-20 right-12 glass-strong-dark rounded-2xl p-6 shadow-2xl transform -rotate-3 animate-float-delayed border border-white/20">
                   <div className="w-16 h-16 bg-gradient-to-br from-arin-orange to-orange-500 rounded-xl mb-4 flex items-center justify-center">
                     <svg
                       className="w-8 h-8 text-white"

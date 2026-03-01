@@ -82,6 +82,32 @@ const Blog = () => {
       image: "/api/placeholder/800/400",
       gradient: "from-orange-500 to-orange-600",
     },
+    {
+      id: 7,
+      title: "How DevOps Reduces Deployment Time: A Comprehensive Enterprise Guide",
+      slug: "how-devops-reduces-deployment-time",
+      excerpt:
+        "Discover the core mechanics of how DevOps practices and automated CI/CD pipelines dramatically decrease software deployment times for modern enterprises.",
+      author: "ARIN IT Solutions",
+      date: "March 20, 2024",
+      category: "DevOps",
+      readTime: "12 min read",
+      image: "/api/placeholder/800/400",
+      gradient: "from-orange-500 to-orange-600",
+    },
+    {
+      id: 8,
+      title: "Cloud Security Best Practices for Enterprises in 2024",
+      slug: "cloud-security-best-practices-for-enterprises",
+      excerpt:
+        "Secure your digital assets with our ultimate guide to enterprise cloud security. Learn about zero-trust architecture, compliance, and proactive threat detection.",
+      author: "ARIN IT Solutions",
+      date: "March 25, 2024",
+      category: "Cloud & DevOps",
+      readTime: "11 min read",
+      image: "/api/placeholder/800/400",
+      gradient: "from-orange-500 to-orange-600",
+    },
   ];
 
   const categories = [

@@ -88,8 +88,8 @@ const WebDevelopment = () => {
   return (
     <div className="min-h-screen overflow-x-hidden">
       <SEO
-        title="Web Development Services - ARIN IT Solutions"
-        description="Expert web development services. We build responsive, fast, and beautiful websites that convert visitors into customers."
+        title="Custom Web Development Services | ARIN IT Solutions"
+        description="Expert custom web development services. We architect highly responsive, blazingly fast websites designed specifically to convert visitors into customers."
         path="/services/web-development"
         keywords="web development, responsive web design, e-commerce, progressive web apps, CMS development"
       />

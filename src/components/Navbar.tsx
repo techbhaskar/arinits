@@ -6,7 +6,7 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
-  const servicesCloseTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const servicesCloseTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -36,6 +36,9 @@ const Navbar = () => {
     { path: "/services/web-development", label: "Web Development" },
     { path: "/services/app-development", label: "App Development" },
     { path: "/services/technology-solutions", label: "Technology Solutions" },
+    { path: "/cloud-solutions", label: "Cloud Solutions" },
+    { path: "/devops-services", label: "DevOps Services" },
+    { path: "/cybersecurity-consulting", label: "Cybersecurity Consulting" },
   ];
 
   return (

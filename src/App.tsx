@@ -17,6 +17,9 @@ const ITConsulting = lazy(() => import("./pages/ITConsulting"));
 const WebDevelopment = lazy(() => import("./pages/WebDevelopment"));
 const AppDevelopment = lazy(() => import("./pages/AppDevelopment"));
 const TechnologySolutions = lazy(() => import("./pages/TechnologySolutions"));
+const CloudSolutions = lazy(() => import("./pages/CloudSolutions"));
+const DevopsServices = lazy(() => import("./pages/DevopsServices"));
+const CybersecurityConsulting = lazy(() => import("./pages/CybersecurityConsulting"));
 
 // Loading component
 const Loading = () => (
@@ -62,6 +65,9 @@ function App() {
                 path="/services/technology-solutions"
                 element={<TechnologySolutions />}
               />
+              <Route path="/cloud-solutions" element={<CloudSolutions />} />
+              <Route path="/devops-services" element={<DevopsServices />} />
+              <Route path="/cybersecurity-consulting" element={<CybersecurityConsulting />} />
               <Route path="/terms" element={<Terms />} />
               <Route path="/privacy" element={<Privacy />} />
             </Routes>

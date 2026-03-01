@@ -1,0 +1,203 @@
+{
+  "workflow_name": "Autonomous SEO Optimization Engine",
+  "mode": "work-slow",
+  "execution_strategy": {
+    "sequential_stages": [
+      "homepage_keyword_fix",
+      "meta_title_optimization",
+      "heading_structure_fix"
+    ],
+    "parallel_stages": [
+      "service_page_expansion",
+      "portfolio_page_creation",
+      "schema_implementation",
+      "blog_generation",
+      "internal_linking_matrix"
+    ]
+  },
+  "global_thresholds": {
+    "lighthouse_seo_score": 90,
+    "pagespeed_score": 80,
+    "content_min_words_homepage": 900,
+    "content_min_words_services": 600,
+    "blog_min_words": 1000,
+    "internal_links_min": 3,
+    "max_iterations_per_task": 5
+  },
+  "tasks": [
+    {
+      "id": "homepage_keyword_fix",
+      "type": "content_update",
+      "target_page": "/",
+      "actions": [
+        "update_h1",
+        "expand_body_copy",
+        "inject_long_tail_keywords"
+      ],
+      "requirements": {
+        "h1": "Custom Software Development & Strategic IT Consulting Solutions",
+        "must_include_keywords": [
+          "enterprise software",
+          "digital transformation",
+          "cloud modernization",
+          "scalable architecture"
+        ]
+      },
+      "validation": [
+        "check_word_count",
+        "check_keyword_density",
+        "check_h1_uniqueness",
+        "run_lighthouse_seo"
+      ],
+      "reiterate_on_fail": true
+    },
+    {
+      "id": "meta_title_optimization",
+      "type": "metadata_update",
+      "scope": "all_pages",
+      "actions": [
+        "rewrite_title_tags",
+        "rewrite_meta_descriptions"
+      ],
+      "requirements": {
+        "title_length": "50-60",
+        "meta_length": "150-160",
+        "must_include_brand": true,
+        "unique_per_page": true
+      },
+      "validation": [
+        "check_duplicate_titles",
+        "check_missing_meta",
+        "validate_length",
+        "run_lighthouse_seo"
+      ],
+      "reiterate_on_fail": true
+    },
+    {
+      "id": "heading_structure_fix",
+      "type": "dom_structure_update",
+      "scope": "all_pages",
+      "actions": [
+        "enforce_single_h1",
+        "convert_styled_text_to_semantic_headers",
+        "insert_h2_for_sections"
+      ],
+      "validation": [
+        "dom_structure_audit",
+        "run_lighthouse_accessibility",
+        "run_lighthouse_seo"
+      ],
+      "reiterate_on_fail": true
+    },
+    {
+      "id": "service_page_expansion",
+      "type": "content_creation",
+      "target_pages": [
+        "/cloud-solutions",
+        "/devops-services",
+        "/cybersecurity-consulting"
+      ],
+      "requirements": {
+        "min_words": 600,
+        "include_case_study": true,
+        "include_faq": true,
+        "internal_links_min": 3
+      },
+      "validation": [
+        "check_word_count",
+        "check_internal_links",
+        "check_schema_faq",
+        "run_lighthouse_seo"
+      ],
+      "parallel": true,
+      "reiterate_on_fail": true
+    },
+    {
+      "id": "portfolio_page_creation",
+      "type": "content_creation",
+      "target_pattern": "/portfolio/*",
+      "requirements": {
+        "min_words": 800,
+        "structure": [
+          "challenge",
+          "solution",
+          "implementation_stack",
+          "results",
+          "testimonial",
+          "cta"
+        ]
+      },
+      "validation": [
+        "check_word_count",
+        "check_internal_links",
+        "simulate_dwell_time"
+      ],
+      "parallel": true,
+      "reiterate_on_fail": true
+    },
+    {
+      "id": "schema_implementation",
+      "type": "structured_data",
+      "actions": [
+        "add_localbusiness_schema",
+        "add_review_schema",
+        "add_organization_schema"
+      ],
+      "validation": [
+        "run_google_rich_results_test",
+        "validate_json_ld"
+      ],
+      "parallel": true,
+      "reiterate_on_fail": true
+    },
+    {
+      "id": "blog_generation",
+      "type": "content_creation",
+      "frequency": "2_per_month",
+      "topics_seed": [
+        "How DevOps reduces deployment time",
+        "Cloud security best practices for enterprises",
+        "Enterprise digital transformation roadmap",
+        "Cost optimization strategies in IT"
+      ],
+      "requirements": {
+        "min_words": 1000,
+        "internal_links_min": 3,
+        "include_faq": true
+      },
+      "validation": [
+        "check_word_count",
+        "check_internal_links",
+        "check_keyword_placement"
+      ],
+      "parallel": true,
+      "reiterate_on_fail": true
+    },
+    {
+      "id": "internal_linking_matrix",
+      "type": "seo_structure",
+      "actions": [
+        "create_link_map",
+        "eliminate_orphan_pages",
+        "diversify_anchor_text"
+      ],
+      "validation": [
+        "crawl_depth_check",
+        "orphan_page_check",
+        "anchor_text_diversity_check"
+      ],
+      "parallel": true,
+      "reiterate_on_fail": true
+    }
+  ],
+  "final_validation": {
+    "actions": [
+      "generate_xml_sitemap",
+      "verify_robots_txt",
+      "check_canonical_tags",
+      "validate_mobile_responsiveness",
+      "run_full_lighthouse_audit"
+    ],
+    "must_pass": true
+  }
+}
