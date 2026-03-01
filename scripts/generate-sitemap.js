@@ -40,6 +40,11 @@ const routes = [
   { path: "/cybersecurity-consulting", changefreq: "monthly", priority: "0.9" },
   { path: "/blog/how-devops-reduces-deployment-time", changefreq: "monthly", priority: "0.7" },
   { path: "/blog/cloud-security-best-practices-for-enterprises", changefreq: "monthly", priority: "0.7" },
+  { path: "/portfolio/sochdb-ai-native-vector-sql-database", changefreq: "monthly", priority: "0.8" },
+  { path: "/portfolio/nova-ai-emotional-intelligence-platform", changefreq: "monthly", priority: "0.8" },
+  { path: "/portfolio/enterprise-microservices-platform", changefreq: "monthly", priority: "0.8" },
+  { path: "/portfolio/hrms-microservice-architecture", changefreq: "monthly", priority: "0.8" },
+  { path: "/portfolio/unified-order-delivery-tracking-platform", changefreq: "monthly", priority: "0.8" },
   { path: "/terms", changefreq: "yearly", priority: "0.5" },
   { path: "/privacy", changefreq: "yearly", priority: "0.5" },
 ];

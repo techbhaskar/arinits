@@ -1,83 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import SEO from "../components/SEO";
+import { projects } from "../data/projects";
 
 const Portfolio = () => {
-  const projects = [
-    {
-      id: 1,
-      title: "Enterprise E-Commerce Platform",
-      category: "Web Development",
-      challenge: "The client's legacy system crashed during peak holiday traffic, costing millions in lost revenue.",
-      solution: "We re-architected the platform using React and Node.js on a highly scalable AWS cloud infrastructure.",
-      result: "Achieved 99.99% uptime, easily handling 100K+ daily transactions with zero latency during peak spikes.",
-      tech: ["React", "Node.js", "PostgreSQL", "AWS"],
-      image: "/api/placeholder/800/600",
-      gradient: "from-orange-500 to-orange-600",
-    },
-    {
-      id: 2,
-      title: "Mobile Banking Application",
-      category: "Mobile Development",
-      challenge: "High fraud rates and terrible App Store ratings due to a clunky, insecure legacy mobile experience.",
-      solution: "Developed a modern, secure React Native app integrating biometric authentication and TensorFlow AI.",
-      result: "Fraud incidents dropped by 85%, and App Store ratings soared from 2.4 to 4.8 stars in three months.",
-      tech: ["React Native", "Firebase", "TensorFlow"],
-      image: "/api/placeholder/800/600",
-      gradient: "from-orange-500 to-orange-600",
-    },
-    {
-      id: 3,
-      title: "Cloud Migration Solution",
-      category: "Cloud & DevOps",
-      challenge: "On-premises servers were incredibly expensive to maintain and could not physically scale with company growth.",
-      solution: "Executed a zero-downtime migration to AWS, heavily utilizing Docker and Kubernetes for microservices.",
-      result: "Reduced total infrastructure costs by 40% while dramatically improving overall application delivery speed.",
-      tech: ["AWS", "Docker", "Kubernetes", "Terraform"],
-      image: "/api/placeholder/800/600",
-      gradient: "from-orange-500 to-orange-600",
-    },
-    {
-      id: 4,
-      title: "AI-Powered Analytics Dashboard",
-      category: "Software Development",
-      challenge: "The executive team was relying on 30-day old spreadsheet data to make critical real-time financial decisions.",
-      solution: "Built a Python/React analytics dashboard powered by Machine Learning to provide predictive data models.",
-      result: "Enabled real-time, minute-by-minute insights, increasing executive decision-making speed by over 300%.",
-      tech: ["Python", "React", "TensorFlow", "PostgreSQL"],
-      image: "/api/placeholder/800/600",
-      gradient: "from-orange-500 to-orange-600",
-    },
-    {
-      id: 5,
-      title: "Healthcare Management System",
-      category: "Web Development",
-      challenge: "Doctors were spending 40% of their daily time navigating archaic, disconnected patient record systems.",
-      solution: "Deployed a unified healthcare management portal with integrated WebRTC telemedicine and scheduling.",
-      result: "Saved medical staff an average of 15 hours per week, allowing them to see 20% more patients daily.",
-      tech: ["React", "Node.js", "MongoDB", "WebRTC"],
-      image: "/api/placeholder/800/600",
-      gradient: "from-orange-500 to-orange-600",
-    },
-    {
-      id: 6,
-      title: "FinTech Trading Platform",
-      category: "Software Development",
-      challenge: "Retail traders experienced severe lag during volatile market events, causing them to miss critical trades.",
-      solution: "Engineered a low-latency trading engine using Go and WebSockets for instantaneous real-time data processing.",
-      result: "Reduced trade execution latency to under 5ms, increasing daily active user volume by over 150%.",
-      tech: ["Vue.js", "Go", "Redis", "WebSocket"],
-      image: "/api/placeholder/800/600",
-      gradient: "from-orange-500 to-orange-600",
-    },
-  ];
 
   const categories = [
     "All Projects",
-    "Web Development",
-    "Mobile Development",
-    "Cloud & DevOps",
-    "Software Development",
+    "AI & Machine Learning Platforms",
+    "Enterprise SaaS",
+    "Workforce & HR Systems",
+    "Logistics & E-commerce",
   ];
 
   const [selectedCategory, setSelectedCategory] =
@@ -119,12 +52,16 @@ const Portfolio = () => {
           <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6">
             <span className="block text-white">Our</span>
             <span className="block bg-gradient-to-r from-arin-orange to-orange-400 bg-clip-text text-transparent">
-              Portfolio
+              Work
             </span>
           </h1>
-          <p className="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
-            Discover innovative solutions we've built for businesses worldwide.
-            Each project represents our commitment to excellence and innovation.
+          <p className="text-xl sm:text-2xl text-white font-semibold mb-4 leading-relaxed max-w-3xl mx-auto">
+            Enterprise Software, AI Systems & Scalable Digital Platforms
+          </p>
+          <p className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-4xl mx-auto">
+            At Arin IT Solutions, we design and build enterprise-grade software platforms that power digital transformation. From AI-native databases to secure microservices architectures, our work focuses on scalability, performance, and long-term business impact.
+            <br/><br/>
+            <strong>We don't just build applications — we architect systems designed to evolve.</strong>
           </p>
         </div>
       </section>
@@ -205,29 +142,90 @@ const Portfolio = () => {
                     </div>
 
                     {/* View Project Button */}
-                    <button className="w-full px-6 py-3 bg-gradient-to-r from-arin-orange to-orange-500 text-white rounded-lg font-semibold hover:from-orange-600 hover:to-orange-700 transition-all duration-300">
+                    <Link
+                      to={`/portfolio/${project.slug}`}
+                      className="block w-full px-6 py-3 bg-gradient-to-r from-arin-orange to-orange-500 text-white rounded-lg font-semibold text-center hover:from-orange-600 hover:to-orange-700 transition-all duration-300"
+                    >
                       View Details
-                    </button>
+                    </Link>
                   </div>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* CTA Section */}
-          <div className="max-w-4xl mx-auto mt-20 text-center glass-strong-dark rounded-3xl p-12 shadow-xl border border-white/20">
+          {/* Our Approach Section */}
+          <div className="max-w-7xl mx-auto mt-20 grid grid-cols-1 md:grid-cols-2 gap-12 text-left">
+            <div className="glass-strong-dark rounded-3xl p-10 shadow-xl border border-white/20">
+              <h2 className="text-3xl font-bold text-white mb-6 flex items-center gap-3">
+                <span className="text-arin-orange">🔐</span> Our Approach
+              </h2>
+              <p className="text-gray-300 mb-6 leading-relaxed">
+                Every system we build follows a structured engineering philosophy:
+              </p>
+              <ul className="space-y-4 text-gray-300">
+                <li className="flex items-start gap-3">
+                  <span className="text-arin-orange">✔</span> Domain-Driven Design
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-arin-orange">✔</span> Microservices-first Architecture
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-arin-orange">✔</span> Secure-by-Default Implementation
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-arin-orange">✔</span> Cloud-Ready Deployment
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-arin-orange">✔</span> Performance Optimization
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-arin-orange">✔</span> Observability & Monitoring
+                </li>
+              </ul>
+              <div className="mt-8 p-4 bg-gradient-to-r from-arin-orange/10 to-transparent border-l-4 border-arin-orange rounded-r-lg">
+                <p className="text-white font-medium italic">"We focus on long-term scalability — not short-term fixes."</p>
+              </div>
+            </div>
+
+            <div className="glass-strong-dark rounded-3xl p-10 shadow-xl border border-white/20">
+              <h2 className="text-3xl font-bold text-white mb-6 flex items-center gap-3">
+                <span className="text-arin-orange">🌍</span> Industries We Support
+              </h2>
+              <ul className="space-y-6">
+                <li className="bg-white/5 p-4 rounded-xl border border-white/10 hover:border-arin-orange/50 transition-colors">
+                  <p className="text-white font-semibold">FinTech & Payments</p>
+                </li>
+                <li className="bg-white/5 p-4 rounded-xl border border-white/10 hover:border-arin-orange/50 transition-colors">
+                  <p className="text-white font-semibold">Enterprise SaaS</p>
+                </li>
+                <li className="bg-white/5 p-4 rounded-xl border border-white/10 hover:border-arin-orange/50 transition-colors">
+                  <p className="text-white font-semibold">AI & Machine Learning Platforms</p>
+                </li>
+                <li className="bg-white/5 p-4 rounded-xl border border-white/10 hover:border-arin-orange/50 transition-colors">
+                  <p className="text-white font-semibold">Logistics & E-commerce</p>
+                </li>
+                <li className="bg-white/5 p-4 rounded-xl border border-white/10 hover:border-arin-orange/50 transition-colors">
+                  <p className="text-white font-semibold">Workforce & HR Systems</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* New CTA Section */}
+          <div className="max-w-4xl mx-auto mt-20 text-center glass-strong-dark rounded-3xl p-12 shadow-xl border border-white/20 relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-arin-orange to-transparent"></div>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Have a Project in Mind?
+              🚀 Let’s Build Scalable Systems Together
             </h2>
-            <p className="text-xl text-gray-300 mb-8">
-              Let's discuss how we can bring your vision to life with our
-              expertise and innovation.
+            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+              Whether you’re modernizing legacy infrastructure, implementing AI-driven solutions, or building secure enterprise platforms, our team delivers architecture designed for growth.
             </p>
             <Link
               to="/contact"
-              className="inline-block px-10 py-4 bg-gradient-to-r from-arin-orange to-orange-500 text-white rounded-lg font-semibold text-lg hover:from-orange-600 hover:to-orange-700 transform hover:scale-105 transition-all duration-300 shadow-xl"
+              className="inline-block px-10 py-4 bg-gradient-to-r from-arin-orange to-orange-500 text-white rounded-lg font-bold text-lg hover:from-orange-600 hover:to-orange-700 transform hover:scale-105 transition-all duration-300 shadow-[0_0_20px_rgba(255,102,0,0.3)] hover:shadow-[0_0_30px_rgba(255,102,0,0.5)]"
             >
-              Start Your Project
+              👉 Schedule a Consultation Today
             </Link>
           </div>
         </div>
