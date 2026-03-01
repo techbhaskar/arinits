@@ -37,7 +37,7 @@ const Contact = () => {
     <div className="min-h-screen overflow-x-hidden">
       <SEO
         title="Contact Us - ARIN IT Solutions"
-        description="Get in touch with ARIN IT Solutions. Contact us for software development, IT consulting, and technology solutions."
+        description="Get in touch with ARIN IT Solutions. Contact us for custom software development, IT consulting, and enterprise technology solutions today!"
         path="/contact"
         keywords="contact ARIN IT, software development contact, IT consulting contact"
       />

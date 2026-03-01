@@ -6,7 +6,7 @@ const CybersecurityConsulting = () => {
     <div className="min-h-screen overflow-x-hidden bg-gradient-to-b from-black via-gray-900 to-gray-900">
       <SEO
         title="Enterprise Cybersecurity Consulting Services | ARIN IT"
-        description="Protect your digital assets with advanced cybersecurity consulting, penetration testing, zero-trust architecture, and strict compliance solutions."
+        description="Protect your digital assets with advanced cybersecurity consulting, penetration testing, and zero-trust. Audit your security with our team today!"
         path="/cybersecurity-consulting"
         keywords="cybersecurity consulting, penetration testing, zero-trust architecture, cybersecurity threat detection"
       />

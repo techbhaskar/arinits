@@ -4,22 +4,27 @@
 User-agent: *
 Allow: /
 
-# Disallow admin or private areas (if any exist in the future)
-# Disallow: /admin/
-# Disallow: /private/
+# Prevent crawling of duplicate content via query parameters
+Disallow: /*?*
 
-# Allow all important pages
-Allow: /
-Allow: /contact
-Allow: /portfolio
-Allow: /team
-Allow: /blog
-Allow: /services/
-Allow: /terms
-Allow: /privacy
+# Prevent crawling of backend/admin paths
+Disallow: /api/
+Disallow: /admin/
+Disallow: /private/
+Disallow: /.git/
 
-# Sitemap location
+# Block aggressive AI Scrapers to save Crawl Budget (Optional but recommended)
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+# Point to Sitemap
 Sitemap: https://www.arinits.com/sitemap.xml
-
-# Crawl-delay (optional - remove if not needed)
-# Crawl-delay: 1

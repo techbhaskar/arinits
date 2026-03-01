@@ -355,6 +355,9 @@ const BlogDetail = () => {
         description={post.excerpt}
         path={`/blog/${post.slug}`}
         keywords={`${post.category}, ${post.title}, blog, technology`}
+        type="article"
+        publishedTime={post.date}
+        image={post.image}
       />
 
       {/* Hero Section */}

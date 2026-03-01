@@ -6,7 +6,7 @@ const DevopsServices = () => {
     <div className="min-h-screen overflow-x-hidden bg-gradient-to-b from-black via-gray-900 to-gray-900">
       <SEO
         title="Expert DevOps Services & CI/CD Automation | ARIN IT"
-        description="Accelerate your software delivery lifecycle with expert DevOps services, CI/CD pipeline automation, and advanced infrastructure as code deployments."
+        description="Accelerate software delivery with expert DevOps services, CI/CD pipelines, & infrastructure as code. Call our team today for a free consult!"
         path="/devops-services"
         keywords="DevOps services, CI/CD automation, infrastructure as code, release management"
       />

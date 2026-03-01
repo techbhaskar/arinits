@@ -130,7 +130,7 @@ const Blog = () => {
     <div className="min-h-screen overflow-x-hidden">
       <SEO
         title="Blog - ARIN IT Solutions"
-        description="Insights, tutorials, and best practices on software development, technology trends, and digital transformation."
+        description="Insights, tutorials, and best practices on software development, technology trends, and digital transformation. Read our latest articles today!"
         path="/blog"
         keywords="blog, technology blog, software development blog, IT consulting blog, tech insights"
       />

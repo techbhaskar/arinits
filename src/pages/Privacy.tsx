@@ -5,9 +5,10 @@ const Privacy = () => {
     <div className="min-h-screen overflow-x-hidden">
       <SEO
         title="Privacy Policy - ARIN IT Solutions"
-        description="Privacy policy for ARIN IT Solutions. Learn how we collect, use, and protect your personal information."
+        description="Privacy policy for ARIN IT Solutions. Learn how we collect, use, and strictly protect your personal information."
         path="/privacy"
         keywords="privacy policy, data privacy, personal information protection, GDPR compliance, privacy statement"
+        robots="noindex, follow"
       />
 
       {/* Hero Section */}

@@ -197,7 +197,7 @@ const Home = () => {
     <div className="overflow-x-hidden">
       <SEO
         title="Custom Software Development & IT Consulting | ARIN IT"
-        description="Expert custom software development and strategic IT consulting. We deliver enterprise software solutions to accelerate your digital transformation."
+        description="Expert custom software development and strategic IT consulting. We deliver scalable enterprise software solutions. Start your digital transformation!"
         path="/"
         keywords="custom software development, strategic IT consulting, enterprise software, digital transformation, technology solutions"
       />

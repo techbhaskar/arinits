@@ -5,9 +5,10 @@ const Terms = () => {
     <div className="min-h-screen overflow-x-hidden">
       <SEO
         title="Terms of Service - ARIN IT Solutions"
-        description="Read the terms of service for ARIN IT Solutions website and services."
+        description="Read the terms of service for the ARIN IT Solutions website, custom software development services, and technology consulting."
         path="/terms"
         keywords="terms of service, terms and conditions, ARIN IT Solutions terms, website terms, legal terms"
+        robots="noindex, follow"
       />
 
       {/* Hero Section */}

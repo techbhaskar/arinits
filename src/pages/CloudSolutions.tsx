@@ -6,7 +6,7 @@ const CloudSolutions = () => {
     <div className="min-h-screen overflow-x-hidden bg-gradient-to-b from-black via-gray-900 to-gray-900">
       <SEO
         title="Enterprise Cloud Solutions & Migration | ARIN IT"
-        description="Comprehensive enterprise cloud solutions, migration strategies, and cloud infrastructure management to accelerate your digital transformation journey."
+        description="Comprehensive enterprise cloud solutions and migration strategies to accelerate your digital transformation. Contact our cloud experts today!"
         path="/cloud-solutions"
         keywords="cloud solutions, cloud migration, AWS, Azure, enterprise cloud"
       />

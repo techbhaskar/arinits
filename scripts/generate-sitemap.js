@@ -35,6 +35,11 @@ const routes = [
     changefreq: "monthly",
     priority: "0.9",
   },
+  { path: "/cloud-solutions", changefreq: "monthly", priority: "0.9" },
+  { path: "/devops-services", changefreq: "monthly", priority: "0.9" },
+  { path: "/cybersecurity-consulting", changefreq: "monthly", priority: "0.9" },
+  { path: "/blog/how-devops-reduces-deployment-time", changefreq: "monthly", priority: "0.7" },
+  { path: "/blog/cloud-security-best-practices-for-enterprises", changefreq: "monthly", priority: "0.7" },
   { path: "/terms", changefreq: "yearly", priority: "0.5" },
   { path: "/privacy", changefreq: "yearly", priority: "0.5" },
 ];
