@@ -7,7 +7,8 @@
     "dev": "vite",
     "generate:sitemap": "node scripts/generate-sitemap.js",
     "indexnow": "node scripts/submit-indexnow.js",
-    "build": "npm run generate:sitemap && tsc && vite build",
+    "build": "npm run generate:sitemap && tsc && vite build && npm run postbuild",
+    "postbuild": "node scripts/post-build.js",
     "preview": "vite preview"
   },
   "dependencies": {
