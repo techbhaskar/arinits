@@ -58,10 +58,10 @@ const Home = () => {
   };
 
   const stats = [
-    { number: "500+", label: "Projects Completed" },
-    { number: "200+", label: "Happy Clients" },
-    { number: "50+", label: "Expert Developers" },
-    { number: "10+", label: "Years Experience" },
+    { number: "50+", label: "Projects Completed" },
+    { number: "20+", label: "Happy Clients" },
+    { number: "6+", label: "Expert Developers" },
+    { number: "3+", label: "Years Experience" },
   ];
 
   const features = [
