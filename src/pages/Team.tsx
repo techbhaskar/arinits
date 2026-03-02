@@ -4,10 +4,10 @@ const Team = () => {
   const teamMembers = [
     {
       id: 1,
-      name: "Alex Rodriguez",
+      name: "Sameera Begum",
       role: "CEO & Founder",
       description:
-        "Visionary leader with 15+ years in technology. Expert in digital transformation and strategic planning.",
+        "Visionary leader with a passion for building scalable, enterprise-grade software systems and driving digital transformation.",
       image: "/api/placeholder/400/400",
       gradient: "from-orange-500 to-orange-600",
       social: {
@@ -17,10 +17,10 @@ const Team = () => {
     },
     {
       id: 2,
-      name: "Sarah Chen",
-      role: "CTO",
+      name: "Bhaskararao Arani",
+      role: "CTO & Co-Founder",
       description:
-        "Architect of innovative solutions with expertise in cloud computing, microservices, and scalable systems.",
+        "Architect of innovative solutions with deep expertise in AI infrastructure, cloud computing, microservices, and high-performance databases.",
       image: "/api/placeholder/400/400",
       gradient: "from-orange-500 to-orange-600",
       social: {
@@ -30,10 +30,10 @@ const Team = () => {
     },
     {
       id: 3,
-      name: "Michael Johnson",
-      role: "Lead Developer",
+      name: "Pranay",
+      role: "Head of Product Curation",
       description:
-        "Full-stack developer passionate about creating elegant solutions. Specializes in React, Node.js, and modern web technologies.",
+        "Product visionary dedicated to aligning technical capabilities with precise market demands, ensuring pristine enterprise delivery.",
       image: "/api/placeholder/400/400",
       gradient: "from-orange-500 to-orange-600",
       social: {
@@ -43,36 +43,23 @@ const Team = () => {
     },
     {
       id: 4,
-      name: "Emily Davis",
-      role: "UX/UI Designer",
+      name: "Suresh",
+      role: "Finance Head",
       description:
-        "Creative designer focused on user-centered design. Transforms complex ideas into intuitive, beautiful interfaces.",
+        "Strategic finance operator who ensures sustainable growth metrics and optimized resource allocation for large-scale operations.",
       image: "/api/placeholder/400/400",
       gradient: "from-orange-500 to-orange-600",
       social: {
         linkedin: "#",
-        behance: "#",
+        twitter: "#",
       },
     },
     {
       id: 5,
-      name: "David Kim",
-      role: "DevOps Engineer",
+      name: "Mahesh Kumar",
+      role: "Customer Experience Head",
       description:
-        "Infrastructure expert ensuring seamless deployments and optimal performance. AWS, Docker, and Kubernetes specialist.",
-      image: "/api/placeholder/400/400",
-      gradient: "from-orange-500 to-orange-600",
-      social: {
-        linkedin: "#",
-        github: "#",
-      },
-    },
-    {
-      id: 6,
-      name: "Lisa Anderson",
-      role: "Project Manager",
-      description:
-        "Organized leader ensuring projects are delivered on time and within budget. Expert in agile methodologies.",
+        "Client relationship expert obsessed with guaranteeing seamless enterprise onboarding, rapid support, and extreme customer satisfaction.",
       image: "/api/placeholder/400/400",
       gradient: "from-orange-500 to-orange-600",
       social: {
@@ -199,13 +186,11 @@ const Team = () => {
                         </a>
                       )}
                       {(member.social.twitter ||
-                        member.social.github ||
-                        member.social.behance) && (
+                        member.social.github) && (
                         <a
                           href={
                             member.social.twitter ||
-                            member.social.github ||
-                            member.social.behance
+                            member.social.github
                           }
                           className="w-10 h-10 glass-strong-dark rounded-full flex items-center justify-center text-white border border-white/20 hover:bg-gradient-to-r hover:from-arin-orange hover:to-orange-500 transition-all"
                         >
@@ -225,15 +210,6 @@ const Team = () => {
                               viewBox="0 0 24 24"
                             >
                               <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                            </svg>
-                          )}
-                          {member.social.behance && (
-                            <svg
-                              className="w-5 h-5"
-                              fill="currentColor"
-                              viewBox="0 0 24 24"
-                            >
-                              <path d="M22 7h-7v-2h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.634 1.442 5.192 3.2l-3.026.013c-.23-1.001-.955-1.713-2.166-1.713-1.953 0-3.35 1.415-3.35 3.65 0 2.567 1.714 3.632 3.35 3.632 1.007 0 1.776-.49 2.078-1.274h-2.078v-2.857h5.441c.047.273.08.552.08.833 0 2.608-1.077 4.564-3.148 4.564zm-11.561-.289c0 3.854-3.4 5.233-6.516 5.233-3.096 0-7.009-1.388-7.009-6.447 0-5.205 3.948-7.01 7.405-7.01 3.429 0 6.12 1.343 6.12 5.72 0 3.832-1.39 4.26-2.588 4.614-.637.186-1.207.267-1.564.267-.766 0-1.266-.186-1.266-.814 0-2.098 1.684-2.66 3.465-2.66 1.835 0 3.404 1.146 3.404 3.42 0 2.363-1.584 4.015-4.558 4.015-2.147 0-4.436-1.103-4.436-4.298 0-4.3 3.293-7.369 7.958-7.369 4.559 0 7.958 3.292 7.958 7.798v2.624z" />
                             </svg>
                           )}
                         </a>
