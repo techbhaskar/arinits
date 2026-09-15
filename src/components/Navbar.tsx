@@ -92,6 +92,9 @@ const Navbar = () => {
               }}
             >
               <button
+                type="button"
+                aria-expanded={isServicesOpen}
+                aria-haspopup="true"
                 className={`px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
                   servicesLinks.some((link) => location.pathname === link.path)
                     ? "bg-arin-orange text-white"
@@ -158,6 +161,10 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <button
+            type="button"
+            aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-navigation"
             className="md:hidden text-gray-700 focus:outline-none"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
@@ -181,7 +188,7 @@ const Navbar = () => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden pb-4 glass-strong rounded-b-lg mt-2">
+          <div id="mobile-navigation" className="md:hidden pb-4 glass-strong rounded-b-lg mt-2">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
@@ -200,6 +207,8 @@ const Navbar = () => {
             {/* Mobile Services */}
             <div className="mt-2">
               <button
+                type="button"
+                aria-expanded={isServicesOpen}
                 onClick={() => setIsServicesOpen(!isServicesOpen)}
                 className={`w-full text-left px-4 py-3 rounded-lg font-medium transition-all duration-200 ${
                   servicesLinks.some((link) => location.pathname === link.path)

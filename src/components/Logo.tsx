@@ -16,8 +16,11 @@ const Logo: React.FC<LogoProps> = ({ className = "", size = "md" }) => {
     <div className={`flex items-center ${className}`}>
       <div className="bg-white rounded-full flex items-center justify-center">
         <img
-          src="/logo_transparent.png"
+          src="/logo-256.webp"
           alt="ARIN IT Solutions Logo"
+          width="256"
+          height="256"
+          decoding="async"
           className={sizeClasses[size]}
         />
       </div>

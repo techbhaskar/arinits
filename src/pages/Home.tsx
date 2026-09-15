@@ -266,9 +266,9 @@ const Home = () => {
                       <path d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
                   </div>
-                  <h3 className="text-white font-bold text-lg mb-2">
+                  <p className="text-white font-bold text-lg mb-2">
                     Cloud Solutions
-                  </h3>
+                  </p>
                   <p className="text-gray-300 text-sm">
                     Scalable infrastructure
                   </p>
@@ -288,9 +288,9 @@ const Home = () => {
                       <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                     </svg>
                   </div>
-                  <h3 className="text-white font-bold text-lg mb-2">
+                  <p className="text-white font-bold text-lg mb-2">
                     Web Development
-                  </h3>
+                  </p>
                   <p className="text-gray-300 text-sm">Modern & responsive</p>
                 </div>
 
@@ -308,9 +308,9 @@ const Home = () => {
                       <path d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
                     </svg>
                   </div>
-                  <h3 className="text-white font-bold text-lg mb-2">
+                  <p className="text-white font-bold text-lg mb-2">
                     Mobile Apps
-                  </h3>
+                  </p>
                   <p className="text-gray-300 text-sm">
                     Native & cross-platform
                   </p>
@@ -330,9 +330,9 @@ const Home = () => {
                       <path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                     </svg>
                   </div>
-                  <h3 className="text-white font-bold text-lg mb-2">
+                  <p className="text-white font-bold text-lg mb-2">
                     Software Dev
-                  </h3>
+                  </p>
                   <p className="text-gray-300 text-sm">Custom solutions</p>
                 </div>
               </div>
@@ -685,9 +685,9 @@ const Home = () => {
             </Link>
             <Link
               to="/contact"
-              className="px-10 py-5 glass-strong-dark text-white rounded-lg font-semibold text-lg 
-                       hover:bg-white/10 transform hover:scale-105 transition-all duration-300 
-                       border-2 border-white/30"
+              className="px-10 py-5 bg-gray-950 text-white rounded-lg font-semibold text-lg
+                       hover:bg-black transform hover:scale-105 transition-all duration-300
+                       border-2 border-white"
             >
               Schedule a Consultation
             </Link>
