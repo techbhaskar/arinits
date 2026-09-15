@@ -24,7 +24,8 @@ const SEO: React.FC<SEOProps> = ({
   robots = "index, follow",
 }) => {
   const siteUrl = "https://arinits.com";
-  const fullUrl = `${siteUrl}${path}`;
+  const normalizedPath = path === "/" ? "/" : `${path.replace(/\/$/, "")}/`;
+  const fullUrl = `${siteUrl}${normalizedPath}`;
   const fullImageUrl = image.startsWith("http") ? image : `${siteUrl}${image}`;
 
   React.useEffect(() => {

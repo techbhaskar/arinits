@@ -21,6 +21,11 @@ const TechnologySolutions = lazy(() => import("./pages/TechnologySolutions"));
 const CloudSolutions = lazy(() => import("./pages/CloudSolutions"));
 const DevopsServices = lazy(() => import("./pages/DevopsServices"));
 const CybersecurityConsulting = lazy(() => import("./pages/CybersecurityConsulting"));
+const AIDevelopment = lazy(() => import("./pages/AIDevelopment"));
+const FintechSolutions = lazy(() => import("./pages/FintechSolutions"));
+const JavaMicroservices = lazy(() => import("./pages/JavaMicroservices"));
+const ApplicationModernization = lazy(() => import("./pages/ApplicationModernization"));
+const About = lazy(() => import("./pages/About"));
 
 // Loading component
 const Loading = () => (
@@ -70,6 +75,11 @@ function App() {
               <Route path="/cloud-solutions" element={<CloudSolutions />} />
               <Route path="/devops-services" element={<DevopsServices />} />
               <Route path="/cybersecurity-consulting" element={<CybersecurityConsulting />} />
+              <Route path="/services/ai-development" element={<AIDevelopment />} />
+              <Route path="/services/fintech-payment-solutions" element={<FintechSolutions />} />
+              <Route path="/services/java-microservices" element={<JavaMicroservices />} />
+              <Route path="/services/application-modernization" element={<ApplicationModernization />} />
+              <Route path="/about" element={<About />} />
               <Route path="/terms" element={<Terms />} />
               <Route path="/privacy" element={<Privacy />} />
             </Routes>

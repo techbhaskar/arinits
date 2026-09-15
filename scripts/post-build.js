@@ -14,7 +14,8 @@ const replaceMeta = (html, selector, value) => html.replace(
 );
 
 const renderRouteHead = (template, route) => {
-  const canonical = `${siteUrl}${route.path}`;
+  const canonicalPath = route.path === "/" ? "/" : `${route.path}/`;
+  const canonical = `${siteUrl}${canonicalPath}`;
   const image = `${siteUrl}/logo.png`;
   let html = template
     .replace(/<title>[^<]*<\/title>/i, `<title>${escapeHtml(route.title)}</title>`)
@@ -30,6 +31,31 @@ const renderRouteHead = (template, route) => {
   html = replaceMeta(html, 'name="twitter:title"', route.title);
   html = replaceMeta(html, 'name="twitter:description"', route.description);
   html = replaceMeta(html, 'name="twitter:image"', image);
+  if (route.path !== "/" && route.path !== "/about") {
+    html = html.replace(
+      /\s*<script type="application\/ld\+json">\s*\{[\s\S]*?"@type"\s*:\s*"Organization"[\s\S]*?<\/script>/i,
+      "",
+    );
+  }
+  const pageSchema = {
+    "@context": "https://schema.org",
+    "@type": route.path.startsWith("/services/") ? "Service" : "WebPage",
+    name: route.title,
+    description: route.description,
+    url: canonical,
+    ...(route.path.startsWith("/services/") ? {
+      provider: {
+        "@type": "Organization",
+        name: "ARIN IT Solutions",
+        url: `${siteUrl}/`,
+      },
+      areaServed: "Worldwide",
+    } : {}),
+  };
+  html = html.replace(
+    "</head>",
+    `    <script type="application/ld+json">${JSON.stringify(pageSchema)}</script>\n  </head>`,
+  );
   return html;
 };
 

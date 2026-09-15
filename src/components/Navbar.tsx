@@ -25,12 +25,17 @@ const Navbar = () => {
   const navLinks = [
     { path: "/", label: "Home" },
     { path: "/portfolio", label: "Portfolio" },
+    { path: "/about", label: "About" },
     { path: "/team", label: "Team" },
     { path: "/blog", label: "Blog" },
     { path: "/contact", label: "Contact" },
   ];
 
   const servicesLinks = [
+    { path: "/services/fintech-payment-solutions", label: "FinTech & Payments" },
+    { path: "/services/java-microservices", label: "Java Microservices" },
+    { path: "/services/ai-development", label: "AI Development" },
+    { path: "/services/application-modernization", label: "Application Modernization" },
     { path: "/services/software-development", label: "Software Development" },
     { path: "/services/it-consulting", label: "IT Consulting" },
     { path: "/services/web-development", label: "Web Development" },

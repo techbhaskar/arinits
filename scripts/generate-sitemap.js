@@ -11,7 +11,7 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 ${seoRoutes
   .map(
     (route) => `  <url>
-    <loc>${siteUrl}${route.path}</loc>
+    <loc>${siteUrl}${route.path === "/" ? "/" : `${route.path}/`}</loc>
     <lastmod>${currentDate}</lastmod>
     <changefreq>${route.changefreq}</changefreq>
     <priority>${route.priority}</priority>

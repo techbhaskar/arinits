@@ -31,6 +31,14 @@ const Footer = () => {
             <ul className="space-y-2">
               <li>
                 <Link
+                  to="/about"
+                  className="text-gray-700 hover:text-arin-orange transition-colors"
+                >
+                  About ARIN
+                </Link>
+              </li>
+              <li>
+                <Link
                   to="/"
                   className="text-gray-700 hover:text-arin-orange transition-colors"
                 >
@@ -70,6 +78,26 @@ const Footer = () => {
               Services
             </h3>
             <ul className="space-y-2">
+              <li>
+                <Link to="/services/fintech-payment-solutions" className="text-gray-700 hover:text-arin-orange transition-colors">
+                  FinTech & Payments
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/java-microservices" className="text-gray-700 hover:text-arin-orange transition-colors">
+                  Java Microservices
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/ai-development" className="text-gray-700 hover:text-arin-orange transition-colors">
+                  AI Development
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/application-modernization" className="text-gray-700 hover:text-arin-orange transition-colors">
+                  Application Modernization
+                </Link>
+              </li>
               <li>
                 <Link
                   to="/services/software-development"
