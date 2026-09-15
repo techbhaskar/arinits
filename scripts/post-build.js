@@ -37,7 +37,7 @@ const renderRouteHead = (template, route) => {
       "",
     );
   }
-  const isServicePage = ["/services/", "/solutions/", "/industries/", "/technologies/"].some(prefix => route.path.startsWith(prefix));
+  const isServicePage = ["/services/", "/solutions/", "/industries/", "/technologies/", "/locations/"].some(prefix => route.path.startsWith(prefix));
   const schemaType = route.type === "article"
     ? "BlogPosting"
     : route.type === "profile"
@@ -57,7 +57,8 @@ const renderRouteHead = (template, route) => {
         name: "ARIN IT Solutions",
         url: `${siteUrl}/`,
       },
-      areaServed: "Worldwide",
+      areaServed: route.areaServed || "Worldwide",
+      ...(route.serviceType ? { serviceType: route.serviceType } : {}),
     } : {}),
     ...(route.type === "profile" ? {
       mainEntity: {

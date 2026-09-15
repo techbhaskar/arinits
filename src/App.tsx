@@ -96,6 +96,9 @@ function App() {
               <Route path="/technologies/spring-boot" element={<GrowthPage />} />
               <Route path="/technologies/kafka" element={<GrowthPage />} />
               <Route path="/technologies/kubernetes" element={<GrowthPage />} />
+              <Route path="/locations/software-development-company-hyderabad" element={<GrowthPage />} />
+              <Route path="/locations/fintech-development-company-india" element={<GrowthPage />} />
+              <Route path="/locations/java-consulting-services-hyderabad" element={<GrowthPage />} />
               <Route path="/terms" element={<Terms />} />
               <Route path="/privacy" element={<Privacy />} />
             </Routes>

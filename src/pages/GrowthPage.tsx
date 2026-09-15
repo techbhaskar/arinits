@@ -110,6 +110,60 @@ const pages: Record<string, Page> = {
     faqs: [{ question: "Does every application need Kubernetes?", answer: "No. Kubernetes is valuable for portfolios needing standardized orchestration, scaling and policy. Managed application platforms can be simpler and cheaper for smaller workloads." }, { question: "How are zero-downtime deployments achieved?", answer: "Healthy rolling or progressive delivery requires correct probes, sufficient capacity, backward-compatible contracts, controlled migrations and automated rollback signals." }, { question: "Can you migrate Docker Compose applications?", answer: "Yes. We first document dependencies and state, then map workloads to appropriate Kubernetes and managed-service primitives instead of translating files mechanically." }],
     links: [{ to: "/solutions/platform-engineering", label: "Platform engineering" }, { to: "/devops-services", label: "DevOps" }, { to: "/services/application-modernization", label: "Application modernization" }],
   },
+  "/locations/software-development-company-hyderabad": {
+    title: "Software Development Company in Hyderabad | ARIN IT",
+    description: "Work with a Hyderabad software development company for enterprise applications, Java microservices, cloud platforms, web products, and modernization.",
+    keywords: "software development company in Hyderabad, custom software Hyderabad, enterprise software company Hyderabad, software developers Hyderabad",
+    eyebrow: "Hyderabad Software Engineering", heading: "Software Development Company in Hyderabad for Complex Business Systems",
+    intro: "ARIN IT Solutions helps Hyderabad businesses and distributed product teams turn operational requirements into secure, maintainable software. Our engineering focus spans enterprise applications, Java and Spring Boot platforms, cloud-native services, integrations, and modernization programs where reliability matters as much as delivery speed.",
+    sections: [
+      { title: "Custom software for Hyderabad businesses", text: "We design around the workflow, controls, users, and integrations that make each business different instead of forcing requirements into a generic product.", points: ["Enterprise web applications and internal platforms", "Customer, partner and operations portals", "Workflow, reporting and case-management systems", "Secure API and third-party integrations"] },
+      { title: "Architecture and modernization", text: "ARIN supports both new product engineering and the careful evolution of existing systems.", points: ["Java and Spring Boot application architecture", "Monolith assessment and incremental modernization", "Microservices and event-driven integration", "Cloud, containers, CI/CD and observability"] },
+      { title: "A practical local engagement model", text: "Hyderabad proximity enables direct discovery and stakeholder workshops while our delivery practices support remote collaboration across India and international teams.", points: ["Architecture and requirement workshops", "Milestone-based product delivery", "Code review, testing and release controls", "Documentation and engineering handover"] },
+    ],
+    faqs: [
+      { question: "What software development services does ARIN provide in Hyderabad?", answer: "ARIN provides custom enterprise applications, Java and Spring Boot services, web platforms, mobile applications, API integrations, cloud engineering, DevOps, AI solutions, and legacy modernization." },
+      { question: "Can ARIN work with an existing in-house engineering team?", answer: "Yes. We can contribute architecture, focused delivery capacity, modernization support, technical reviews, or an end-to-end workstream while aligning with your repositories, standards and release process." },
+      { question: "Does ARIN only serve companies located in Hyderabad?", answer: "No. Hyderabad is our local market, and we also support customers and distributed engineering teams across India and other regions." },
+    ],
+    links: [{ to: "/services/software-development", label: "Software development services" }, { to: "/services/application-modernization", label: "Application modernization" }, { to: "/portfolio", label: "View engineering work" }],
+  },
+  "/locations/fintech-development-company-india": {
+    title: "FinTech Development Company in India | ARIN IT Solutions",
+    description: "Build payment, reconciliation, wallet, merchant, banking integration, and financial operations software with an experienced FinTech development company in India.",
+    keywords: "fintech development company India, payment software development India, banking software company India, fintech app developers India",
+    eyebrow: "FinTech Engineering in India", heading: "FinTech Development Company in India for Reliable Money-Movement Platforms",
+    intro: "ARIN IT Solutions engineers FinTech systems around transaction integrity, auditability, security, and operational control. We help Indian and global teams build or modernize payment services, reconciliation workflows, merchant platforms, integrations, and supporting cloud-native capabilities without treating compliance-sensitive workflows as ordinary CRUD applications.",
+    sections: [
+      { title: "Payment and financial platform capabilities", text: "We model complete transaction lifecycles and the operational processes needed when external systems disagree or fail.", points: ["Payment initiation, status, refund and reversal workflows", "Merchant, wallet and partner integration services", "Reconciliation, settlement and exception management", "Case management, reporting and audit timelines"] },
+      { title: "Controls built into the architecture", text: "Financial correctness depends on explicit controls across APIs, messaging, data, and operations.", points: ["Idempotent APIs and duplicate-payment protection", "Authentication, authorization and data boundaries", "Ledger-aware state transitions and audit events", "Retries, compensation, reconciliation and recovery"] },
+      { title: "India delivery with enterprise engineering depth", text: "Our experience across Java, payments, distributed systems, observability, cloud, and delivery governance supports product teams from discovery through production readiness.", points: ["Java, Spring Boot, Kafka and relational data", "API gateways, IAM and partner connectivity", "Docker, Kubernetes and automated delivery", "Metrics, logs, traces and business monitoring"] },
+    ],
+    faqs: [
+      { question: "Which FinTech products can ARIN develop?", answer: "ARIN can develop payment and wallet services, merchant platforms, reconciliation and settlement workflows, financial operations portals, case systems, reporting, and secure partner integrations." },
+      { question: "Does ARIN provide regulatory certification?", answer: "No. We implement technical controls in collaboration with customer compliance and security teams, but software delivery itself is not RBI, PCI DSS, KYC, AML, or privacy certification." },
+      { question: "Can ARIN modernize an existing FinTech platform?", answer: "Yes. We can assess service boundaries, transaction risks, data consistency, integrations and operational gaps, then modernize through controlled and reversible stages." },
+    ],
+    links: [{ to: "/industries/fintech", label: "FinTech engineering expertise" }, { to: "/services/fintech-payment-solutions", label: "Payment software services" }, { to: "/solutions/payment-reconciliation", label: "Reconciliation solutions" }],
+  },
+  "/locations/java-consulting-services-hyderabad": {
+    title: "Java Consulting Services in Hyderabad | ARIN IT Solutions",
+    description: "Get Java consulting in Hyderabad for Spring Boot architecture, microservices, Kafka, performance, modernization, cloud deployment, and production reliability.",
+    keywords: "Java consulting services Hyderabad, Spring Boot consultant Hyderabad, Java microservices company Hyderabad, Java architect Hyderabad",
+    eyebrow: "Java Expertise in Hyderabad", heading: "Java Consulting Services in Hyderabad for Modern Enterprise Platforms",
+    intro: "ARIN IT Solutions provides hands-on Java architecture and engineering support for teams building or modernizing business-critical platforms. We combine deep Java and Spring Boot experience with practical knowledge of microservices, Kafka, databases, security, cloud infrastructure, observability, and production incident prevention.",
+    sections: [
+      { title: "Architecture and technical assessment", text: "We make current constraints and target decisions explicit before recommending a rewrite, migration, or new service boundary.", points: ["Application and dependency assessment", "Domain boundaries and modular architecture", "API, data and event-contract reviews", "Performance, security and reliability risks"] },
+      { title: "Spring Boot and microservices engineering", text: "Consulting can extend from recommendations into implementation, reviews, and enablement for your team.", points: ["Spring Boot APIs and service architecture", "Kafka events, outbox patterns and idempotency", "OAuth 2.0, OIDC and authorization", "Testing, database design and transaction boundaries"] },
+      { title: "Modernization and production readiness", text: "We help teams move safely from legacy constraints to supported runtimes and repeatable operations.", points: ["Java and Spring version upgrades", "Monolith decomposition and strangler migrations", "Docker, Kubernetes and CI/CD", "Metrics, logs, tracing, SLOs and recovery"] },
+    ],
+    faqs: [
+      { question: "Can ARIN review an existing Java architecture?", answer: "Yes. A review can cover code structure, service boundaries, dependencies, APIs, data access, concurrency, security, testing, deployment, observability, and prioritized remediation." },
+      { question: "Do you provide both consulting and implementation?", answer: "Yes. Engagements can include architecture advisory, hands-on implementation, technical leadership, code review, team mentoring, or a defined modernization workstream." },
+      { question: "Which Java technologies does ARIN support?", answer: "Our core expertise includes modern Java, Spring Boot, Spring Security, JPA and SQL, REST APIs, Kafka, Redis, testing, Docker, Kubernetes, cloud platforms, CI/CD, and observability tooling." },
+    ],
+    links: [{ to: "/services/java-microservices", label: "Java microservices services" }, { to: "/technologies/spring-boot", label: "Spring Boot expertise" }, { to: "/technologies/kafka", label: "Kafka consulting" }],
+  },
 };
 
 export default function GrowthPage() {
@@ -120,10 +174,10 @@ export default function GrowthPage() {
   return <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-gray-950 text-white">
     <SEO title={page.title} description={page.description} path={key} keywords={page.keywords} />
     <header className="pt-36 pb-20 border-b border-white/10"><div className="max-w-6xl mx-auto px-4"><p className="uppercase tracking-widest text-arin-orange font-semibold">{page.eyebrow}</p><h1 className="text-4xl sm:text-6xl font-bold mt-4 max-w-5xl">{page.heading}</h1><p className="text-xl text-gray-300 mt-7 leading-relaxed max-w-4xl">{page.intro}</p><Link to="/contact" className="inline-block mt-8 px-8 py-4 rounded-lg bg-arin-orange font-semibold hover:bg-orange-600">Discuss Your Requirements</Link></div></header>
-    <main className="max-w-6xl mx-auto px-4 py-20 space-y-20">
+    <div className="max-w-6xl mx-auto px-4 py-20 space-y-20">
       <section className="space-y-8">{page.sections.map(section => <article key={section.title} className="rounded-3xl border border-white/10 bg-white/5 p-8"><h2 className="text-3xl font-bold">{section.title}</h2><p className="text-gray-300 text-lg mt-4 leading-relaxed">{section.text}</p><ul className="grid md:grid-cols-2 gap-3 mt-6">{section.points.map(point => <li key={point} className="flex gap-3 text-gray-200"><span className="text-arin-orange">✓</span>{point}</li>)}</ul></article>)}</section>
       <section><h2 className="text-3xl font-bold mb-7">Frequently Asked Questions</h2><div className="space-y-5">{page.faqs.map(faq => <article key={faq.question} className="p-7 border border-white/10 rounded-2xl"><h3 className="text-xl font-semibold text-arin-orange">{faq.question}</h3><p className="text-gray-300 mt-3 leading-relaxed">{faq.answer}</p></article>)}</div></section>
       <section className="border-t border-white/10 pt-10"><h2 className="text-2xl font-bold mb-5">Continue Exploring</h2><div className="flex flex-wrap gap-5">{page.links.map(link => <Link key={link.to} to={link.to} className="text-arin-orange hover:underline">{link.label} →</Link>)}</div></section>
-    </main>
+    </div>
   </div>;
 }

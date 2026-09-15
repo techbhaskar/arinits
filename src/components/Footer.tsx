@@ -107,6 +107,9 @@ const Footer = () => {
               <li><Link to="/solutions/payment-reconciliation" className="text-gray-700 hover:text-arin-orange transition-colors">Payment Reconciliation</Link></li>
               <li><Link to="/solutions/api-integration" className="text-gray-700 hover:text-arin-orange transition-colors">API Integration</Link></li>
               <li><Link to="/solutions/platform-engineering" className="text-gray-700 hover:text-arin-orange transition-colors">Platform Engineering</Link></li>
+              <li><Link to="/locations/software-development-company-hyderabad" className="text-gray-700 hover:text-arin-orange transition-colors">Software Development Hyderabad</Link></li>
+              <li><Link to="/locations/fintech-development-company-india" className="text-gray-700 hover:text-arin-orange transition-colors">FinTech Development India</Link></li>
+              <li><Link to="/locations/java-consulting-services-hyderabad" className="text-gray-700 hover:text-arin-orange transition-colors">Java Consulting Hyderabad</Link></li>
               <li>
                 <Link
                   to="/services/software-development"
