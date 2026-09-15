@@ -38,6 +38,11 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
+                <Link to="/about/bhaskara-rao" className="text-gray-700 hover:text-arin-orange transition-colors">
+                  Engineering Leadership
+                </Link>
+              </li>
+              <li>
                 <Link
                   to="/"
                   className="text-gray-700 hover:text-arin-orange transition-colors"
@@ -98,6 +103,10 @@ const Footer = () => {
                   Application Modernization
                 </Link>
               </li>
+              <li><Link to="/industries/fintech" className="text-gray-700 hover:text-arin-orange transition-colors">FinTech Industry</Link></li>
+              <li><Link to="/solutions/payment-reconciliation" className="text-gray-700 hover:text-arin-orange transition-colors">Payment Reconciliation</Link></li>
+              <li><Link to="/solutions/api-integration" className="text-gray-700 hover:text-arin-orange transition-colors">API Integration</Link></li>
+              <li><Link to="/solutions/platform-engineering" className="text-gray-700 hover:text-arin-orange transition-colors">Platform Engineering</Link></li>
               <li>
                 <Link
                   to="/services/software-development"

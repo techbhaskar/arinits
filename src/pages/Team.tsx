@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import SEO from "../components/SEO";
 
 const Team = () => {
@@ -19,6 +20,7 @@ const Team = () => {
       id: 2,
       name: "Bhaskararao Arani",
       role: "CTO & Co-Founder",
+      profile: "/about/bhaskara-rao",
       description:
         "Architect of innovative solutions with deep expertise in AI infrastructure, cloud computing, microservices, and high-performance databases.",
       image: "/api/placeholder/400/400",
@@ -159,9 +161,7 @@ const Team = () => {
 
                   {/* Member Info */}
                   <div className="p-6">
-                    <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-arin-orange transition-colors">
-                      {member.name}
-                    </h3>
+                    {member.profile ? <Link to={member.profile} className="block text-2xl font-bold text-white mb-2 group-hover:text-arin-orange transition-colors">{member.name}</Link> : <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-arin-orange transition-colors">{member.name}</h3>}
                     <p className="text-arin-orange font-semibold mb-4">
                       {member.role}
                     </p>

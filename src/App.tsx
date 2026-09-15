@@ -26,6 +26,8 @@ const FintechSolutions = lazy(() => import("./pages/FintechSolutions"));
 const JavaMicroservices = lazy(() => import("./pages/JavaMicroservices"));
 const ApplicationModernization = lazy(() => import("./pages/ApplicationModernization"));
 const About = lazy(() => import("./pages/About"));
+const BhaskaraRao = lazy(() => import("./pages/BhaskaraRao"));
+const GrowthPage = lazy(() => import("./pages/GrowthPage"));
 
 // Loading component
 const Loading = () => (
@@ -80,6 +82,14 @@ function App() {
               <Route path="/services/java-microservices" element={<JavaMicroservices />} />
               <Route path="/services/application-modernization" element={<ApplicationModernization />} />
               <Route path="/about" element={<About />} />
+              <Route path="/about/bhaskara-rao" element={<BhaskaraRao />} />
+              <Route path="/industries/fintech" element={<GrowthPage />} />
+              <Route path="/solutions/payment-reconciliation" element={<GrowthPage />} />
+              <Route path="/solutions/api-integration" element={<GrowthPage />} />
+              <Route path="/solutions/platform-engineering" element={<GrowthPage />} />
+              <Route path="/technologies/spring-boot" element={<GrowthPage />} />
+              <Route path="/technologies/kafka" element={<GrowthPage />} />
+              <Route path="/technologies/kubernetes" element={<GrowthPage />} />
               <Route path="/terms" element={<Terms />} />
               <Route path="/privacy" element={<Privacy />} />
             </Routes>

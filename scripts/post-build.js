@@ -37,19 +37,35 @@ const renderRouteHead = (template, route) => {
       "",
     );
   }
+  const isServicePage = ["/services/", "/solutions/", "/industries/", "/technologies/"].some(prefix => route.path.startsWith(prefix));
+  const schemaType = route.type === "article"
+    ? "BlogPosting"
+    : route.type === "profile"
+      ? "ProfilePage"
+      : isServicePage
+        ? "Service"
+        : "WebPage";
   const pageSchema = {
     "@context": "https://schema.org",
-    "@type": route.path.startsWith("/services/") ? "Service" : "WebPage",
+    "@type": schemaType,
     name: route.title,
     description: route.description,
     url: canonical,
-    ...(route.path.startsWith("/services/") ? {
+    ...(isServicePage ? {
       provider: {
         "@type": "Organization",
         name: "ARIN IT Solutions",
         url: `${siteUrl}/`,
       },
       areaServed: "Worldwide",
+    } : {}),
+    ...(route.type === "profile" ? {
+      mainEntity: {
+        "@type": "Person",
+        name: "Bhaskara Rao Arani",
+        jobTitle: "CTO & Co-Founder",
+        worksFor: { "@type": "Organization", name: "ARIN IT Solutions", url: `${siteUrl}/` },
+      },
     } : {}),
   };
   html = html.replace(

@@ -1,41 +1,10 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import SEO from "../components/SEO";
+import { projects } from "../data/projects";
 
 const Home = () => {
-  const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [showScrollTop, setShowScrollTop] = useState(false);
-
-  const testimonials = [
-    {
-      name: "Sarah Johnson",
-      role: "CEO, TechCorp",
-      content:
-        "ARIN IT Solutions transformed our business with their innovative software solutions. Their team is professional, skilled, and truly understands our needs.",
-      rating: 5,
-    },
-    {
-      name: "Michael Chen",
-      role: "CTO, StartupXYZ",
-      content:
-        "The best IT consulting experience we've had. They delivered on time, within budget, and exceeded our expectations. Highly recommended!",
-      rating: 5,
-    },
-    {
-      name: "Emily Rodriguez",
-      role: "Director, Digital Innovations",
-      content:
-        "Outstanding web development services. Our new platform increased user engagement by 300%. ARIN IT Solutions is our go-to technology partner.",
-      rating: 5,
-    },
-  ];
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -58,10 +27,10 @@ const Home = () => {
   };
 
   const stats = [
-    { number: "50+", label: "Projects Completed" },
-    { number: "20+", label: "Happy Clients" },
-    { number: "6+", label: "Expert Developers" },
-    { number: "3+", label: "Years Experience" },
+    { number: "Java", label: "Enterprise Engineering" },
+    { number: "FinTech", label: "Payment Platforms" },
+    { number: "AI", label: "RAG and Agent Systems" },
+    { number: "Cloud", label: "DevOps and Platforms" },
   ];
 
   const features = [
@@ -82,6 +51,7 @@ const Home = () => {
         </svg>
       ),
       title: "Custom Software Development",
+      path: "/services/software-development",
       description:
         "We build tailored software solutions that perfectly match your business requirements. From enterprise applications to startup MVPs, we deliver excellence.",
       color: "from-blue-500 to-cyan-500",
@@ -103,6 +73,7 @@ const Home = () => {
         </svg>
       ),
       title: "Strategic IT Consulting",
+      path: "/services/it-consulting",
       description:
         "Get expert guidance on technology decisions that drive business growth. Our consultants help you navigate digital transformation with confidence.",
       color: "from-purple-500 to-pink-500",
@@ -124,6 +95,7 @@ const Home = () => {
         </svg>
       ),
       title: "Modern Web Development",
+      path: "/services/web-development",
       description:
         "Responsive, fast, and beautiful websites that convert visitors into customers. Built with cutting-edge technologies for optimal performance.",
       color: "from-green-500 to-emerald-500",
@@ -145,6 +117,7 @@ const Home = () => {
         </svg>
       ),
       title: "Mobile App Development",
+      path: "/services/app-development",
       description:
         "Native iOS and Android apps that deliver exceptional user experiences. We create apps that users love and businesses rely on.",
       color: "from-orange-500 to-red-500",
@@ -166,6 +139,7 @@ const Home = () => {
         </svg>
       ),
       title: "Cloud Solutions & DevOps",
+      path: "/solutions/platform-engineering",
       description:
         "Scalable cloud infrastructure that grows with your business. We help you leverage AWS, Azure, and Google Cloud for maximum efficiency.",
       color: "from-indigo-500 to-blue-500",
@@ -187,6 +161,7 @@ const Home = () => {
         </svg>
       ),
       title: "Cybersecurity & Compliance",
+      path: "/cybersecurity-consulting",
       description:
         "Protect your digital assets with comprehensive security solutions. We ensure compliance with industry standards and regulations.",
       color: "from-red-500 to-pink-500",
@@ -396,8 +371,9 @@ const Home = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (
-              <div
+              <Link
                 key={index}
+                to={feature.path}
                 className="group relative glass-strong-dark rounded-3xl p-8 hover:scale-105 transition-all duration-500 shadow-xl overflow-hidden border border-white/20"
               >
                 <div
@@ -432,7 +408,7 @@ const Home = () => {
                     </svg>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -456,62 +432,16 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black via-gray-900 to-gray-900">
+      {/* Engineering principles */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black via-gray-900 to-gray-900">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
-              Client Success Stories
-            </h2>
-            <p className="text-xl text-gray-300">
-              Don't just take our word for it. See what our clients say about
-              working with us.
-            </p>
-          </div>
-
-          <div className="relative glass-strong-dark rounded-3xl p-12 md:p-16 shadow-2xl border border-white/20">
-            <div className="text-center">
-              <div className="flex justify-center mb-6">
-                {[...Array(testimonials[currentTestimonial].rating)].map(
-                  (_, i) => (
-                    <svg
-                      key={i}
-                      className="w-6 h-6 text-arin-orange"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  )
-                )}
-              </div>
-              <p className="text-2xl md:text-3xl text-gray-300 mb-8 leading-relaxed italic">
-                "{testimonials[currentTestimonial].content}"
-              </p>
-              <div>
-                <div className="text-xl font-bold text-white mb-2">
-                  {testimonials[currentTestimonial].name}
-                </div>
-                <div className="text-gray-300">
-                  {testimonials[currentTestimonial].role}
-                </div>
-              </div>
-            </div>
-
-            {/* Testimonial Indicators */}
-            <div className="flex justify-center gap-2 mt-8">
-              {testimonials.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentTestimonial(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    index === currentTestimonial
-                      ? "bg-arin-orange w-8"
-                      : "bg-gray-500"
-                  }`}
-                />
-              ))}
-            </div>
+          <div className="text-center mb-14"><h2 className="text-5xl md:text-6xl font-bold text-white mb-6">How We Engineer</h2><p className="text-xl text-gray-300">Principles that guide architecture, delivery, and production operations.</p></div>
+          <div className="grid md:grid-cols-3 gap-7">
+            {[
+              { title: "Design for failure", text: "Timeouts, retries, idempotency, recovery, reconciliation, and observability are part of the architecture from the beginning." },
+              { title: "Make ownership explicit", text: "Services, data, APIs, events, and operational decisions need clear responsibility and evolvable contracts." },
+              { title: "Prove outcomes", text: "We connect technical choices to transaction integrity, delivery speed, reliability, cost, security, and user experience." },
+            ].map(item => <article key={item.title} className="glass-strong-dark rounded-3xl p-8 border border-white/20"><h3 className="text-2xl font-bold text-arin-orange">{item.title}</h3><p className="text-gray-300 mt-4 leading-relaxed">{item.text}</p></article>)}
           </div>
         </div>
       </section>
@@ -530,26 +460,10 @@ const Home = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            {[
-              {
-                title: "Enterprise E-Commerce Platform",
-                category: "Web Development",
-                gradient: "from-orange-500 to-orange-600",
-              },
-              {
-                title: "Mobile Banking Application",
-                category: "Mobile Development",
-                gradient: "from-orange-500 to-orange-600",
-              },
-              {
-                title: "Cloud Migration Solution",
-                category: "Cloud & DevOps",
-                gradient: "from-orange-500 to-orange-600",
-              },
-            ].map((project, index) => (
+            {projects.slice(0, 3).map((project, index) => (
               <Link
                 key={index}
-                to="/portfolio"
+                to={`/portfolio/${project.slug}`}
                 className="group glass-strong-dark rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 border border-white/20"
               >
                 <div
@@ -611,32 +525,18 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 justify-center">
             {[
               {
-                name: "Alex Rodriguez",
-                role: "CEO & Founder",
-                gradient: "from-orange-500 to-orange-600",
-              },
-              {
-                name: "Sarah Chen",
-                role: "CTO",
-                gradient: "from-orange-500 to-orange-600",
-              },
-              {
-                name: "Michael Johnson",
-                role: "Lead Developer",
-                gradient: "from-orange-500 to-orange-600",
-              },
-              {
-                name: "Emily Davis",
-                role: "UX/UI Designer",
+                name: "Bhaskara Rao Arani",
+                role: "CTO & Co-Founder — Java, FinTech and Software Architecture",
+                to: "/about/bhaskara-rao",
                 gradient: "from-orange-500 to-orange-600",
               },
             ].map((member, index) => (
               <Link
                 key={index}
-                to="/team"
+                to={member.to}
                 className="group glass-strong-dark rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105 border border-white/20"
               >
                 <div
