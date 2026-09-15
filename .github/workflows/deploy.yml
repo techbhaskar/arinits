@@ -43,3 +43,14 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
+
+      - name: Checkout repository for search submission
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js for search submission
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Notify IndexNow after deployment
+        run: npm run indexnow

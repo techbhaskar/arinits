@@ -60,7 +60,7 @@ const Privacy = () => {
                   ARIN IT Solutions ("we", "our", or "us") is committed to
                   protecting your privacy. This Privacy Policy explains how we
                   collect, use, disclose, and safeguard your information when
-                  you visit our website www.arinits.com. Please read this
+                  you visit our website arinits.com. Please read this
                   privacy policy carefully. If you do not agree with the terms
                   of this privacy policy, please do not access the site.
                 </p>
@@ -266,7 +266,7 @@ const Privacy = () => {
                     <strong>Email:</strong> info@arinits.com
                   </p>
                   <p className="text-white">
-                    <strong>Website:</strong> www.arinits.com
+                    <strong>Website:</strong> arinits.com
                   </p>
                 </div>
               </section>

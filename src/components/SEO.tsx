@@ -23,7 +23,7 @@ const SEO: React.FC<SEOProps> = ({
   modifiedTime,
   robots = "index, follow",
 }) => {
-  const siteUrl = "https://www.arinits.com";
+  const siteUrl = "https://arinits.com";
   const fullUrl = `${siteUrl}${path}`;
   const fullImageUrl = image.startsWith("http") ? image : `${siteUrl}${image}`;
 

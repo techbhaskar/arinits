@@ -1,5 +1,5 @@
 # robots.txt for ARIN IT Solutions
-# https://www.arinits.com
+# https://arinits.com
 
 User-agent: *
 Allow: /
@@ -27,4 +27,4 @@ User-agent: anthropic-ai
 Disallow: /
 
 # Point to Sitemap
-Sitemap: https://www.arinits.com/sitemap.xml
+Sitemap: https://arinits.com/sitemap.xml

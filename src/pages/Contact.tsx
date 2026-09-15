@@ -131,12 +131,12 @@ const Contact = () => {
                     <div>
                       <h3 className="font-semibold text-white mb-1">Website</h3>
                       <a
-                        href="https://www.arinits.com"
+                        href="https://arinits.com"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-gray-300 hover:text-arin-orange transition-colors"
                       >
-                        www.arinits.com
+                        arinits.com
                       </a>
                     </div>
                   </div>

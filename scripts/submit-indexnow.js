@@ -3,7 +3,7 @@ import { join } from "path";
 
 // IndexNow configuration for ARIN IT Solutions
 const key = "a6c5b4d3e2f1a0b9c8d7e6f5a4b3c2d1";
-const host = "www.arinits.com";
+const host = "arinits.com";
 const keyLocation = `https://${host}/${key}.txt`;
 
 async function submitToIndexNow() {

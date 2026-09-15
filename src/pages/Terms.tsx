@@ -58,7 +58,7 @@ const Terms = () => {
                 </h2>
                 <p>
                   By accessing and using the ARIN IT Solutions website
-                  (www.arinits.com), you accept and agree to be bound by the
+                  (arinits.com), you accept and agree to be bound by the
                   terms and provision of this agreement. If you do not agree to
                   abide by the above, please do not use this service.
                 </p>
@@ -201,7 +201,7 @@ const Terms = () => {
                     <strong>Email:</strong> info@arinits.com
                   </p>
                   <p className="text-white">
-                    <strong>Website:</strong> www.arinits.com
+                    <strong>Website:</strong> arinits.com
                   </p>
                 </div>
               </section>
