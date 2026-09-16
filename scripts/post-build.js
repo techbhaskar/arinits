@@ -9,7 +9,7 @@ const escapeHtml = (value) => value
   .replaceAll(">", "&gt;");
 
 const replaceMeta = (html, selector, value) => html.replace(
-  new RegExp(`<meta ${selector}="[^"]+" content="[^"]*"\\s*/?>`, "i"),
+  new RegExp(`<meta\\s+${selector}\\s+content="[^"]*"\\s*/?>`, "i"),
   `<meta ${selector} content="${escapeHtml(value)}" />`,
 );
 
@@ -51,6 +51,13 @@ const renderRouteHead = (template, route) => {
     name: route.title,
     description: route.description,
     url: canonical,
+    ...(route.type === "article" ? {
+      headline: route.title,
+      ...(route.publishedTime ? { datePublished: route.publishedTime, dateModified: route.publishedTime } : {}),
+      author: { "@type": "Organization", name: "ARIN IT Solutions", url: `${siteUrl}/about/` },
+      publisher: { "@type": "Organization", name: "ARIN IT Solutions", url: `${siteUrl}/` },
+      mainEntityOfPage: canonical,
+    } : {}),
     ...(isServicePage ? {
       provider: {
         "@type": "Organization",

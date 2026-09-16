@@ -5,6 +5,19 @@ import SEO from "../components/SEO";
 const Blog = () => {
   const blogPosts = [
     {
+      id: 9,
+      title: "Idempotent Payment APIs: Prevent Duplicate Charges",
+      slug: "idempotent-payment-apis-prevent-duplicate-charges",
+      excerpt:
+        "A practical architecture guide to idempotency keys, atomic processing, safe retries, and recovery across payment APIs and event-driven systems.",
+      author: "ARIN IT Solutions",
+      date: "September 16, 2026",
+      category: "Payments & FinTech",
+      readTime: "12 min read",
+      image: "/logo.png",
+      gradient: "from-orange-600 to-red-700",
+    },
+    {
       id: 1,
       title: "10 Essential Tips for Modern Web Development",
       slug: "10-essential-tips-for-modern-web-development",
@@ -117,6 +130,7 @@ const Blog = () => {
     "Cloud & DevOps",
     "Technology",
     "Design",
+    "Payments & FinTech",
   ];
 
   const [selectedCategory, setSelectedCategory] = useState("All Posts");
