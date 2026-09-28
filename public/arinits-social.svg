@@ -1,10 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 200" role="img" aria-label="ARINITS infinity icon"><defs>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="ARINITS Quantum Infinity Loop social preview"><defs>
   <linearGradient id="left" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#E65100"/><stop offset="45%" stop-color="#FF6D00"/><stop offset="100%" stop-color="#FFA000"/></linearGradient>
   <linearGradient id="right" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#FF9100"/><stop offset="55%" stop-color="#FF6D00"/><stop offset="100%" stop-color="#DD2C00"/></linearGradient>
   <linearGradient id="cross" x1="30%" y1="0%" x2="70%" y2="100%"><stop offset="0%" stop-color="#FFB300"/><stop offset="50%" stop-color="#FF7A00"/><stop offset="100%" stop-color="#D84315"/></linearGradient>
-</defs><g transform="translate(20 0)"><g fill="none" stroke-width="26" stroke-linecap="round" stroke-linejoin="round">
+</defs><rect width="1200" height="630" fill="#0B0F17"/><g transform="translate(400 35) scale(2)"><g fill="none" stroke-width="26" stroke-linecap="round" stroke-linejoin="round">
  <path d="M 100 100 C 60 45, 10 65, 10 100 C 10 135, 60 155, 100 100 Z" stroke="url(#left)"/>
  <path d="M 100 100 C 140 155, 190 135, 190 100 C 190 65, 140 45, 100 100 Z" stroke="url(#right)"/>
  <path d="M 65 72 C 90 92, 110 108, 135 128" stroke="url(#cross)"/>
  <path d="M 100 100 C 135 148, 178 130, 180 100" stroke="#FFFFFF" stroke-opacity=".32" stroke-width="4"/>
-</g></g></svg>
+</g></g><text x="600" y="475" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="95" font-weight="800" letter-spacing="5" fill="#FFFFFF">ARINITS</text><text x="600" y="530" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="600" letter-spacing="8" fill="#CBD5E1">ENTERPRISE TECH &amp; CLOUD</text></svg>
