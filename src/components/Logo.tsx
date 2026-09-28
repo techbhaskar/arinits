@@ -7,21 +7,21 @@ interface LogoProps {
 
 const Logo: React.FC<LogoProps> = ({ className = "", size = "md" }) => {
   const sizeClasses = {
-    sm: "h-12 w-auto",
-    md: "h-16 w-auto",
-    lg: "h-24 w-auto",
+    sm: "w-56 h-14",
+    md: "w-64 h-16",
+    lg: "w-96 h-24",
   };
 
   return (
     <div className={`flex items-center ${className}`}>
       <div className="flex items-center justify-center">
         <img
-          src="/arinits-logo-dark.svg"
+          src="/arinits-logo-dark.jpg"
           alt="ARINITS logo"
-          width="800"
-          height="240"
+          width="1376"
+          height="768"
           decoding="async"
-          className={sizeClasses[size]}
+          className={`${sizeClasses[size]} object-cover rounded-lg`}
         />
       </div>
     </div>
