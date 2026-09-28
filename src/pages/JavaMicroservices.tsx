@@ -2,13 +2,13 @@ import SpecializedService from "../components/SpecializedService";
 
 export default function JavaMicroservices() {
   return <SpecializedService
-    title="Java Spring Boot Microservices Development | ARIN IT Solutions"
+    title="Java Spring Boot Microservices Development | ARINITS"
     description="Design and modernize scalable Java and Spring Boot platforms with domain-driven microservices, Kafka, security, observability, and Kubernetes."
     path="/services/java-microservices"
     keywords="Java microservices development, Spring Boot consulting, Kafka architecture, Kubernetes microservices, Java modernization India"
     eyebrow="Java and Cloud-Native Engineering"
     heading="Java and Spring Boot Microservices That Stay Operable at Scale"
-    introduction="ARIN IT Solutions architects enterprise Java platforms around clear domain boundaries, dependable data ownership, secure APIs, event-driven integration, and production observability. We balance service independence with the operational cost of distributed systems."
+    introduction="ARINITS architects enterprise Java platforms around clear domain boundaries, dependable data ownership, secure APIs, event-driven integration, and production observability. We balance service independence with the operational cost of distributed systems."
     capabilities={[
       { title: "Domain-Driven Service Design", description: "Identify bounded contexts, ownership, contracts, consistency requirements, and team boundaries before decomposing a system into services." },
       { title: "Spring Boot Platform Engineering", description: "Build secured REST APIs, validation, persistence, caching, configuration, resilience, and reusable platform capabilities with modern Java and Spring Boot." },

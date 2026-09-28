@@ -17,7 +17,7 @@ const SEO: React.FC<SEOProps> = ({
   description,
   path = "",
   keywords = "",
-  image = "/logo.png",
+  image = "/arinits-brand.png",
   type = "website",
   publishedTime,
   modifiedTime,
@@ -59,7 +59,7 @@ const SEO: React.FC<SEOProps> = ({
     if (keywords) updateMetaTag("keywords", keywords);
 
     // Open Graph / Facebook
-    updateMetaTag("og:site_name", "ARIN IT Solutions", true);
+    updateMetaTag("og:site_name", "ARINITS", true);
     updateMetaTag("og:type", type, true);
     updateMetaTag("og:title", title, true);
     updateMetaTag("og:description", description, true);

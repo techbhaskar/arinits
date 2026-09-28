@@ -88,7 +88,7 @@ const SoftwareDevelopment = () => {
   return (
     <div className="min-h-screen overflow-x-hidden">
       <SEO
-        title="Software Development Services - ARIN IT Solutions"
+        title="Software Development Services - ARINITS"
         description="Build highly scalable, secure enterprise apps strictly tailored to your business. Transform your workflow with our custom software solutions today!"
         path="/services/software-development"
         keywords="software development, custom software, enterprise applications, API development, legacy modernization"

@@ -24,7 +24,7 @@ const Portfolio = () => {
   return (
     <div className="min-h-screen overflow-x-hidden">
       <SEO
-        title="Portfolio - ARIN IT Solutions"
+        title="Portfolio - ARINITS"
         description="Explore our portfolio of successful projects. See how we've helped businesses transform through innovative tech solutions. Start your project today!"
         path="/portfolio"
         keywords="portfolio, projects, case studies, software development projects, web development portfolio"

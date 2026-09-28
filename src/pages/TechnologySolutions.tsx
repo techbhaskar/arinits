@@ -88,7 +88,7 @@ const TechnologySolutions = () => {
   return (
     <div className="min-h-screen overflow-x-hidden">
       <SEO
-        title="Technology Solutions - ARIN IT Solutions"
+        title="Technology Solutions - ARINITS"
         description="Comprehensive technology solutions including cloud, DevOps, and AI. Transform your infrastructure and contact us today for custom tech solutions!"
         path="/services/technology-solutions"
         keywords="technology solutions, cloud solutions, DevOps, cybersecurity, AI, machine learning"

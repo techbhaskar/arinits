@@ -30,6 +30,6 @@
            Z" 
         fill="#FF5A30"/>
   
-  <!-- ARIN IT text -->
-  <text x="50" y="84" font-family="Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="black">ARIN IT</text>
+  <!-- ARINITS text -->
+  <text x="50" y="84" font-family="Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="black">ARINITS</text>
 </svg>

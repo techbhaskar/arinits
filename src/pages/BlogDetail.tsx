@@ -9,12 +9,12 @@ const blogPosts = [
     slug: "idempotent-payment-apis-prevent-duplicate-charges",
     excerpt:
       "A practical architecture guide to idempotency keys, atomic processing, safe retries, and recovery across payment APIs and event-driven systems.",
-    author: "ARIN IT Solutions",
+    author: "ARINITS",
     date: "September 16, 2026",
     publishedTime: "2026-09-16",
     category: "Payments & FinTech",
     readTime: "12 min read",
-    image: "/logo.png",
+    image: "/arinits-brand.png",
     gradient: "from-orange-600 to-red-700",
     content: `
       <p>A payment client sends a charge request, the payment service commits it, and the network fails before the response reaches the client. The client now has a difficult choice: retry and risk charging twice, or stop and risk telling the customer that a successful payment failed. This uncertainty is normal in distributed systems. A reliable payment API must make retries safe by design.</p>
@@ -124,7 +124,7 @@ const blogPosts = [
       <h2>Architecture decisions for engineering leaders</h2>
       <p>When reviewing a payment platform, ask where the idempotency guarantee begins and ends. Does it protect only the API controller, or does the same business identity reach the processor and asynchronous consumers? Can support teams explain a timed-out payment from the transaction timeline? Can reconciliation detect a provider charge that missed the internal success transition? Can a replay repair state without causing another charge?</p>
 
-      <p>The right design is usually layered: client-generated intent identity, atomic server-side claim, constrained domain transitions, stable downstream references, idempotent consumers, outbox publication, observable recovery, and reconciliation. ARIN applies these controls within its <a href="/services/fintech-payment-solutions">FinTech and payment engineering services</a>, <a href="/services/java-microservices">Java microservices work</a>, and <a href="/solutions/api-integration">enterprise API integration services</a>. To review a specific payment workflow or modernization risk, <a href="/contact">discuss your architecture with ARIN IT Solutions</a>.</p>
+      <p>The right design is usually layered: client-generated intent identity, atomic server-side claim, constrained domain transitions, stable downstream references, idempotent consumers, outbox publication, observable recovery, and reconciliation. ARIN applies these controls within its <a href="/services/fintech-payment-solutions">FinTech and payment engineering services</a>, <a href="/services/java-microservices">Java microservices work</a>, and <a href="/solutions/api-integration">enterprise API integration services</a>. To review a specific payment workflow or modernization risk, <a href="/contact">discuss your architecture with ARINITS</a>.</p>
 
       <h2>Frequently asked questions</h2>
       <h3>Is an idempotency key the same as a transaction ID?</h3>
@@ -377,7 +377,7 @@ const blogPosts = [
     slug: "how-devops-reduces-deployment-time",
     excerpt:
       "Discover the core mechanics of how DevOps practices and automated CI/CD pipelines dramatically decrease software deployment times for modern enterprises.",
-    author: "ARIN IT Solutions",
+    author: "ARINITS",
     date: "March 20, 2025",
     category: "DevOps",
     readTime: "12 min read",
@@ -424,7 +424,7 @@ const blogPosts = [
     slug: "cloud-security-best-practices-for-enterprises",
     excerpt:
       "Secure your digital assets with our ultimate guide to enterprise cloud security. Learn about zero-trust architecture, compliance, and proactive threat detection.",
-    author: "ARIN IT Solutions",
+    author: "ARINITS",
     date: "March 25, 2025",
     category: "Cloud & DevOps",
     readTime: "11 min read",
@@ -491,7 +491,7 @@ const BlogDetail = () => {
   return (
     <div className="min-h-screen overflow-x-hidden">
       <SEO
-        title={`${post.title} | ARIN IT`}
+        title={`${post.title} | ARINITS`}
         description={post.excerpt}
         path={`/blog/${post.slug}`}
         keywords={`${post.category}, ${post.title}, blog, technology`}

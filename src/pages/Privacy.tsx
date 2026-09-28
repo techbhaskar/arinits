@@ -4,8 +4,8 @@ const Privacy = () => {
   return (
     <div className="min-h-screen overflow-x-hidden">
       <SEO
-        title="Privacy Policy - ARIN IT Solutions"
-        description="Privacy policy for ARIN IT Solutions. Learn how we collect, use, and strictly protect your personal information."
+        title="Privacy Policy - ARINITS"
+        description="Privacy policy for ARINITS. Learn how we collect, use, and strictly protect your personal information."
         path="/privacy"
         keywords="privacy policy, data privacy, personal information protection, GDPR compliance, privacy statement"
         robots="noindex, follow"
@@ -57,7 +57,8 @@ const Privacy = () => {
                   1. Introduction
                 </h2>
                 <p>
-                  ARIN IT Solutions ("we", "our", or "us") is committed to
+                  ARINITS, operated by ARIN IT SOLUTIONS PRIVATE LIMITED
+                  ("we", "our", or "us"), is committed to
                   protecting your privacy. This Privacy Policy explains how we
                   collect, use, disclose, and safeguard your information when
                   you visit our website arinits.com. Please read this
@@ -260,7 +261,7 @@ const Privacy = () => {
                 </p>
                 <div className="mt-4 p-4 glass-strong-dark rounded-lg border border-white/20">
                   <p className="text-white">
-                    <strong>ARIN IT Solutions</strong>
+                    <strong>ARINITS (ARIN IT SOLUTIONS PRIVATE LIMITED)</strong>
                   </p>
                   <p className="text-white">
                     <strong>Email:</strong> info@arinits.com

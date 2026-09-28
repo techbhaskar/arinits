@@ -16,7 +16,7 @@ const replaceMeta = (html, selector, value) => html.replace(
 const renderRouteHead = (template, route) => {
   const canonicalPath = route.path === "/" ? "/" : `${route.path}/`;
   const canonical = `${siteUrl}${canonicalPath}`;
-  const image = `${siteUrl}/logo.png`;
+  const image = `${siteUrl}/arinits-brand.png`;
   let html = template
     .replace(/<title>[^<]*<\/title>/i, `<title>${escapeHtml(route.title)}</title>`)
     .replace(/<link rel="canonical" href="[^"]*"\s*\/>/i, `<link rel="canonical" href="${canonical}" />`);
@@ -54,14 +54,14 @@ const renderRouteHead = (template, route) => {
     ...(route.type === "article" ? {
       headline: route.title,
       ...(route.publishedTime ? { datePublished: route.publishedTime, dateModified: route.publishedTime } : {}),
-      author: { "@type": "Organization", name: "ARIN IT Solutions", url: `${siteUrl}/about/` },
-      publisher: { "@type": "Organization", name: "ARIN IT Solutions", url: `${siteUrl}/` },
+      author: { "@type": "Organization", name: "ARINITS", url: `${siteUrl}/about/` },
+      publisher: { "@type": "Organization", name: "ARINITS", url: `${siteUrl}/` },
       mainEntityOfPage: canonical,
     } : {}),
     ...(isServicePage ? {
       provider: {
         "@type": "Organization",
-        name: "ARIN IT Solutions",
+        name: "ARINITS",
         url: `${siteUrl}/`,
       },
       areaServed: route.areaServed || "Worldwide",
@@ -72,7 +72,7 @@ const renderRouteHead = (template, route) => {
         "@type": "Person",
         name: "Bhaskara Rao Arani",
         jobTitle: "CTO & Co-Founder",
-        worksFor: { "@type": "Organization", name: "ARIN IT Solutions", url: `${siteUrl}/` },
+        worksFor: { "@type": "Organization", name: "ARINITS", url: `${siteUrl}/` },
       },
     } : {}),
   };
@@ -100,7 +100,7 @@ try {
     '<meta name="robots" content="index, follow" />',
     '<meta name="robots" content="noindex, follow" />',
   );
-  fallback = fallback.replace(/<title>[^<]*<\/title>/i, "<title>Page Not Found | ARIN IT Solutions</title>");
+  fallback = fallback.replace(/<title>[^<]*<\/title>/i, "<title>Page Not Found | ARINITS</title>");
   copyFileSync(indexFile, fallbackFile);
   writeFileSync(fallbackFile, fallback);
   console.log(`✅ Generated ${seoRoutes.length} indexable route pages and a noindex SPA fallback.`);

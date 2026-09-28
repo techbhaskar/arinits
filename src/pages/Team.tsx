@@ -81,8 +81,8 @@ const Team = () => {
   return (
     <div className="min-h-screen overflow-x-hidden">
       <SEO
-        title="Our Team - ARIN IT Solutions"
-        description="Meet the talented engineers and designers behind ARIN IT Solutions. Discover our expertise and view open positions to join our growing team today!"
+        title="Our Team - ARINITS"
+        description="Meet the talented engineers and designers behind ARINITS. Discover our expertise and view open positions to join our growing team today!"
         path="/team"
         keywords="team, developers, designers, IT consultants, software engineers"
       />

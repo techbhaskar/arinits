@@ -171,7 +171,7 @@ const Home = () => {
   return (
     <div className="overflow-x-hidden">
       <SEO
-        title="Custom Software Development & IT Consulting | ARIN IT"
+        title="Custom Software Development & IT Consulting | ARINITS"
         description="Expert custom software development and strategic IT consulting. We deliver scalable enterprise software solutions. Start your digital transformation!"
         path="/"
         keywords="custom software development, strategic IT consulting, enterprise software, digital transformation, technology solutions"
@@ -671,7 +671,7 @@ const Home = () => {
             Ready to Build Something Amazing?
           </h2>
           <p className="text-xl md:text-2xl text-gray-300 mb-10 max-w-2xl mx-auto">
-            Let's discuss how ARIN IT Solutions can help transform your ideas
+            Let's discuss how ARINITS can help transform your ideas
             into innovative digital solutions that drive business success.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -2,7 +2,7 @@ import SpecializedService from "../components/SpecializedService";
 
 export default function ApplicationModernization() {
   return <SpecializedService
-    title="Legacy Application Modernization Services | ARIN IT Solutions"
+    title="Legacy Application Modernization Services | ARINITS"
     description="Modernize legacy Java and enterprise applications through architecture assessment, modularization, APIs, cloud migration, DevOps, and observability."
     path="/services/application-modernization"
     keywords="legacy application modernization, Java modernization, monolith to microservices, cloud migration consulting, application replatforming"

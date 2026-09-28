@@ -88,7 +88,7 @@ const ITConsulting = () => {
   return (
     <div className="min-h-screen overflow-x-hidden">
       <SEO
-        title="Strategic IT Consulting Services | ARIN IT Solutions"
+        title="Strategic IT Consulting Services | ARINITS"
         description="Get strategic guidance on technology architecture that drives sustained business growth and digital transformation. Book your IT consultation today!"
         path="/services/it-consulting"
         keywords="IT consulting, digital transformation, technology assessment, IT strategy, technology consulting"

@@ -88,7 +88,7 @@ const WebDevelopment = () => {
   return (
     <div className="min-h-screen overflow-x-hidden">
       <SEO
-        title="Custom Web Development Services | ARIN IT Solutions"
+        title="Custom Web Development Services | ARINITS"
         description="We architect highly responsive, fast websites designed to continually convert visitors into customers. Get your free custom web consultation today!"
         path="/services/web-development"
         keywords="web development, responsive web design, e-commerce, progressive web apps, CMS development"

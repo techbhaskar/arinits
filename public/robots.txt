@@ -1,4 +1,4 @@
-# robots.txt for ARIN IT Solutions
+# robots.txt for ARINITS
 # https://arinits.com
 
 User-agent: *

@@ -1,7 +1,7 @@
 import { readFileSync, existsSync } from "fs";
 import { join } from "path";
 
-// IndexNow configuration for ARIN IT Solutions
+// IndexNow configuration for ARINITS
 const key = "a6c5b4d3e2f1a0b9c8d7e6f5a4b3c2d1";
 const host = "arinits.com";
 const keyLocation = `https://${host}/${key}.txt`;

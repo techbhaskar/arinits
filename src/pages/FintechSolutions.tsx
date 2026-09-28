@@ -2,7 +2,7 @@ import SpecializedService from "../components/SpecializedService";
 
 export default function FintechSolutions() {
   return <SpecializedService
-    title="FinTech and Payment Software Development | ARIN IT Solutions"
+    title="FinTech and Payment Software Development | ARINITS"
     description="Engineer secure payment, wallet, reconciliation, merchant, case-management, and FinTech platforms with resilient APIs and auditable transaction workflows."
     path="/services/fintech-payment-solutions"
     keywords="fintech software development India, payment platform development, reconciliation software, wallet development, payment microservices"

@@ -4,10 +4,10 @@ const Terms = () => {
   return (
     <div className="min-h-screen overflow-x-hidden">
       <SEO
-        title="Terms of Service - ARIN IT Solutions"
-        description="Read the terms of service for the ARIN IT Solutions website, custom software development services, and technology consulting."
+        title="Terms of Service - ARINITS"
+        description="Read the terms of service for the ARINITS website, custom software development services, and technology consulting."
         path="/terms"
-        keywords="terms of service, terms and conditions, ARIN IT Solutions terms, website terms, legal terms"
+        keywords="terms of service, terms and conditions, ARINITS terms, website terms, legal terms"
         robots="noindex, follow"
       />
 
@@ -57,7 +57,8 @@ const Terms = () => {
                   1. Agreement to Terms
                 </h2>
                 <p>
-                  By accessing and using the ARIN IT Solutions website
+                  By accessing and using the ARINITS website, operated by
+                  ARIN IT SOLUTIONS PRIVATE LIMITED,
                   (arinits.com), you accept and agree to be bound by the
                   terms and provision of this agreement. If you do not agree to
                   abide by the above, please do not use this service.
@@ -70,7 +71,7 @@ const Terms = () => {
                 </h2>
                 <p>
                   Permission is granted to temporarily download one copy of the
-                  materials on ARIN IT Solutions' website for personal,
+                  materials on ARINITS' website for personal,
                   non-commercial transitory viewing only. This is the grant of a
                   license, not a transfer of title, and under this license you
                   may not:
@@ -101,7 +102,7 @@ const Terms = () => {
                   3. Services
                 </h2>
                 <p>
-                  ARIN IT Solutions provides software development, IT
+                  ARINITS provides software development, IT
                   consulting, web development, app development, and related
                   technology services. All services are subject to separate
                   service agreements that will detail the specific terms,
@@ -114,8 +115,8 @@ const Terms = () => {
                   4. Disclaimer
                 </h2>
                 <p>
-                  The materials on ARIN IT Solutions' website are provided on an
-                  'as is' basis. ARIN IT Solutions makes no warranties,
+                  The materials on ARINITS' website are provided on an
+                  'as is' basis. ARINITS makes no warranties,
                   expressed or implied, and hereby disclaims and negates all
                   other warranties including, without limitation, implied
                   warranties or conditions of merchantability, fitness for a
@@ -129,11 +130,11 @@ const Terms = () => {
                   5. Limitations
                 </h2>
                 <p>
-                  In no event shall ARIN IT Solutions or its suppliers be liable
+                  In no event shall ARINITS or its suppliers be liable
                   for any damages (including, without limitation, damages for
                   loss of data or profit, or due to business interruption)
                   arising out of the use or inability to use the materials on
-                  ARIN IT Solutions' website, even if ARIN IT Solutions or an
+                  ARINITS' website, even if ARINITS or an
                   authorized representative has been notified orally or in
                   writing of the possibility of such damage.
                 </p>
@@ -144,10 +145,10 @@ const Terms = () => {
                   6. Accuracy of Materials
                 </h2>
                 <p>
-                  The materials appearing on ARIN IT Solutions' website could
+                  The materials appearing on ARINITS' website could
                   include technical, typographical, or photographic errors. ARIN
                   IT Solutions does not warrant that any of the materials on its
-                  website are accurate, complete, or current. ARIN IT Solutions
+                  website are accurate, complete, or current. ARINITS
                   may make changes to the materials contained on its website at
                   any time without notice.
                 </p>
@@ -156,10 +157,10 @@ const Terms = () => {
               <section>
                 <h2 className="text-2xl font-bold text-white mb-4">7. Links</h2>
                 <p>
-                  ARIN IT Solutions has not reviewed all of the sites linked to
+                  ARINITS has not reviewed all of the sites linked to
                   its website and is not responsible for the contents of any
                   such linked site. The inclusion of any link does not imply
-                  endorsement by ARIN IT Solutions of the site. Use of any such
+                  endorsement by ARINITS of the site. Use of any such
                   linked website is at the user's own risk.
                 </p>
               </section>
@@ -169,7 +170,7 @@ const Terms = () => {
                   8. Modifications
                 </h2>
                 <p>
-                  ARIN IT Solutions may revise these terms of service for its
+                  ARINITS may revise these terms of service for its
                   website at any time without notice. By using this website you
                   are agreeing to be bound by the then current version of these
                   terms of service.

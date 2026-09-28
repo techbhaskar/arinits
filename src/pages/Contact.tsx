@@ -36,10 +36,10 @@ const Contact = () => {
   return (
     <div className="min-h-screen overflow-x-hidden">
       <SEO
-        title="Contact Us - ARIN IT Solutions"
-        description="Get in touch with ARIN IT Solutions. Contact us for custom software development, IT consulting, and enterprise technology solutions today!"
+        title="Contact Us - ARINITS"
+        description="Get in touch with ARINITS. Contact us for custom software development, IT consulting, and enterprise technology solutions today!"
         path="/contact"
-        keywords="contact ARIN IT, software development contact, IT consulting contact"
+        keywords="contact ARINITS, software development contact, IT consulting contact"
       />
 
       {/* Hero Section */}

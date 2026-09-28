@@ -10,11 +10,11 @@ const Blog = () => {
       slug: "idempotent-payment-apis-prevent-duplicate-charges",
       excerpt:
         "A practical architecture guide to idempotency keys, atomic processing, safe retries, and recovery across payment APIs and event-driven systems.",
-      author: "ARIN IT Solutions",
+      author: "ARINITS",
       date: "September 16, 2026",
       category: "Payments & FinTech",
       readTime: "12 min read",
-      image: "/logo.png",
+      image: "/arinits-brand.png",
       gradient: "from-orange-600 to-red-700",
     },
     {
@@ -101,7 +101,7 @@ const Blog = () => {
       slug: "how-devops-reduces-deployment-time",
       excerpt:
         "Discover the core mechanics of how DevOps practices and automated CI/CD pipelines dramatically decrease software deployment times for modern enterprises.",
-      author: "ARIN IT Solutions",
+      author: "ARINITS",
       date: "March 20, 2024",
       category: "DevOps",
       readTime: "12 min read",
@@ -114,7 +114,7 @@ const Blog = () => {
       slug: "cloud-security-best-practices-for-enterprises",
       excerpt:
         "Secure your digital assets with our ultimate guide to enterprise cloud security. Learn about zero-trust architecture, compliance, and proactive threat detection.",
-      author: "ARIN IT Solutions",
+      author: "ARINITS",
       date: "March 25, 2024",
       category: "Cloud & DevOps",
       readTime: "11 min read",
@@ -143,7 +143,7 @@ const Blog = () => {
   return (
     <div className="min-h-screen overflow-x-hidden">
       <SEO
-        title="Blog - ARIN IT Solutions"
+        title="Blog - ARINITS"
         description="Insights, tutorials, and best practices on software development, technology trends, and digital transformation. Read our latest articles today!"
         path="/blog"
         keywords="blog, technology blog, software development blog, IT consulting blog, tech insights"

@@ -1,6 +1,6 @@
-# ARIN IT Solutions Website
+# ARINITS Website
 
-A premium, glassmorphic static website for ARIN IT Solutions - a software development and consulting company.
+A premium, glassmorphic static website for ARINITS - a software development and consulting company.
 
 ## Features
 

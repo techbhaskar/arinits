@@ -10,7 +10,7 @@ type Page = {
 
 const pages: Record<string, Page> = {
   "/industries/fintech": {
-    title: "FinTech Software Engineering Company | ARIN IT Solutions",
+    title: "FinTech Software Engineering Company | ARINITS",
     description: "Build resilient payment, banking, wallet, reconciliation, lending, and financial operations platforms with experienced FinTech engineers.",
     keywords: "fintech software engineering, payment platform company India, banking software development, fintech Hyderabad",
     eyebrow: "Industry Expertise", heading: "FinTech Platforms Built for Control, Reliability and Change",
@@ -27,7 +27,7 @@ const pages: Record<string, Page> = {
     ], links: [{ to: "/services/fintech-payment-solutions", label: "FinTech and payment services" }, { to: "/solutions/payment-reconciliation", label: "Payment reconciliation" }, { to: "/services/java-microservices", label: "Java microservices" }],
   },
   "/solutions/payment-reconciliation": {
-    title: "Payment Reconciliation Software Solutions | ARIN IT",
+    title: "Payment Reconciliation Software Solutions | ARINITS",
     description: "Design automated payment reconciliation, settlement matching, exception management, audit trails, and operational reporting for FinTech platforms.",
     keywords: "payment reconciliation software, settlement reconciliation, transaction matching, fintech exception management",
     eyebrow: "Payment Operations", heading: "Reconciliation That Turns Transaction Differences Into Actionable Work",
@@ -41,7 +41,7 @@ const pages: Record<string, Page> = {
     links: [{ to: "/industries/fintech", label: "FinTech expertise" }, { to: "/services/fintech-payment-solutions", label: "Payment engineering" }, { to: "/contact", label: "Discuss reconciliation modernization" }],
   },
   "/solutions/api-integration": {
-    title: "Enterprise API Integration Services | ARIN IT Solutions",
+    title: "Enterprise API Integration Services | ARINITS",
     description: "Connect enterprise, payment, SaaS, and legacy platforms through secure APIs, events, webhooks, adapters, and observable integration workflows.",
     keywords: "enterprise API integration, REST API development, webhook integration, legacy system integration",
     eyebrow: "Enterprise Integration", heading: "APIs and Integrations Designed for Change and Failure",
@@ -55,7 +55,7 @@ const pages: Record<string, Page> = {
     links: [{ to: "/services/software-development", label: "Custom software" }, { to: "/technologies/kafka", label: "Kafka engineering" }, { to: "/services/application-modernization", label: "Application modernization" }],
   },
   "/solutions/platform-engineering": {
-    title: "Platform Engineering Services | ARIN IT Solutions",
+    title: "Platform Engineering Services | ARINITS",
     description: "Improve developer delivery with secure internal platforms, golden paths, CI/CD, Kubernetes, observability, and self-service infrastructure.",
     keywords: "platform engineering services, internal developer platform, Kubernetes platform, developer experience",
     eyebrow: "Engineering Enablement", heading: "Internal Platforms That Make the Safe Path the Easy Path",
@@ -69,7 +69,7 @@ const pages: Record<string, Page> = {
     links: [{ to: "/devops-services", label: "DevOps services" }, { to: "/technologies/kubernetes", label: "Kubernetes expertise" }, { to: "/cloud-solutions", label: "Cloud solutions" }],
   },
   "/technologies/spring-boot": {
-    title: "Spring Boot Development and Consulting | ARIN IT",
+    title: "Spring Boot Development and Consulting | ARINITS",
     description: "Build secure enterprise APIs and microservices with Java, Spring Boot, Spring Security, data access, testing, observability, and cloud deployment.",
     keywords: "Spring Boot development company, Java Spring consulting, enterprise API development, Spring microservices",
     eyebrow: "Technology Expertise", heading: "Enterprise Spring Boot Engineering Beyond Basic REST APIs",
@@ -83,7 +83,7 @@ const pages: Record<string, Page> = {
     links: [{ to: "/services/java-microservices", label: "Java microservices" }, { to: "/technologies/kafka", label: "Kafka" }, { to: "/portfolio/enterprise-microservices-platform", label: "Microservices case study" }],
   },
   "/technologies/kafka": {
-    title: "Apache Kafka Consulting and Event-Driven Architecture | ARIN IT",
+    title: "Apache Kafka Consulting and Event-Driven Architecture | ARINITS",
     description: "Design reliable Kafka platforms with event contracts, partitioning, consumer groups, idempotency, retries, schema evolution, and observability.",
     keywords: "Kafka consulting, event driven architecture, Kafka microservices, Kafka payment processing",
     eyebrow: "Technology Expertise", heading: "Kafka Architectures Built Around Delivery Semantics and Ownership",
@@ -97,7 +97,7 @@ const pages: Record<string, Page> = {
     links: [{ to: "/services/java-microservices", label: "Java microservices" }, { to: "/solutions/api-integration", label: "API and integration" }, { to: "/industries/fintech", label: "FinTech systems" }],
   },
   "/technologies/kubernetes": {
-    title: "Kubernetes Consulting and Cloud-Native Platforms | ARIN IT",
+    title: "Kubernetes Consulting and Cloud-Native Platforms | ARINITS",
     description: "Run secure, observable and resilient applications on Kubernetes with workload design, autoscaling, deployment automation, policy, and recovery."
     ,keywords: "Kubernetes consulting, cloud native platform, Docker Kubernetes services, Kubernetes India",
     eyebrow: "Technology Expertise", heading: "Kubernetes Platforms Designed for Operability, Not YAML Volume",
@@ -111,11 +111,11 @@ const pages: Record<string, Page> = {
     links: [{ to: "/solutions/platform-engineering", label: "Platform engineering" }, { to: "/devops-services", label: "DevOps" }, { to: "/services/application-modernization", label: "Application modernization" }],
   },
   "/locations/software-development-company-hyderabad": {
-    title: "Software Development Company in Hyderabad | ARIN IT",
+    title: "Software Development Company in Hyderabad | ARINITS",
     description: "Work with a Hyderabad software development company for enterprise applications, Java microservices, cloud platforms, web products, and modernization.",
     keywords: "software development company in Hyderabad, custom software Hyderabad, enterprise software company Hyderabad, software developers Hyderabad",
     eyebrow: "Hyderabad Software Engineering", heading: "Software Development Company in Hyderabad for Complex Business Systems",
-    intro: "ARIN IT Solutions helps Hyderabad businesses and distributed product teams turn operational requirements into secure, maintainable software. Our engineering focus spans enterprise applications, Java and Spring Boot platforms, cloud-native services, integrations, and modernization programs where reliability matters as much as delivery speed.",
+    intro: "ARINITS helps Hyderabad businesses and distributed product teams turn operational requirements into secure, maintainable software. Our engineering focus spans enterprise applications, Java and Spring Boot platforms, cloud-native services, integrations, and modernization programs where reliability matters as much as delivery speed.",
     sections: [
       { title: "Custom software for Hyderabad businesses", text: "We design around the workflow, controls, users, and integrations that make each business different instead of forcing requirements into a generic product.", points: ["Enterprise web applications and internal platforms", "Customer, partner and operations portals", "Workflow, reporting and case-management systems", "Secure API and third-party integrations"] },
       { title: "Architecture and modernization", text: "ARIN supports both new product engineering and the careful evolution of existing systems.", points: ["Java and Spring Boot application architecture", "Monolith assessment and incremental modernization", "Microservices and event-driven integration", "Cloud, containers, CI/CD and observability"] },
@@ -129,11 +129,11 @@ const pages: Record<string, Page> = {
     links: [{ to: "/services/software-development", label: "Software development services" }, { to: "/services/application-modernization", label: "Application modernization" }, { to: "/portfolio", label: "View engineering work" }],
   },
   "/locations/fintech-development-company-india": {
-    title: "FinTech Development Company in India | ARIN IT Solutions",
+    title: "FinTech Development Company in India | ARINITS",
     description: "Build payment, reconciliation, wallet, merchant, banking integration, and financial operations software with an experienced FinTech development company in India.",
     keywords: "fintech development company India, payment software development India, banking software company India, fintech app developers India",
     eyebrow: "FinTech Engineering in India", heading: "FinTech Development Company in India for Reliable Money-Movement Platforms",
-    intro: "ARIN IT Solutions engineers FinTech systems around transaction integrity, auditability, security, and operational control. We help Indian and global teams build or modernize payment services, reconciliation workflows, merchant platforms, integrations, and supporting cloud-native capabilities without treating compliance-sensitive workflows as ordinary CRUD applications.",
+    intro: "ARINITS engineers FinTech systems around transaction integrity, auditability, security, and operational control. We help Indian and global teams build or modernize payment services, reconciliation workflows, merchant platforms, integrations, and supporting cloud-native capabilities without treating compliance-sensitive workflows as ordinary CRUD applications.",
     sections: [
       { title: "Payment and financial platform capabilities", text: "We model complete transaction lifecycles and the operational processes needed when external systems disagree or fail.", points: ["Payment initiation, status, refund and reversal workflows", "Merchant, wallet and partner integration services", "Reconciliation, settlement and exception management", "Case management, reporting and audit timelines"] },
       { title: "Controls built into the architecture", text: "Financial correctness depends on explicit controls across APIs, messaging, data, and operations.", points: ["Idempotent APIs and duplicate-payment protection", "Authentication, authorization and data boundaries", "Ledger-aware state transitions and audit events", "Retries, compensation, reconciliation and recovery"] },
@@ -147,11 +147,11 @@ const pages: Record<string, Page> = {
     links: [{ to: "/industries/fintech", label: "FinTech engineering expertise" }, { to: "/services/fintech-payment-solutions", label: "Payment software services" }, { to: "/solutions/payment-reconciliation", label: "Reconciliation solutions" }],
   },
   "/locations/java-consulting-services-hyderabad": {
-    title: "Java Consulting Services in Hyderabad | ARIN IT Solutions",
+    title: "Java Consulting Services in Hyderabad | ARINITS",
     description: "Get Java consulting in Hyderabad for Spring Boot architecture, microservices, Kafka, performance, modernization, cloud deployment, and production reliability.",
     keywords: "Java consulting services Hyderabad, Spring Boot consultant Hyderabad, Java microservices company Hyderabad, Java architect Hyderabad",
     eyebrow: "Java Expertise in Hyderabad", heading: "Java Consulting Services in Hyderabad for Modern Enterprise Platforms",
-    intro: "ARIN IT Solutions provides hands-on Java architecture and engineering support for teams building or modernizing business-critical platforms. We combine deep Java and Spring Boot experience with practical knowledge of microservices, Kafka, databases, security, cloud infrastructure, observability, and production incident prevention.",
+    intro: "ARINITS provides hands-on Java architecture and engineering support for teams building or modernizing business-critical platforms. We combine deep Java and Spring Boot experience with practical knowledge of microservices, Kafka, databases, security, cloud infrastructure, observability, and production incident prevention.",
     sections: [
       { title: "Architecture and technical assessment", text: "We make current constraints and target decisions explicit before recommending a rewrite, migration, or new service boundary.", points: ["Application and dependency assessment", "Domain boundaries and modular architecture", "API, data and event-contract reviews", "Performance, security and reliability risks"] },
       { title: "Spring Boot and microservices engineering", text: "Consulting can extend from recommendations into implementation, reviews, and enablement for your team.", points: ["Spring Boot APIs and service architecture", "Kafka events, outbox patterns and idempotency", "OAuth 2.0, OIDC and authorization", "Testing, database design and transaction boundaries"] },

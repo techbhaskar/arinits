@@ -12,7 +12,7 @@ const Footer = () => {
           <div className="col-span-1 md:col-span-2">
             <Logo size="sm" />
             <p className="mt-4 text-gray-700 max-w-md">
-              ARIN IT Solutions - Premier software development and consulting
+              ARINITS - Premier software development and consulting
               company delivering innovative technology solutions for businesses
               worldwide.
             </p>
@@ -34,7 +34,7 @@ const Footer = () => {
                   to="/about"
                   className="text-gray-700 hover:text-arin-orange transition-colors"
                 >
-                  About ARIN
+                  About ARINITS
                 </Link>
               </li>
               <li>
@@ -179,7 +179,7 @@ const Footer = () => {
         </div>
 
         <div className="mt-8 pt-8 border-t border-white/30 text-center text-gray-700">
-          <p>&copy; {currentYear} ARIN IT Solutions. All rights reserved.</p>
+          <p>&copy; {currentYear} ARINITS. All rights reserved.</p>
         </div>
       </div>
     </footer>

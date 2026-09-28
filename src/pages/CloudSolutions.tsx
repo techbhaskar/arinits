@@ -5,7 +5,7 @@ const CloudSolutions = () => {
   return (
     <div className="min-h-screen overflow-x-hidden bg-gradient-to-b from-black via-gray-900 to-gray-900">
       <SEO
-        title="Enterprise Cloud Solutions & Migration | ARIN IT"
+        title="Enterprise Cloud Solutions & Migration | ARINITS"
         description="Comprehensive enterprise cloud solutions and migration strategies to accelerate your digital transformation. Contact our cloud experts today!"
         path="/cloud-solutions"
         keywords="cloud solutions, cloud migration, AWS, Azure, enterprise cloud"
@@ -27,7 +27,7 @@ const CloudSolutions = () => {
         <section>
           <h2 className="text-3xl font-bold text-white mb-6">Empowering Your Digital Transformation</h2>
           <p>
-            In today's fast-paced digital economy, adopting robust cloud solutions is no longer a luxury—it is an absolute necessity for enterprise survival and growth. Cloud technology provides the foundational architecture required for incredible scalability, unbreakable security, and global accessibility. At ARIN IT Solutions, we specialize in migrating complex legacy infrastructure to modern, agile cloud environments seamlessly. Our approach ensures zero downtime during migrations and perfectly aligns with your long-term operational goals. By leveraging cloud platforms such as AWS, Microsoft Azure, and Google Cloud, we equip your business with the computational power to process large datasets, deploy applications instantly, and reduce unnecessary capital expenditures on physical hardware.
+            In today's fast-paced digital economy, adopting robust cloud solutions is no longer a luxury—it is an absolute necessity for enterprise survival and growth. Cloud technology provides the foundational architecture required for incredible scalability, unbreakable security, and global accessibility. At ARINITS, we specialize in migrating complex legacy infrastructure to modern, agile cloud environments seamlessly. Our approach ensures zero downtime during migrations and perfectly aligns with your long-term operational goals. By leveraging cloud platforms such as AWS, Microsoft Azure, and Google Cloud, we equip your business with the computational power to process large datasets, deploy applications instantly, and reduce unnecessary capital expenditures on physical hardware.
           </p>
           <p className="mt-4">
             Our cloud modernization strategy extends deeply into your existing development lifecycle. If you want to learn more about how we structure the rest of our consulting pipelines, please read more about our <Link to="/services/it-consulting" className="text-arin-orange hover:underline">Strategic IT Consulting Services</Link>.

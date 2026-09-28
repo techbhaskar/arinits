@@ -5,7 +5,7 @@ const CybersecurityConsulting = () => {
   return (
     <div className="min-h-screen overflow-x-hidden bg-gradient-to-b from-black via-gray-900 to-gray-900">
       <SEO
-        title="Enterprise Cybersecurity Consulting Services | ARIN IT"
+        title="Enterprise Cybersecurity Consulting Services | ARINITS"
         description="Protect your digital assets with advanced cybersecurity consulting, penetration testing, and zero-trust. Audit your security with our team today!"
         path="/cybersecurity-consulting"
         keywords="cybersecurity consulting, penetration testing, zero-trust architecture, cybersecurity threat detection"
@@ -26,7 +26,7 @@ const CybersecurityConsulting = () => {
         <section>
           <h2 className="text-3xl font-bold text-white mb-6">Defending Your Most Valuable Assets</h2>
           <p>
-            In an era where digital threats are becoming increasingly sophisticated, catastrophic data breaches are no longer a matter of 'if', but 'when'. Establishing formidable cybersecurity defenses is paramount protecting your intellectual property, client trust, and bottom line. ARIN IT Solutions provides world-class cybersecurity consulting precisely designed to proactively identify vulnerabilities, implement airtight defensive methodologies, and ensure rapid neutralization of active threats. We do not just react to breaches; we engineer impenetrable perimeters using modern zero-trust architecture principles and comprehensive layered security models that safeguard your critical digital infrastructure around the clock.
+            In an era where digital threats are becoming increasingly sophisticated, catastrophic data breaches are no longer a matter of 'if', but 'when'. Establishing formidable cybersecurity defenses is paramount protecting your intellectual property, client trust, and bottom line. ARINITS provides world-class cybersecurity consulting precisely designed to proactively identify vulnerabilities, implement airtight defensive methodologies, and ensure rapid neutralization of active threats. We do not just react to breaches; we engineer impenetrable perimeters using modern zero-trust architecture principles and comprehensive layered security models that safeguard your critical digital infrastructure around the clock.
           </p>
           <p className="mt-4">
             Security must be integrated deeply into every project. Learn how we lock down the applications we build by exploring our <Link to="/services/web-development" className="text-arin-orange hover:underline">Web Development</Link> division.

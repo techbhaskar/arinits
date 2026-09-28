@@ -87,10 +87,10 @@ const PortfolioDetail = () => {
   return (
     <div className="min-h-screen overflow-x-hidden bg-gradient-to-b from-black via-gray-900 to-gray-900">
       <SEO
-        title={`${project.title} - Case Study | ARIN IT`}
+        title={`${project.title} - Case Study | ARINITS`}
         description={`Read our detailed case study on how we built the ${project.title}. Challenge, Solution, and Results.`}
         path={`/portfolio/${project.slug}`}
-        keywords={`case study, ${project.category.toLowerCase()}, ARIN IT portfolio`}
+        keywords={`case study, ${project.category.toLowerCase()}, ARINITS portfolio`}
       />
 
       {/* Hero Section */}

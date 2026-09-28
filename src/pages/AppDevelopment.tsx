@@ -94,7 +94,7 @@ const AppDevelopment = () => {
   return (
     <div className="min-h-screen overflow-x-hidden">
       <SEO
-        title="Mobile App Development Services | ARIN IT Solutions"
+        title="Mobile App Development Services | ARINITS"
         description="We create powerful custom iOS and Android applications that consistently deliver exceptional user experiences. Contact us to build your app today!"
         path="/services/app-development"
         keywords="app development, mobile app development, iOS development, Android development, React Native, Flutter"

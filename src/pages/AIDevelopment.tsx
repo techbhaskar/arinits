@@ -2,13 +2,13 @@ import SpecializedService from "../components/SpecializedService";
 
 export default function AIDevelopment() {
   return <SpecializedService
-    title="AI Development Company in Hyderabad | ARIN IT Solutions"
+    title="AI Development Company in Hyderabad | ARINITS"
     description="Build production-ready AI agents, RAG applications, enterprise copilots, and intelligent workflows with secure integration and measurable evaluation."
     path="/services/ai-development"
     keywords="AI development company Hyderabad, generative AI development, RAG development, AI agents, enterprise AI consulting"
     eyebrow="AI Engineering"
     heading="Production-Ready AI Applications, Agents and RAG Systems"
-    introduction="ARIN IT Solutions helps enterprises move from AI experiments to dependable software. We design retrieval-augmented generation, agent workflows, contextual memory, policy guardrails, evaluation pipelines, and secure integrations around real business processes."
+    introduction="ARINITS helps enterprises move from AI experiments to dependable software. We design retrieval-augmented generation, agent workflows, contextual memory, policy guardrails, evaluation pipelines, and secure integrations around real business processes."
     capabilities={[
       { title: "Enterprise RAG Applications", description: "Ground language-model responses in approved business knowledge using document ingestion, embeddings, vector retrieval, citations, access controls, and measurable retrieval quality." },
       { title: "AI Agents and Workflow Automation", description: "Design bounded agents that plan, use tools, maintain context, request human approval, and recover safely when a dependency or model call fails." },
