@@ -21,7 +21,7 @@ const Logo: React.FC<LogoProps> = ({ className = "", size = "md" }) => {
           width="1376"
           height="768"
           decoding="async"
-          className={`${sizeClasses[size]} object-cover rounded-lg`}
+          className={`${sizeClasses[size]} object-cover mix-blend-lighten`}
         />
       </div>
     </div>
