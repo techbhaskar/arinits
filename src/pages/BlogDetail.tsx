@@ -4,6 +4,86 @@ import SEO from "../components/SEO";
 // Blog posts data - should match Blog.tsx
 const blogPosts = [
   {
+    id: 10,
+    title: "Payment Reconciliation Architecture: Ledger to Bank",
+    slug: "payment-reconciliation-architecture-ledger-settlement-bank",
+    excerpt: "Design a payment reconciliation workflow that matches internal ledger events, processor settlements, and bank payouts while managing exceptions and safe replay.",
+    author: "ARINITS",
+    date: "September 30, 2026",
+    publishedTime: "2026-09-30",
+    category: "Payments & FinTech",
+    readTime: "10 min read",
+    image: "/arinits-brand.png",
+    gradient: "from-orange-600 to-red-700",
+    content: `
+<p>A payment can be authorized, captured, reported as settled by a processor, and still leave a finance team unable to explain the cash that reached its bank account. Those are different events, recorded by different systems at different times. A reconciliation design must connect them without assuming that a successful API response proves settlement or that a bank deposit equals the sum of yesterday’s sales.</p>
+<p>This guide is for engineering leaders designing or replacing a payment reconciliation workflow. It sets out the records to retain, the matching rules to apply, the exceptions to route to people, and the controls that make a replay safe. The examples are illustrative, not claims about ARINITS client systems.</p>
+
+<h2>Define the questions before designing the pipeline</h2>
+<p>“Is this payment reconciled?” is ambiguous. A useful design separates at least three questions:</p>
+<ul>
+<li><strong>Transaction reconciliation:</strong> does each internal capture, refund, reversal, or chargeback have the expected processor record?</li>
+<li><strong>Settlement reconciliation:</strong> do the processor’s transaction and fee entries explain each settlement batch?</li>
+<li><strong>Bank reconciliation:</strong> does each reported payout correspond to the cash movement on the bank statement?</li>
+</ul>
+<p>These checks operate at different grains. One merchant order may have multiple capture events. One processor batch may contain many transactions plus fees and adjustments. One bank credit may cover a payout batch rather than one customer payment. Adyen’s official <a href="https://docs.adyen.com/reporting/settlement-reconciliation/">settlement reconciliation guide</a> distinguishes transaction-level checks from batch-level matching to bank statements. The distinction applies broadly even when the provider’s file names and identifiers differ.</p>
+
+<h2>Preserve source facts before normalizing them</h2>
+<p>Start with immutable copies of each input: internal ledger postings, processor reports or APIs, and bank statement lines. For every imported file or response, retain source name, merchant account, reporting period, retrieval time, checksum, schema version, and original row reference. A normalized record should point back to that evidence. This allows an investigator to show how a match was reached months later.</p>
+<p>Normalize money as integer minor units with an explicit currency. Record both the business event time and the source’s reporting or batch time, including timezone. Keep gross amount, processor fee, tax, reserve movement, and net amount as separate fields. Do not convert a net bank payout into a fictional individual payment amount.</p>
+<p>Provider documentation illustrates why this matters: Adyen’s <a href="https://docs.adyen.com/reporting/settlement-reconciliation/transaction-level/settlement-details-report">Settlement details report</a> includes settled transactions and their costs, while its <a href="https://docs.adyen.com/reporting/settlement-reconciliation/batch-level/aggregate-settlement-details-report">aggregate report</a> groups credits, debits, and counts by settlement batch and other dimensions. Design adapters around the actual provider contract; do not assume all providers expose the same columns or payout timing.</p>
+
+<h2>Build a durable reconciliation identity</h2>
+<p>A matching engine needs more than a timestamp and amount. Carry stable references through the payment lifecycle wherever integrations permit:</p>
+<ul>
+<li>Merchant order and payment identifiers generated internally.</li>
+<li>Processor payment, capture, refund, dispute, and payout references.</li>
+<li>Merchant account, legal entity, terminal or channel, and currency.</li>
+<li>Settlement batch number and bank statement reference.</li>
+</ul>
+<p>Record relationships explicitly. A payment can have one-to-many captures or refunds; a payout has many settlement entries. A match table should identify the matched source rows, match rule and version, match time, and any human decision. A unique constraint on a provider row identifier prevents the same settlement line from being allocated twice. PostgreSQL’s <a href="https://www.postgresql.org/docs/current/ddl-constraints.html">constraint documentation</a> describes how unique constraints enforce that invariant.</p>
+
+<h2>Match in stages, from strong evidence to weaker evidence</h2>
+<h3>Stage 1: exact transaction references</h3>
+<p>Match internal events to processor events using a stable provider reference, event type, currency, and amount. A captured payment must not silently match a refund with the same amount. For a partial capture or partial refund, match the operation identifier and amount for that specific movement, then verify the total against the original payment.</p>
+<h3>Stage 2: batch composition</h3>
+<p>Rebuild the expected net settlement from the processor’s own batch entries: captured amounts minus refunds, disputes, fees, reserves, and other documented adjustments. Compare this with the processor’s reported payout for the batch. Keep each component visible so a difference can be attributed to a fee or adjustment instead of hidden in a tolerance.</p>
+<h3>Stage 3: payout to bank</h3>
+<p>Match payout reference, account, currency, amount, and expected arrival window to the bank entry. Timing windows are useful for finding candidates, but a date-and-amount match alone should be marked provisional when multiple candidates exist. Some processors issue multiple payouts on the same day; unrelated credits may have the same amount.</p>
+<p>Use configurable, versioned rules. Record whether a result was exact, provisional, or manually resolved. “Close enough” should be a documented exception policy, never a silent default.</p>
+
+<h2>A practical example: why gross sales and bank cash differ</h2>
+<p>Suppose an illustrative settlement batch contains ₹100,000 in captures, ₹4,000 in refunds, ₹1,500 in processing fees, and a ₹500 reserve movement. Its expected net payout is ₹94,000. If the bank receives ₹94,000, the batch-level cash check passes. That does not prove every capture was recorded correctly: a missing ₹2,000 capture and an unrelated extra ₹2,000 entry can cancel each other out. Transaction-level matching must still run.</p>
+<p>Conversely, if the processor reports a ₹94,000 payout but the bank has no corresponding credit yet, the transaction and settlement checks may pass while bank reconciliation remains open. The correct state is “awaiting bank confirmation” until the agreed arrival window expires, then an exception requiring investigation.</p>
+
+<h2>Make exceptions an operational workflow</h2>
+<p>A reconciliation system should name the reason for each unresolved item. Useful categories include missing internal event, missing processor event, amount mismatch, currency mismatch, duplicate source row, unmatched fee, payout timing difference, bank credit missing, and ambiguous candidate match.</p>
+<p>Give each exception an owner, age, severity, evidence bundle, and resolution history. Separate automated retries from human decisions. A late processor report may close an exception automatically; a disputed allocation may need finance approval. Preserve the original variance even after adjustment so an audit can reconstruct what happened.</p>
+<p>Route alerts by money movement and operational risk. A small fee difference might join a daily review queue; a missing high-value payout or duplicate settlement allocation merits immediate escalation. Thresholds must be set by the business and its controls, not copied from another company.</p>
+
+<h2>Design ingestion and replay for failure</h2>
+<p>Files arrive late, APIs paginate, webhooks duplicate, and schemas change. Ingestion should be idempotent: the same file or page can be fetched twice without creating duplicate source rows. Check file completeness and row counts before matching. Quarantine malformed records with a reason; never quietly drop them to make totals balance.</p>
+<p>Use a stable import key such as source, account, file identifier, and row number or provider event ID. Process reconciliation in bounded batches with checkpoints. On a replay, rerun a known rule version against preserved source facts and record any changed result rather than overwriting history. If a match event must be published to another service, commit it with the match state through an outbox; AWS’s <a href="https://docs.aws.amazon.com/prescriptive-guidance/latest/cloud-design-patterns/transactional-outbox.html">transactional outbox guidance</a> explains the dual-write failure it addresses and notes that consumers still need to handle duplicate messages.</p>
+
+<h2>Architecture choices for engineering leaders</h2>
+<p>Before buying or building, test the proposed platform against the real payment flow. Ask whether it handles multiple processors, split captures, partial refunds, fees, reserves, chargebacks, and delayed settlements. Verify how a new report column or changed payout schedule is introduced. Confirm that finance can trace one bank credit back to a batch and then to its source transactions without exporting data into ad hoc spreadsheets.</p>
+<p>Start with a narrow, valuable slice: one provider, one merchant account, and one payout path. Establish source completeness, transaction matching, batch totals, and bank confirmation. Measure unmatched value, exception age, and time to resolution. Add providers and complex edge cases after the first path is explainable end to end.</p>
+<p>ARINITS works on <a href="/solutions/payment-reconciliation/">payment reconciliation and exception workflows</a> as part of its <a href="/services/fintech-payment-solutions/">FinTech engineering services</a>. The same design depends on reliable <a href="/solutions/api-integration/">API and file integrations</a> and clear <a href="/portfolio/">engineering evidence</a>. If you are reviewing a settlement pipeline, <a href="/contact/">contact ARINITS</a> with the systems and failure cases you need to reconcile.</p>
+
+<h2>Frequently asked questions</h2>
+<h3>Can we reconcile payments using only webhooks?</h3>
+<p>Webhooks provide timely event signals, but they do not replace a processor settlement report or bank statement. Use them to update operational state, then reconcile against authoritative settlement and cash records.</p>
+<h3>Should we match on amount and date when provider references are missing?</h3>
+<p>Use amount and date to propose candidates, together with account, currency, event type, and a bounded time window. Treat ambiguous matches as exceptions and obtain stronger evidence before closing them.</p>
+<h3>What is the difference between a timing difference and a mismatch?</h3>
+<p>A timing difference has a known expected event and an agreed arrival window that has not passed. A mismatch has conflicting facts or an overdue missing record. Both need visible states and ageing rules.</p>
+<h3>How do we prevent duplicate reconciliation after re-importing a report?</h3>
+<p>Assign a durable identity to every source row, enforce uniqueness in storage, and make matching operations repeatable. Keep match history and rule versions so a replay is explainable.</p>
+<h3>When is reconciliation complete?</h3>
+<p>Define completion separately for transaction, settlement batch, and bank payout. A payout is fully reconciled when all required source records, adjustments, totals, and bank cash movement are accounted for under approved rules, with no unresolved material exception.</p>
+    `,
+  },
+  {
     id: 9,
     title: "Idempotent Payment APIs: Prevent Duplicate Charges",
     slug: "idempotent-payment-apis-prevent-duplicate-charges",

@@ -5,6 +5,18 @@ import SEO from "../components/SEO";
 const Blog = () => {
   const blogPosts = [
     {
+      id: 10,
+      title: "Payment Reconciliation Architecture: Ledger to Bank",
+      slug: "payment-reconciliation-architecture-ledger-settlement-bank",
+      excerpt: "Design a payment reconciliation workflow that matches internal ledger events, processor settlements, and bank payouts while managing exceptions and safe replay.",
+      author: "ARINITS",
+      date: "September 30, 2026",
+      category: "Payments & FinTech",
+      readTime: "10 min read",
+      image: "/arinits-brand.png",
+      gradient: "from-orange-600 to-red-700",
+    },
+    {
       id: 9,
       title: "Idempotent Payment APIs: Prevent Duplicate Charges",
       slug: "idempotent-payment-apis-prevent-duplicate-charges",
