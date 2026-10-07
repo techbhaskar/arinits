@@ -5,6 +5,18 @@ import SEO from "../components/SEO";
 const Blog = () => {
   const blogPosts = [
     {
+      id: 11,
+      title: "Spring Boot Microservices Observability: A Production Guide",
+      slug: "spring-boot-microservices-observability-production-guide",
+      excerpt: "Design production observability for Spring Boot microservices using useful logs, metrics, traces, service-level objectives, and actionable alerts.",
+      author: "ARINITS",
+      date: "October 7, 2026",
+      category: "Java & Architecture",
+      readTime: "11 min read",
+      image: "/arinits-brand.png",
+      gradient: "from-orange-600 to-red-700",
+    },
+    {
       id: 10,
       title: "Payment Reconciliation Architecture: Ledger to Bank",
       slug: "payment-reconciliation-architecture-ledger-settlement-bank",
@@ -143,6 +155,7 @@ const Blog = () => {
     "Technology",
     "Design",
     "Payments & FinTech",
+    "Java & Architecture",
   ];
 
   const [selectedCategory, setSelectedCategory] = useState("All Posts");

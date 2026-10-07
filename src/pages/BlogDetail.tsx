@@ -4,6 +4,81 @@ import SEO from "../components/SEO";
 // Blog posts data - should match Blog.tsx
 const blogPosts = [
   {
+    id: 11,
+    title: "Spring Boot Microservices Observability: A Production Guide",
+    slug: "spring-boot-microservices-observability-production-guide",
+    excerpt: "Design production observability for Spring Boot microservices using useful logs, metrics, traces, service-level objectives, and actionable alerts.",
+    author: "ARINITS",
+    date: "October 7, 2026",
+    publishedTime: "2026-10-07",
+    category: "Java & Architecture",
+    readTime: "11 min read",
+    image: "/arinits-brand.png",
+    gradient: "from-orange-600 to-red-700",
+    content: `
+<p>A dashboard full of green CPU charts does not prove that a customer request completed correctly. In a distributed Spring Boot platform, one business operation can cross an API gateway, several services, Kafka topics, databases, caches, and third-party APIs. When it fails, engineering teams need to reconstruct what happened, understand the customer impact, and decide whether to retry, compensate, or escalate.</p>
+<p>This guide is for engineering leaders planning observability for new microservices or modernizing an existing Java estate. It explains what to instrument, how to connect signals, which service-level indicators matter, and how to avoid collecting expensive telemetry that does not improve decisions. Examples are illustrative and are not claims about ARINITS client systems.</p>
+
+<h2>Start with business questions, not monitoring tools</h2>
+<p>Observability should answer concrete operational questions: Are customer requests succeeding? Which dependency is increasing latency? Did a deployment change an error rate? Is a Kafka consumer falling behind? Can support trace a payment or order without exposing sensitive data?</p>
+<p>Define critical user journeys before choosing dashboards. For a payment flow, that might include creating an intent, authorizing it, receiving an asynchronous provider event, posting the result, and reconciling settlement. For an enterprise workflow, it may be sign-in, approval, document generation, and notification. Each journey needs an owner, expected outcome, latency expectation, and failure policy.</p>
+<p>Spring Boot defines observability around three pillars: logging, metrics, and traces. Its official <a href="https://docs.spring.io/spring-boot/reference/actuator/observability.html">observability documentation</a> explains that metrics and traces are built on Micrometer Observation. That common observation model is useful because teams can instrument meaningful application operations once and export telemetry through their chosen backend.</p>
+
+<h2>Give every service a consistent telemetry identity</h2>
+<p>Every signal should identify the service, environment, version, and region or cluster. Without consistent resource attributes, a query for one release becomes a manual exercise. Use the same service name in deployment configuration, logs, metrics, traces, dashboards, and ownership catalogues.</p>
+<p>Propagate trace context across synchronous HTTP calls and asynchronous messages. Include trace and span identifiers in structured logs so an engineer can move from an error event to the distributed trace. Preserve a business correlation identifier, such as an order or payment reference, only when it is safe and useful. Do not put card data, access tokens, personal information, or full request bodies into labels or logs.</p>
+<p>OpenTelemetry describes traces, metrics, and logs as related telemetry signals. Its official <a href="https://opentelemetry.io/docs/concepts/signals/">signals documentation</a> provides the vendor-neutral model behind this correlation. Adopting standard semantic conventions reduces custom naming and makes future backend changes less disruptive.</p>
+
+<h2>Design logs for investigation</h2>
+<p>Structured logs should describe state changes and decisions, not narrate every line of code. A useful event normally contains timestamp, severity, service and version, operation, outcome, trace identifier, safe business reference, dependency, duration, and a stable error code. The error code should map to an operational response; a raw exception message is rarely enough.</p>
+<p>Log once at the layer that can add the most context. If a repository logs an exception, a service logs it again, and a controller logs it a third time, alert counts and storage costs rise without adding evidence. Preserve stack traces for unexpected defects, but handle expected validation and domain failures as structured outcomes.</p>
+<p>Define retention by purpose. Short-lived high-volume application logs, longer-lived audit evidence, and security events have different access and retention needs. Redact secrets at the source, restrict production access, and test log statements with the same care as API responses.</p>
+
+<h2>Choose metrics that lead to action</h2>
+<p>Begin with request rate, error rate, and latency for entry points, then add saturation for constrained resources such as thread pools, database connections, CPU, memory, and Kafka consumers. Measure dependencies separately so a database slowdown is not hidden inside total request time.</p>
+<p>Micrometer timers and counters are useful only when their tags stay bounded. A tag such as HTTP method has a small known set; customer ID, order ID, exception message, and raw URL can create unbounded cardinality. High-cardinality labels increase memory, storage, and query costs. Put unique identifiers in logs or traces instead of metric dimensions.</p>
+<h3>Measure business outcomes as well as infrastructure</h3>
+<p>Technical health and business correctness are different. Add controlled metrics for completed and failed workflows, retries, timeouts, duplicate requests, reconciliation exceptions, dead-letter records, and manual interventions. Use a small, stable set of outcome and reason codes. These measurements help leaders distinguish a healthy server from a failing customer journey.</p>
+
+<h2>Use traces to explain latency and dependency failure</h2>
+<p>A distributed trace should show the critical path through the request: inbound API, internal services, database operations, message publication, and external calls. Name spans after stable operations, not variable URLs. Add attributes that support grouping and diagnosis, while avoiding sensitive or unbounded data.</p>
+<p>Trace propagation becomes more important at asynchronous boundaries. When a producer publishes a Kafka record, propagate context in supported headers and create consumer spans when work resumes. Also retain the business message identifier for deduplication and recovery; a trace is diagnostic evidence, not a durable business key.</p>
+<p>Sampling is a cost and coverage decision. Head sampling chooses early and is predictable, but can discard rare failures. Tail sampling can retain traces based on outcome or latency after more of the trace is known, but needs additional collector capacity and careful failure handling. Keep all relevant errors and slow requests where policy and cost permit, and use lower sampling for routine success traffic.</p>
+
+<h2>Turn service-level objectives into an operating contract</h2>
+<p>A service-level indicator measures behavior users experience. Examples include the proportion of valid requests completed successfully, the proportion completed below a latency threshold, or the freshness of a processed event. A service-level objective sets the target for that indicator over a defined window.</p>
+<p>Use objectives to prioritize reliability work and deployment risk. If a service is consuming its error budget too quickly, teams can slow risky releases and focus on recovery. If it has ample budget, normal delivery can continue. Document exclusions narrowly; removing every dependency failure from the indicator produces a target that customers do not recognize.</p>
+<p>Alert on symptoms and error-budget consumption rather than every transient technical event. A short, fast burn and a longer, slower burn catch different incidents. Route an alert only when the recipient can act on it, and include service ownership, affected journey, current impact, dashboard, recent deployments, and a runbook.</p>
+
+<h2>A practical Spring Boot implementation path</h2>
+<h3>1. Establish the runtime foundation</h3>
+<p>Enable Spring Boot Actuator and expose only the endpoints needed through a protected management interface. Configure Micrometer for metrics and tracing, then export through OpenTelemetry Protocol where it fits the platform standard. The OpenTelemetry project documents both a Java agent and a <a href="https://opentelemetry.io/docs/zero-code/java/spring-boot-starter/">Spring Boot starter</a>; evaluate the agent for broad automatic coverage and the starter when Spring configuration and application packaging need tighter control.</p>
+<h3>2. Add domain observations</h3>
+<p>Automatic HTTP and database spans reveal infrastructure behavior, but they do not explain why a business operation failed. Add observations around a few high-value workflows. Record stable outcome codes and durations, then attach safe contextual attributes. Avoid instrumenting every private method.</p>
+<h3>3. Validate propagation and failure paths</h3>
+<p>Run an end-to-end request through gateway, services, database, Kafka, and a stubbed external dependency. Confirm that trace context is continuous, logs contain the trace identifier, metrics use bounded labels, and errors retain enough evidence. Repeat for timeouts, retries, circuit breakers, consumer redelivery, and partial failure.</p>
+<h3>4. Build one journey dashboard and alert</h3>
+<p>Start with a critical journey rather than dozens of component dashboards. Show traffic, successful outcomes, latency percentiles, dependency failures, saturation, and the current service-level objective. Test the alert during a controlled failure and verify that the on-call engineer can reach a diagnosis from the linked evidence.</p>
+
+<h2>Architecture decisions for engineering leaders</h2>
+<p>Decide who owns instrumentation standards, collectors, storage, dashboards, and incident response. A central platform team can provide libraries, conventions, deployment defaults, and cost controls; service teams still own the meaning of domain outcomes and their operational response.</p>
+<p>Review telemetry as part of architecture and release readiness. A production-ready service should identify its critical journeys, dependencies, failure modes, indicators, objectives, alert owner, and recovery steps. Observability is not complete when data reaches a vendor. It is complete when teams can make a timely, evidence-based decision during failure.</p>
+<p>ARINITS applies these principles through its <a href="/services/java-microservices/">Java and Spring Boot microservices services</a>, <a href="/services/application-modernization/">application modernization work</a>, and <a href="/solutions/platform-engineering/">platform engineering services</a>. See relevant implementation patterns in the <a href="/portfolio/enterprise-microservices-platform/">enterprise microservices portfolio example</a>, or <a href="/contact/">contact ARINITS</a> to review a specific production-readiness gap.</p>
+
+<h2>Frequently asked questions</h2>
+<h3>What is the difference between monitoring and observability?</h3>
+<p>Monitoring tracks known conditions through selected measurements and alerts. Observability is the broader ability to investigate system behavior from its emitted evidence, including failures that were not anticipated when a dashboard was created. A mature platform needs both.</p>
+<h3>Should Spring Boot services use the OpenTelemetry Java agent or starter?</h3>
+<p>The Java agent provides broad automatic instrumentation without changing application code. The Spring Boot starter offers configuration within the application and may suit environments where agent deployment is difficult or Spring integration needs tighter control. Test library compatibility, propagation, startup impact, and operational ownership before standardizing.</p>
+<h3>Are logs, metrics, and traces all required?</h3>
+<p>They answer different questions. Metrics efficiently show trends and trigger alerts, traces reveal the path and latency of distributed work, and logs retain detailed events and decisions. Smaller systems may begin with fewer signals, but critical distributed journeys benefit from correlation across all three.</p>
+<h3>How can we control observability cost?</h3>
+<p>Reduce unbounded metric labels, define log levels and retention, sample routine traces, keep errors and slow paths selectively, filter noisy health traffic, and review telemetry that nobody queries. Cost controls should preserve evidence needed for security, audits, and critical incident recovery.</p>
+<h3>What should be checked before a microservice goes live?</h3>
+<p>Verify service identity, trace propagation, structured and redacted logs, bounded metrics, dependency visibility, critical-journey indicators, a realistic objective, actionable alerts, ownership, and tested runbooks. Exercise at least one timeout, one dependency failure, and one asynchronous replay scenario before release.</p>
+    `,
+  },
+  {
     id: 10,
     title: "Payment Reconciliation Architecture: Ledger to Bank",
     slug: "payment-reconciliation-architecture-ledger-settlement-bank",
