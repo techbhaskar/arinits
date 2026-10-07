@@ -4,6 +4,80 @@ import SEO from "../components/SEO";
 // Blog posts data - should match Blog.tsx
 const blogPosts = [
   {
+    id: 12,
+    title: "Java Monolith Modernization: A Safe Migration Plan",
+    slug: "java-monolith-modernization-safe-migration-plan",
+    excerpt: "Plan incremental Java modernization with clear service boundaries, data ownership, safe cutover, rollback controls, and production validation.",
+    author: "ARINITS",
+    date: "October 7, 2026",
+    publishedTime: "2026-10-07",
+    category: "Java & Architecture",
+    readTime: "10 min read",
+    image: "/arinits-brand.png",
+    gradient: "from-orange-600 to-red-700",
+    content: `
+
+<p>Replacing a mature Java application is rarely just a framework upgrade. Its database, scheduled jobs, integrations, and undocumented rules may support years of business activity. Splitting the code into services can move that complexity onto the network without making the business easier to operate.</p>
+<p>This guide helps engineering leaders plan incremental modernization while preserving a working product. It focuses on migration decisions and evidence required before each cutover. The examples are illustrative; they do not describe an ARINITS client engagement.</p>
+
+<h2>Choose the business outcome before the target architecture</h2>
+<p>Start with a specific constraint: releases require coordinated downtime, one workload consumes too much capacity, an unsupported runtime creates maintenance risk, or changes in one domain repeatedly break another. Establish a baseline for release frequency, recovery time, production defects, latency, and operating cost. Define how the proposed change will improve the constraint.</p>
+<p>A modular monolith may solve ownership and coupling problems with fewer operational demands. Microservices become useful when a capability needs independent deployment, scaling, security boundaries, or team ownership. A containerized monolith is still a monolith, but moving it onto a supported runtime and repeatable deployment process can be a valuable first step.</p>
+
+<h2>Map dependencies and business invariants</h2>
+<p>Inventory entry points, scheduled tasks, reports, external consumers, database tables, stored procedures, batch exports, and operational scripts. Trace representative workflows through these components. Ask support and finance teams which manual workarounds are essential; repository analysis alone will not reveal every dependency.</p>
+<p>Document the rules that must remain true throughout migration. For example, an order must not be fulfilled twice, a payment must not produce duplicate financial effects, and an approval must be attributable to an authorized person. These invariants determine the transaction boundaries, tests, and reconciliation controls.</p>
+<p>Build a dependency map around capabilities rather than packages. A package named “utilities” may conceal pricing rules shared by several workflows. A proposed service that reads ten domains' tables is unlikely to be independent merely because it exposes an HTTP endpoint.</p>
+
+<h2>Select a first slice with measurable value</h2>
+<p>Choose a capability with clear inputs and outputs, manageable dependencies, an accountable owner, and enough value to justify the migration. A read-oriented catalogue or notification workflow can be easier to separate than the transaction engine, but its suitability depends on the actual system. Avoid selecting a component solely because its code is small.</p>
+<p>For an illustrative order platform, shipment tracking might be a good first slice if it consumes stable order events and does not own payment decisions. First identify every legacy reader and writer of tracking state. Then define a contract for status changes, duplicate events, late updates, and unavailable downstream providers.</p>
+<p>Write acceptance criteria before extraction: equivalent business behavior, documented consistency, agreed latency, observable failures, and a tested cutover procedure. Also define when to stop. If ownership remains unclear or the new boundary requires chatty calls during every transaction, refine the module before distributing it.</p>
+
+<h2>Introduce a routing seam with the strangler fig pattern</h2>
+<p>The strangler fig approach replaces capabilities gradually while the existing application continues serving the remaining workload. A routing layer can direct selected operations to the new implementation. AWS's <a href="https://docs.aws.amazon.com/prescriptive-guidance/latest/cloud-design-patterns/strangler-fig.html">pattern guidance</a> highlights domain-boundary uncertainty and the risk of making that routing layer a bottleneck. Martin Fowler's <a href="https://martinfowler.com/bliki/StranglerFigApplication.html">original discussion</a> explains the incremental replacement idea.</p>
+<p>Make routing rules explicit and reviewable. A route may depend on capability, tenant cohort, or a controlled feature flag. Preserve authentication, authorization, request limits, and timeouts across both paths. Use an adapter to translate legacy contracts into the new domain model, and give temporary adapters a removal owner and exit condition.</p>
+<p>Shadow execution is useful for comparing read results. It is dangerous for commands that send messages, create orders, or charge customers. Compare such commands using isolated replay fixtures or a side-effect-free evaluation mode. Never execute a live financial command twice just to compare implementations.</p>
+
+<h2>Separate data ownership before claiming independence</h2>
+<h3>Identify the authoritative writer</h3>
+<p>For each migrated entity, name one authoritative owner. If both applications can update the same record without a coordination contract, conflicts and ambiguous rollback become likely. A shared database may be a temporary migration seam, but it should have restricted access, a defined duration, and a plan to remove direct table dependencies.</p>
+<h3>Plan the transition from historical to live data</h3>
+<p>Backfill historical records with stable identifiers and checkpoints. Verify row completeness, relevant totals, reference integrity, and representative business states. Capture changes that occur during the backfill, then establish a cutover position so there is no gap between historical import and live processing. Track duplicates and schema versions explicitly.</p>
+<h3>Make consistency a product decision</h3>
+<p>If a downstream read model receives events asynchronously, document how stale it may become and what users see while it catches up. Financial state, inventory reservations, and access revocation can require different consistency policies. Do not apply eventual consistency to every workflow merely because messaging is available.</p>
+<p>Avoid an unprotected database-plus-message dual write. When a state change must emit an event, consider a transactional outbox and idempotent consumers. ARINITS's <a href="/blog/idempotent-payment-apis-prevent-duplicate-charges/">payment idempotency guide</a> explains duplicate and recovery concerns; those controls remain relevant during migration.</p>
+
+<h2>Define rollback around data, not only traffic</h2>
+<p>Returning requests to the old endpoint is safe only if the old application can understand the state produced by the new one. Once ownership transfers, rollback may need reverse synchronization, compatibility handling, or a forward repair. Specify the maximum supported rollback window and what makes it close.</p>
+<p>Use additive schema changes first. Introduce a new field, allow compatible readers and writers, migrate data, verify usage, and remove obsolete fields only after the old code is retired. Keep database compatibility and application deployment as separate decisions.</p>
+<p>A cutover runbook should identify the decision owner, prerequisites, checkpoints, pause conditions, recovery commands, and reconciliation checks. For the tracking example, compare processed event positions, unresolved deliveries, and status history before shifting traffic. Agree how new writes will be handled if the service must be disabled.</p>
+
+<h2>Prove readiness with failure-focused validation</h2>
+<p>Characterization tests capture legacy behavior where specifications are incomplete. Contract tests protect interfaces between old and new components. Representative replay data helps compare results, but it must be sanitized and must not trigger live side effects. Include edge cases, rather than only successful examples.</p>
+<p>Exercise timeouts, duplicate events, out-of-order updates, worker crashes, dependency failures, and authorization changes. Verify that recovery preserves the business invariants. A green unit-test suite does not prove that a partially completed workflow is recoverable after a cutover.</p>
+<p>Instrument the migration before sending production traffic. Compare outcome rates, latency, error codes, backlog, and data differences by cohort. The <a href="/blog/spring-boot-microservices-observability-production-guide/">Spring Boot observability guide</a> describes how logs, metrics, and traces can support this diagnosis. Observability should tell the operator when to pause, not simply provide more dashboards.</p>
+
+<h2>Retire the old path deliberately</h2>
+<p>After the new capability stabilizes, remove obsolete routes, writers, jobs, integrations, and permissions. Confirm that reporting and recovery procedures no longer depend on legacy tables. Archive required records under the organization's retention policy, and document the remaining system boundary.</p>
+<p>A migration is not complete while both systems remain mandatory forever. Review each temporary bridge regularly and connect its removal to a concrete milestone. Measure the resulting delivery and operating behavior against the baseline; use that evidence to decide whether another extraction is worthwhile.</p>
+<p>ARINITS can help assess boundaries and delivery risks through its <a href="/services/application-modernization/">application modernization services</a> and <a href="/services/java-microservices/">Java microservices engineering</a>. Review the <a href="/portfolio/enterprise-microservices-platform/">enterprise microservices portfolio example</a>, or <a href="/contact/">contact ARINITS</a> with the workflow, constraints, and migration risks you need to evaluate.</p>
+
+<h2>Frequently asked questions</h2>
+<h3>Must a Java monolith become microservices?</h3>
+<p>No. Supported runtimes, modular boundaries, automated testing, and repeatable releases may address the business problem. Extract services when independent operation offers enough value to justify distributed-system complexity.</p>
+<h3>Can the new service share the legacy database?</h3>
+<p>Temporarily, if ownership and access are controlled. Treat direct table access as a migration dependency with an exit plan. Sharing a database indefinitely usually limits independent changes and complicates recovery.</p>
+<h3>Which capability should we migrate first?</h3>
+<p>Choose one with a clear owner, stable contract, manageable dependencies, measurable benefit, and feasible recovery. The best candidate depends on the dependency map and business risk, not a universal list.</p>
+<h3>Is routing traffic back enough to roll back?</h3>
+<p>Only when legacy code can interpret all state written during the new path. Otherwise, recovery needs data synchronization, compatibility logic, or forward repair. Test that procedure before cutover.</p>
+<h3>How should success be measured?</h3>
+<p>Compare the original constraint with the new behavior: release independence, defect rate, recovery time, latency, cost, or scaling limits. Also confirm that the old path can be retired without losing required business behavior.</p>
+
+    `,
+  },
+  {
     id: 11,
     title: "Spring Boot Microservices Observability: A Production Guide",
     slug: "spring-boot-microservices-observability-production-guide",

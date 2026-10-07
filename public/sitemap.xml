@@ -4,6 +4,12 @@
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
+    <loc>https://arinits.com/blog/java-monolith-modernization-safe-migration-plan/</loc>
+    <lastmod>2026-10-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://arinits.com/</loc>
     <lastmod>2026-10-07</lastmod>
     <changefreq>weekly</changefreq>

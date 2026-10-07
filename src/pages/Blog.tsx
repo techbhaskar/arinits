@@ -5,6 +5,18 @@ import SEO from "../components/SEO";
 const Blog = () => {
   const blogPosts = [
     {
+    id: 12,
+    title: "Java Monolith Modernization: A Safe Migration Plan",
+    slug: "java-monolith-modernization-safe-migration-plan",
+    excerpt: "Plan incremental Java modernization with clear service boundaries, data ownership, safe cutover, rollback controls, and production validation.",
+    author: "ARINITS",
+    date: "October 7, 2026",
+    category: "Java & Architecture",
+    readTime: "10 min read",
+    image: "/arinits-brand.png",
+    gradient: "from-orange-600 to-red-700",
+    },
+    {
       id: 11,
       title: "Spring Boot Microservices Observability: A Production Guide",
       slug: "spring-boot-microservices-observability-production-guide",
