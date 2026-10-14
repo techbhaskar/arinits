@@ -11,6 +11,7 @@ const page = (path, title, description, options = {}) => ({
 });
 
 export const seoRoutes = [
+  page("/blog/enterprise-rag-security-access-control-before-answers", "Enterprise RAG Security: Access Control Before Answers | ARINITS", "Secure enterprise RAG with permission-aware retrieval, tenant isolation, prompt injection defenses, safe caching, and practical production release tests.", { type: "article", priority: "0.8", publishedTime: "2026-10-14" }),
   page("/blog/java-monolith-modernization-safe-migration-plan", "Java Monolith Modernization: A Safe Migration Plan | ARINITS", "Plan incremental Java modernization with clear service boundaries, data ownership, safe cutover, rollback controls, and production validation.", { type: "article", priority: "0.8", publishedTime: "2026-10-07" }),
   page("/", "Custom Software Development & IT Consulting | ARINITS", "Expert custom software development and strategic IT consulting. We deliver scalable enterprise software solutions. Start your digital transformation!", { changefreq: "weekly", priority: "1.0" }),
   page("/contact", "Contact Us - ARINITS", "Get in touch with ARINITS for custom software development, IT consulting, and enterprise technology solutions.", { priority: "0.9" }),

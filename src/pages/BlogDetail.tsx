@@ -4,6 +4,85 @@ import SEO from "../components/SEO";
 // Blog posts data - should match Blog.tsx
 const blogPosts = [
   {
+    id: 13,
+    title: "Enterprise RAG Security: Access Control Before Answers",
+    slug: "enterprise-rag-security-access-control-before-answers",
+    excerpt: "Secure enterprise RAG with permission-aware retrieval, tenant isolation, prompt injection defenses, safe caching, and practical production release tests.",
+    author: "ARINITS",
+    date: "October 14, 2026",
+    publishedTime: "2026-10-14",
+    category: "Technology",
+    readTime: "10 min read",
+    image: "/arinits-brand.png",
+    gradient: "from-orange-600 to-red-700",
+    content: `
+
+<p>An enterprise assistant can produce an accurate answer and still create a security incident. If it retrieves a salary document for an employee who cannot open that document in the source system, factual accuracy does not make the disclosure acceptable. Retrieval-augmented generation, or RAG, must preserve the organization's authorization rules before information reaches a model.</p>
+<p>This guide is for engineering leaders evaluating internal copilots, knowledge assistants, and document-search products. It presents a practical security design and release criteria. The examples are illustrative and do not describe ARINITS client systems.</p>
+
+<h2>Define the security contract for the assistant</h2>
+<p>Start by identifying who may ask questions, which sources the assistant can read, and what actions it can perform. A read-only policy assistant and an agent that updates cases have different risk profiles. Write down the boundary for each workflow before selecting an embedding model or vector database.</p>
+<p>The minimum contract is simple: a user should receive information only from records they are authorized to access. That must apply to document text, generated summaries, citations, search snippets, conversation history, and exported answers. Decide whether document titles themselves are confidential. A denied answer that reveals a private project name can still disclose useful information.</p>
+<p>Separate authorization from answer generation. A model can suggest an interpretation of a question, but deterministic application code must decide whether the authenticated caller can read a record or execute an operation.</p>
+
+<h2>Preserve permissions during ingestion</h2>
+<h3>Carry source identity into every chunk</h3>
+<p>A document ingestion pipeline should retain a stable source identifier, version, tenant, owner, permission reference, and deletion status. Every extracted chunk must retain its relationship to the original record. Chunking a file into paragraphs must not discard the access policy that protected the file.</p>
+<p>Use explicit handling for missing permission metadata. Quarantine such records or make them unavailable to ordinary retrieval until permissions can be resolved. Treating “unknown” as “public” turns an ingestion defect into a disclosure path.</p>
+<h3>Plan permission changes and deletions</h3>
+<p>Permissions evolve after indexing. Employees leave groups, projects become restricted, and documents are removed. Specify how changes propagate to the index, caches, and conversation storage. Track synchronization lag and define whether sensitive sources need an online authorization check at query time.</p>
+<p>Deletion needs an operational workflow. Remove or disable chunks and derived representations according to the applicable policy, invalidate cached answers, and verify that subsequent queries cannot retrieve the removed material. A successful source deletion does not prove that every downstream copy disappeared.</p>
+
+<h2>Enforce access before retrieval results enter context</h2>
+<p>Authenticate the caller at the API boundary and derive tenant and group membership from a trusted identity system. Build retrieval filters on the server. Never accept a client-supplied tenant ID or list of allowed groups as proof of authorization.</p>
+<p>Microsoft's <a href="https://learn.microsoft.com/en-us/azure/search/search-security-trimming-for-azure-search">security filter guidance</a> describes an approach that associates records with access identifiers and filters search results using the caller's permitted identities. Treat the filter as one implementation component; it still depends on trustworthy identity, correct indexing, and consistent enforcement across all retrieval paths.</p>
+<p>Apply equivalent permission checks to keyword search, vector search, hybrid search, reranking, document fetches, and citation endpoints. A secure vector query does not help if a fallback keyword query returns unrestricted snippets. Check permissions before sending candidate content to an external reranker as well.</p>
+<p>If results are filtered only after a broad query, authorized documents can disappear from a small candidate set. This creates an answer-quality problem even when unauthorized candidates are withheld. Prefer permission-aware retrieval, then test its behavior against the actual search engine and indexing strategy.</p>
+
+<h2>An example: two employees asking the same question</h2>
+<p>Suppose an HR manager and a developer both ask, “What is the compensation policy for Project Orion?” The HR manager can access a restricted project appendix; the developer can access only the general compensation policy. Both questions are identical, but the authorized evidence sets differ.</p>
+<p>The assistant should assemble each answer from that caller's permitted sources. It should not reuse the HR manager's answer for the developer. A citation to the appendix must also enforce permissions when opened, and a follow-up question must not recover the appendix from another user's conversation.</p>
+<p>This example provides a useful acceptance test: run identical prompts with different identities, inspect the retrieved chunk identifiers, and verify that restricted content never reaches the unauthorized request's model context. Testing only the final answer misses disclosures hidden in intermediate processing or traces.</p>
+
+<h2>Treat retrieved documents as untrusted input</h2>
+<p>Authorized content is not necessarily safe content. A document can contain instructions telling the assistant to ignore its task, disclose other material, or invoke a tool. OWASP's <a href="https://genai.owasp.org/llmrisk/llm01-prompt-injection/">prompt injection guidance</a> distinguishes direct user input from instructions embedded in external sources and explains that RAG alone does not remove this risk.</p>
+<p>Separate instructions from evidence in the application design. Label source passages clearly, limit their scope, and tell the model to use them as reference material. Those measures can help, but they do not create an authorization boundary. The backend must continue enforcing permissions even if the generated response requests a prohibited action.</p>
+<p>Keep tool execution behind a policy layer. Validate tool name, arguments, caller identity, target resource, and allowed operation. A knowledge assistant should not acquire unrestricted database or email access simply because the model supports function calling. For sensitive writes, use a reviewable action with explicit business approval and a durable audit trail.</p>
+
+<h2>Isolate caches, sessions, and telemetry</h2>
+<p>A cache key based only on prompt text is unsafe when callers have different permissions. Cache within a verified authorization scope and consider changes to membership, document version, and source policy. If those conditions are difficult to encode correctly, avoid sharing generated answers across users.</p>
+<p>Conversation memory needs the same controls as document storage. Bind sessions to authenticated identities and tenants, enforce access on every read, and prevent a guessed session identifier from exposing another conversation. Recheck source access when reusing sensitive context; an earlier authorized answer does not grant permanent access.</p>
+<p>Logs and traces can leak the very documents retrieval protects. Record operational metadata such as source IDs, policy decisions, model versions, latency, and safe error codes. Restrict or redact prompt and response content, define retention, and limit production access. Debugging should not silently create a second unrestricted knowledge repository.</p>
+
+<h2>Evaluate security and usefulness together</h2>
+<h3>Build a representative permission test set</h3>
+<p>Include users with overlapping groups, users with no access, revoked memberships, private documents, missing metadata, deleted records, and cross-tenant requests. Test every search mode and document-opening path. Measure unauthorized retrieval separately from answer quality; a fluent answer can hide a serious access failure.</p>
+<h3>Test adversarial documents</h3>
+<p>Add controlled documents containing misleading instructions, fabricated citations, and requests to invoke tools. Check the resulting context, answer, and attempted actions. Keep tests in isolated environments and ensure test payloads cannot execute real business operations.</p>
+<h3>Test normal failure behavior</h3>
+<p>Simulate an unavailable identity service, stale group cache, incomplete index synchronization, and an unreachable source system. Define a fail-closed policy for sensitive retrieval. Return a useful explanation of temporary unavailability without exposing restricted record names or internal credentials.</p>
+<p>Also test answer completeness, source freshness, citation accuracy, latency, and cost. Security controls can reduce the available evidence, so the assistant must be able to say that it lacks sufficient authorized information rather than inventing an answer.</p>
+
+<h2>Questions to ask before choosing a RAG platform</h2>
+<p>Ask vendors or implementation teams to demonstrate an identity change taking effect, a deleted document disappearing, and the same query producing different authorized contexts for different users. Request evidence for permission enforcement in reranking, caching, citations, exports, and logs. A feature labelled “enterprise security” is not a substitute for these tests.</p>
+<p>Begin with a narrow corpus and a read-only use case. Establish source ownership, permission synchronization, evaluation fixtures, incident response, and a way to disable a connector. Expand sources and agent capabilities only after those controls are repeatable.</p>
+<p>ARINITS's <a href="/services/ai-development/">AI development services</a> cover enterprise AI workflows, while <a href="/solutions/api-integration/">API integration</a> and <a href="/cybersecurity-consulting/">cybersecurity consulting</a> address the surrounding identity and system boundaries. Explore the <a href="/portfolio/sochdb-ai-native-vector-sql-database/">SochDB portfolio example</a> for an AI data-platform project; it is not evidence that a specific RAG permission design has been certified. To review your source permissions and release criteria, <a href="/contact/">contact ARINITS</a>.</p>
+
+<h2>Frequently asked questions</h2>
+<h3>Does RAG prevent prompt injection?</h3>
+<p>No. Retrieved content can itself contain malicious instructions. Combine constrained model behavior with backend authorization, limited tools, validated outputs, and adversarial testing.</p>
+<h3>Should we create a separate vector index for each tenant?</h3>
+<p>Separate indexes can simplify isolation but add operational overhead. A shared index can work when tenant filters and permissions are enforced reliably on every path. Choose based on isolation requirements, scale, operational capability, and testing evidence.</p>
+<h3>Can we filter restricted information from the generated answer?</h3>
+<p>Output checks can provide another layer of protection, but they should not replace permission checks before retrieval results enter context. Once restricted content reaches the model or downstream processors, the exposure has already crossed a boundary.</p>
+<h3>How quickly must revoked access take effect?</h3>
+<p>Set a documented maximum delay based on the sensitivity of the source and business policy. For sensitive records, consider a current authorization check rather than relying solely on periodically synchronized metadata.</p>
+<h3>What makes an enterprise RAG pilot ready for production?</h3>
+<p>Verified permission enforcement, deletion handling, isolated sessions and caches, controlled tool access, safe telemetry, representative security tests, useful grounded answers, and clear operational ownership. A convincing demonstration alone does not establish those properties.</p>
+
+    `,
+  },
+  {
     id: 12,
     title: "Java Monolith Modernization: A Safe Migration Plan",
     slug: "java-monolith-modernization-safe-migration-plan",

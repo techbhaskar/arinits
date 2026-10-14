@@ -5,6 +5,18 @@ import SEO from "../components/SEO";
 const Blog = () => {
   const blogPosts = [
     {
+    id: 13,
+    title: "Enterprise RAG Security: Access Control Before Answers",
+    slug: "enterprise-rag-security-access-control-before-answers",
+    excerpt: "Secure enterprise RAG with permission-aware retrieval, tenant isolation, prompt injection defenses, safe caching, and practical production release tests.",
+    author: "ARINITS",
+    date: "October 14, 2026",
+    category: "Technology",
+    readTime: "10 min read",
+    image: "/arinits-brand.png",
+    gradient: "from-orange-600 to-red-700",
+    },
+    {
     id: 12,
     title: "Java Monolith Modernization: A Safe Migration Plan",
     slug: "java-monolith-modernization-safe-migration-plan",
