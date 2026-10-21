@@ -4,6 +4,91 @@ import SEO from "../components/SEO";
 // Blog posts data - should match Blog.tsx
 const blogPosts = [
   {
+    id: 14,
+    title: "Kafka Consumer Recovery: Retries, Dead Letters and Safe Replay",
+    slug: "kafka-consumer-recovery-retries-dead-letters-safe-replay",
+    excerpt: "Design Kafka consumer recovery with bounded retries, dead-letter ownership, idempotent processing, ordering controls, and safe operational replay.",
+    author: "ARINITS",
+    date: "October 21, 2026",
+    publishedTime: "2026-10-21",
+    category: "Java & Architecture",
+    readTime: "10 min read",
+    image: "/arinits-brand.png",
+    gradient: "from-orange-600 to-red-700",
+    content: `
+
+<p>A Kafka consumer fails after updating a database but before recording its progress. On restart, it receives the same event again. Another record contains an invalid enum and fails every time. Meanwhile, a downstream API is unavailable, and repeated retries make the outage worse. These failures need different recovery decisions.</p>
+<p>This guide helps engineering leaders assess retry, dead-letter, and replay designs for Java and Spring Boot platforms. Its focus is operational recovery: deciding what can run again, preserving business correctness, and giving operators evidence to resolve failures. Examples are illustrative, not claims about ARINITS client systems.</p>
+
+<h2>Define success beyond reading a record</h2>
+<p>A consumer is successful when its intended business change is durably complete. Receiving a record, logging it, or returning from part of a handler does not establish that outcome. Define the completion boundary for each workflow, including database changes, external calls, and emitted events.</p>
+<p>Consider a shipment-status event. Updating a local projection may fit within one database transaction. Calling an external carrier API introduces another system whose outcome can be uncertain. A timed-out request may already have succeeded. Document those differences before configuring retries.</p>
+<p>For each event type, record an owner, stable event identifier, schema version, business entity key, expected processing time, and recovery policy. A topic-wide retry count alone cannot express those decisions.</p>
+
+<h2>Classify failures before choosing a retry policy</h2>
+<h3>Transient dependency failures</h3>
+<p>Connection failures, throttling, and brief service unavailability may recover without changing the record. Use bounded retries with backoff and a retry budget. Coordinate the budget across HTTP clients, consumer handlers, and orchestration layers so their individual policies do not multiply attempts unexpectedly.</p>
+<h3>Permanent input failures</h3>
+<p>Missing required fields, unsupported schema versions, and invalid domain values usually need correction or a producer fix. Repeating the same input immediately wastes capacity. Preserve the failed input and a stable reason code in a controlled failure workflow. Distinguish malformed serialization from a valid event that violates a business rule.</p>
+<h3>Unknown side-effect outcomes</h3>
+<p>If an external operation timed out after submission, first determine whether it completed. Query by a stable operation reference or use the provider's documented idempotency mechanism. A new request identifier can turn a recovery attempt into a second business operation.</p>
+<p>Classification should be explicit and versioned. A broad “catch exception and continue” can skip work, while “retry everything forever” can block a partition indefinitely.</p>
+
+<h2>Choose blocking or non-blocking retries deliberately</h2>
+<p>A short retry on the original processing path can be appropriate when preserving order is essential and the expected interruption is brief. Its cost is delayed progress for other records on the affected path. Long waits also require careful handling of consumer liveness, polling, and rebalances.</p>
+<p>Retry topics move failed work onto another processing path so later source records can proceed. That improves availability for unrelated work, but it changes ordering behavior. If event A for an account is delayed while event B proceeds, the application needs a policy for that sequence.</p>
+<p>Spring for Apache Kafka provides non-blocking retry infrastructure through <a href="https://docs.spring.io/spring-kafka/reference/retrytopic.html">retry-topic support</a>. Its documentation lists compatibility limits, including batch listeners and container transactions. Check the reference for the version deployed rather than applying a configuration example without reviewing its transaction model.</p>
+<p>Use the business entity as the unit of ordering analysis. A partition key can keep related source events together, but routing one event to a separate retry topic does not automatically preserve their original processing order. Version checks, stale-event rejection, buffering, or pausing affected work may be necessary.</p>
+
+<h2>Make repeated processing safe</h2>
+<p>For a database-backed consumer, store a processed-event marker and the business state change in the same local transaction where possible. Enforce uniqueness on the event identifier within the appropriate consumer or workflow scope. A duplicate should produce a known outcome rather than run the business change again.</p>
+<p>Commit Kafka progress only after the required durable work completes, according to the chosen listener and transaction configuration. A crash after the database commit but before offset progress can cause redelivery; the durable duplicate guard must handle it. A crash before commit should leave neither a partial business change nor a misleading success marker.</p>
+<p>When a local update must publish another event, avoid assuming that separate database and broker writes are atomic. AWS's <a href="https://docs.aws.amazon.com/prescriptive-guidance/latest/cloud-design-patterns/transactional-outbox.html">transactional outbox guidance</a> describes committing an event record with local state and publishing it separately, while retaining duplicate handling downstream.</p>
+<p>These controls extend the principles in the <a href="/blog/idempotent-payment-apis-prevent-duplicate-charges/">payment idempotency guide</a>. Broker delivery guarantees must be evaluated alongside the database and external side effects that define the real business operation.</p>
+
+<h2>Treat the dead-letter topic as an owned queue of unresolved work</h2>
+<p>A dead-letter topic, or DLT, isolates records that exhausted their retry policy or require intervention. Moving a record there is a recovery handoff, not successful completion of the original business task.</p>
+<p>Retain the event identity, original topic and position, schema version, failure category, attempt information, first failure time, and the latest diagnostic context. Keep payload access restricted and avoid copying secrets into exception headers. Define retention long enough for the agreed investigation process, with monitoring before records expire.</p>
+<p>Assign an operational owner and a resolution state: awaiting dependency recovery, awaiting producer correction, approved for replay, resolved, or intentionally rejected. Record the reason for manual decisions. Otherwise, a DLT becomes a place where failed business operations disappear from normal dashboards.</p>
+<p>Test what happens when publishing to the DLT fails. Offset handling must not silently discard the source record because an error handler attempted a handoff that never became durable.</p>
+
+<h2>A practical example: recover a failed order projection</h2>
+<p>Suppose a consumer updates an order projection and writes event ID E42 into its processed-events table in one transaction. The process crashes before its Kafka offset is committed. When E42 is delivered again, the unique event marker shows the update already completed, so the handler acknowledges the duplicate without applying it twice.</p>
+<p>Now suppose E43 contains a status that the deployed schema does not support. Immediate retries will not change its meaning. Route it to the failure workflow, inspect the producer contract, deploy the appropriate correction, and test E43 in an isolated environment before replay.</p>
+<p>If E44 has already advanced the order state, replaying E43 later must not move the order backwards. A monotonic version or permitted-state-transition check should reject or reconcile stale updates. Duplicate detection protects against repeating one event; it does not independently solve out-of-order business changes.</p>
+
+<h2>Make replay a controlled operation</h2>
+<h3>Preserve identity and evidence</h3>
+<p>Keep the original event ID when retrying the same intended operation. Add a separate replay execution ID to track who initiated the run and which recovery policy applied. If a payload needs correction, preserve the original and document the transformation; decide explicitly whether the result is a corrected event or a new business command.</p>
+<h3>Bound scope and throughput</h3>
+<p>Select records by failure category, time range, tenant, or business entity. Start with a small cohort and throttle replay so it does not overload the recovered dependency or starve current traffic. Confirm that the intended handler version and schema are available before releasing the next batch.</p>
+<h3>Reconcile the business result</h3>
+<p>Track attempted, completed, duplicate, stale, rejected, and still-failed records. Verify the resulting business state, not just a decreasing DLT count. An empty failure topic can mean records expired or were moved elsewhere. Keep a replay audit trail and a stop condition for unexpected differences.</p>
+
+<h2>Use operational signals that reveal stuck work</h2>
+<p>Monitor consumer lag, age of the oldest unresolved event, retry rate, failure categories, DLT arrivals, replay outcomes, and dependency latency. Separate normal processing delay from records waiting for a human decision. Include tenant or workflow dimensions only where cardinality and access policies allow.</p>
+<p>An alert should identify the affected business workflow, owner, current impact, and runbook. Connect a failed event to its processing history through safe identifiers. The <a href="/blog/spring-boot-microservices-observability-production-guide/">Spring Boot observability guide</a> describes how correlated signals support investigations.</p>
+<p>Before production, exercise crashes before and after commit, duplicate delivery, stale events, unavailable dependencies, failed DLT publication, rebalance during recovery, and replay after a schema change. Each test should demonstrate a business invariant and an operator action.</p>
+
+<h2>Questions to ask an implementation team</h2>
+<p>Ask the team to demonstrate one failed record from original receipt through retry, isolation, investigation, and successful recovery. Identify where durable ownership changes and what happens if the process crashes at each boundary. Require clear answers about order, duplicate handling, retention, replay authorization, and side effects.</p>
+<p>ARINITS's <a href="/technologies/kafka/">Kafka consulting</a> and <a href="/services/java-microservices/">Java microservices services</a> address event-driven integration design. Review the <a href="/portfolio/enterprise-microservices-platform/">enterprise microservices portfolio example</a>, or <a href="/contact/">contact ARINITS</a> to discuss a consumer recovery workflow and its failure cases.</p>
+
+<h2>Frequently asked questions</h2>
+<h3>Should every consumer failure be retried?</h3>
+<p>No. Retry failures that can plausibly recover without changing the input. Invalid input, unsupported schemas, and uncertain external effects require distinct investigation or reconciliation policies.</p>
+<h3>Do retry topics preserve source-event order?</h3>
+<p>Do not assume they do. A delayed event can be processed after later source events. Test ordering requirements per business entity and implement the required state or sequencing controls.</p>
+<h3>Is a dead-letter topic enough for recovery?</h3>
+<p>No. It also needs ownership, diagnostic metadata, retention, alerts, authorization, and a tested replay process. Isolation alone does not resolve the business failure.</p>
+<h3>Should replay generate a new event ID?</h3>
+<p>Preserve the original identity for the same intended event so duplicate controls remain effective. Track replay separately. Use a new business identity only when the operation is deliberately different and that distinction is documented.</p>
+<h3>How many retries should we configure?</h3>
+<p>Choose a bounded policy from dependency behavior, recovery time, ordering requirements, and the business deadline. Measure the combined attempts across layers and route exhausted work to an owned recovery process.</p>
+
+    `,
+  },
+  {
     id: 13,
     title: "Enterprise RAG Security: Access Control Before Answers",
     slug: "enterprise-rag-security-access-control-before-answers",

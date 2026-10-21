@@ -5,6 +5,18 @@ import SEO from "../components/SEO";
 const Blog = () => {
   const blogPosts = [
     {
+    id: 14,
+    title: "Kafka Consumer Recovery: Retries, Dead Letters and Safe Replay",
+    slug: "kafka-consumer-recovery-retries-dead-letters-safe-replay",
+    excerpt: "Design Kafka consumer recovery with bounded retries, dead-letter ownership, idempotent processing, ordering controls, and safe operational replay.",
+    author: "ARINITS",
+    date: "October 21, 2026",
+    category: "Java & Architecture",
+    readTime: "10 min read",
+    image: "/arinits-brand.png",
+    gradient: "from-orange-600 to-red-700",
+    },
+    {
     id: 13,
     title: "Enterprise RAG Security: Access Control Before Answers",
     slug: "enterprise-rag-security-access-control-before-answers",
