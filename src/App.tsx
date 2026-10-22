@@ -42,6 +42,13 @@ const Loading = () => (
 function App() {
   return (
     <Router>
+      <AppContent />
+    </Router>
+  );
+}
+
+export function AppContent() {
+  return (
       <div className="min-h-screen flex flex-col">
         <a
           href="#main-content"
@@ -106,7 +113,6 @@ function App() {
         </main>
         <Footer />
       </div>
-    </Router>
   );
 }
 

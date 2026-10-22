@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import SEO from "../components/SEO";
 import { projects } from "../data/projects";
+import { blogPosts } from "../data/blogPosts";
 
 const Home = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -364,9 +365,23 @@ const Home = () => {
               Our Expertise
             </h2>
             <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto">
-              Comprehensive technology services designed to accelerate your
-              business growth and digital transformation journey.
+              ARINITS is a Hyderabad-based software engineering and consulting
+              company building enterprise, FinTech, Java, and AI systems.
             </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+            {[
+              ["FinTech & Payment Engineering", "/services/fintech-payment-solutions/", "Payment APIs, reconciliation, wallets, and auditable transaction workflows."],
+              ["Java & Spring Boot Microservices", "/services/java-microservices/", "Service boundaries, Kafka integration, production reliability, and performance."],
+              ["Enterprise AI Development", "/services/ai-development/", "RAG applications, AI agents, evaluation, and secure enterprise integration."],
+              ["Application Modernization", "/services/application-modernization/", "Incremental migration, modular architecture, cloud readiness, and safer releases."],
+            ].map(([title, path, description]) => (
+              <Link key={path} to={path} className="rounded-2xl border border-white/20 bg-white/5 p-7 hover:border-arin-orange transition-colors">
+                <h3 className="text-2xl font-bold text-white mb-3">{title}</h3>
+                <p className="text-gray-300">{description}</p>
+              </Link>
+            ))}
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -586,29 +601,10 @@ const Home = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            {[
-              {
-                title: "10 Essential Tips for Modern Web Development",
-                category: "Web Development",
-                date: "March 15, 2024",
-                gradient: "from-orange-500 to-orange-600",
-              },
-              {
-                title: "Cloud Migration: A Complete Guide",
-                category: "Cloud & DevOps",
-                date: "March 10, 2024",
-                gradient: "from-orange-500 to-orange-600",
-              },
-              {
-                title: "Building Secure Mobile Applications",
-                category: "Mobile Development",
-                date: "March 5, 2024",
-                gradient: "from-orange-500 to-orange-600",
-              },
-            ].map((post, index) => (
+            {blogPosts.slice(0, 3).map((post) => (
               <Link
-                key={index}
-                to="/blog"
+                key={post.slug}
+                to={`/blog/${post.slug}/`}
                 className="group glass-strong-dark rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 border border-white/20"
               >
                 <div

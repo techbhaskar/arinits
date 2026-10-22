@@ -1,6 +1,7 @@
 import { copyFileSync, mkdirSync, readFileSync, writeFileSync } from "fs";
 import { dirname, join } from "path";
 import { seoRoutes, siteUrl } from "./seo-routes.js";
+import { createServer } from "vite";
 
 const escapeHtml = (value) => value
   .replaceAll("&", "&amp;")
@@ -80,10 +81,22 @@ const renderRouteHead = (template, route) => {
     "</head>",
     `    <script type="application/ld+json">${JSON.stringify(pageSchema)}</script>\n  </head>`,
   );
+  if (route.path === "/") {
+    html = html.replace("</head>", `<script type="application/ld+json">${JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      name: "ARINITS",
+      url: `${siteUrl}/`,
+      publisher: { "@id": `${siteUrl}/#organization` },
+    })}</script></head>`);
+  }
   return html;
 };
 
+const server = await createServer({ server: { middlewareMode: true }, appType: "custom" });
 try {
+  const { render } = await server.ssrLoadModule("/src/entry-server.tsx");
   const indexFile = join(process.cwd(), "dist", "index.html");
   const fallbackFile = join(process.cwd(), "dist", "404.html");
   const template = readFileSync(indexFile, "utf8");
@@ -93,7 +106,12 @@ try {
       ? indexFile
       : join(process.cwd(), "dist", route.path.slice(1), "index.html");
     mkdirSync(dirname(outputFile), { recursive: true });
-    writeFileSync(outputFile, renderRouteHead(template, route));
+    const body = await render(route.path);
+    if (!body.includes("<h1") || body.includes("Post Not Found")) {
+      throw new Error(`Missing page content for ${route.path}`);
+    }
+    writeFileSync(outputFile, renderRouteHead(template, route)
+      .replace('<div id="root"></div>', () => `<div id="root">${body}</div>`));
   }
 
   let fallback = template.replace(
@@ -107,4 +125,6 @@ try {
 } catch (e) {
   console.error("❌ Failed to generate static route pages:", e);
   process.exit(1);
+} finally {
+  await server.close();
 }
