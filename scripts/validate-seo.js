@@ -41,6 +41,16 @@ for (const path of ["/services/fintech-payment-solutions/", "/services/java-micr
   assert(home.includes(`href="${path}"`), `Missing homepage service link ${path}`);
 }
 assert(home.includes('"@type":"WebSite"'), "Missing site identity schema");
+assert(home.includes("googletagmanager.com/gtag/js?id=G-B4F8PBZ80F"), "Missing ARINITS Google tag");
+assert(home.includes("analytics_storage: 'denied'"), "Analytics consent must default to denied");
+assert(home.includes("send_page_view: false"), "GA4 automatic page views must be disabled for SPA tracking");
+const builtScripts = [...home.matchAll(/<script type="module" crossorigin src="([^"]+)"/g)]
+  .map(match => readFileSync(`dist${match[1]}`, "utf8")).join("\n");
+assert(builtScripts.includes("arinits-analytics-consent"), "Missing analytics consent preference handling");
+assert(builtScripts.includes("page_view"), "Missing SPA page-view tracking");
+const privacy = readFileSync("dist/privacy/index.html", "utf8");
+assert(privacy.includes("Google Analytics 4"), "Privacy policy must disclose Google Analytics");
+assert(privacy.includes("https://policies.google.com/technologies/partner-sites"), "Privacy policy missing Google data notice");
 const fallback = readFileSync("dist/404.html", "utf8");
 assert(fallback.includes('name="robots" content="noindex, follow"'));
 assert(!fallback.includes("<h1"), "Fallback must not inherit homepage content");

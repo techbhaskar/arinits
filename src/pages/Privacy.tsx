@@ -140,9 +140,28 @@ const Privacy = () => {
                   experience on our website.
                 </p>
                 <p className="mt-4">
-                  You can control cookies through your browser settings.
-                  However, disabling cookies may limit your ability to use
-                  certain features of our website.
+                  We use Google Analytics 4 to understand which pages visitors
+                  use, how they reach the site, and how the site performs. The
+                  service may process device, browser, approximate location,
+                  referral, and interaction data. Analytics storage is disabled
+                  unless you accept it through our cookie preference notice.
+                  Google explains how it uses information from sites that use
+                  its services in its{" "}
+                  <a
+                    href="https://policies.google.com/technologies/partner-sites"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-orange-400 underline"
+                  >
+                    business data responsibility notice
+                  </a>
+                  .
+                </p>
+                <p className="mt-4">
+                  You can accept or decline analytics using the notice shown on
+                  your first visit. You can also clear the site data stored by
+                  your browser to reset that choice, and control cookies through
+                  your browser settings.
                 </p>
               </section>
 
