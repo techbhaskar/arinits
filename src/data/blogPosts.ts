@@ -1,4 +1,5 @@
 export const blogPosts = [
+{"id": 15, "title": "Payment Webhook Architecture: Secure, Reliable Processing", "slug": "payment-webhook-architecture-secure-reliable-processing", "excerpt": "Design payment webhooks with signature verification, durable acceptance, duplicate protection, safe state transitions, reconciliation, and operational recovery.", "author": "ARINITS", "date": "October 28, 2026", "category": "Payments & FinTech", "readTime": "9 min read", "image": "/arinits-brand.png", "gradient": "from-orange-600 to-red-700"},
     {
     id: 14,
     title: "Kafka Consumer Recovery: Retries, Dead Letters and Safe Replay",

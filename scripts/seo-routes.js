@@ -11,6 +11,7 @@ const page = (path, title, description, options = {}) => ({
 });
 
 export const seoRoutes = [
+  page("/blog/payment-webhook-architecture-secure-reliable-processing", "Payment Webhook Architecture: Secure, Reliable Processing | ARINITS", "Design payment webhooks with signature verification, durable acceptance, duplicate protection, safe state transitions, reconciliation, and operational recovery.", { type: "article", priority: "0.8", publishedTime: "2026-10-28" }),
   page("/blog/kafka-consumer-recovery-retries-dead-letters-safe-replay", "Kafka Consumer Recovery: Retries, Dead Letters and Safe Replay | ARINITS", "Design Kafka consumer recovery with bounded retries, dead-letter ownership, idempotent processing, ordering controls, and safe operational replay.", { type: "article", priority: "0.8", publishedTime: "2026-10-21" }),
   page("/blog/enterprise-rag-security-access-control-before-answers", "Enterprise RAG Security: Access Control Before Answers | ARINITS", "Secure enterprise RAG with permission-aware retrieval, tenant isolation, prompt injection defenses, safe caching, and practical production release tests.", { type: "article", priority: "0.8", publishedTime: "2026-10-14" }),
   page("/blog/java-monolith-modernization-safe-migration-plan", "Java Monolith Modernization: A Safe Migration Plan | ARINITS", "Plan incremental Java modernization with clear service boundaries, data ownership, safe cutover, rollback controls, and production validation.", { type: "article", priority: "0.8", publishedTime: "2026-10-07" }),
